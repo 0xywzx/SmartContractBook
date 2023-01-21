@@ -9,340 +9,403 @@
   - https://docs.uniswap.org/contracts/v2/reference/smart-contracts/factory#createpair
 
 ## 1.2 ウォレットとは何ですか
-- MetaMask “MetaMask Docs”
+- MetaMask "MetaMask Docs"
   - https://docs.metamask.io/guide/#why-metamask
 - Github "MetaMask/metamask-extension"
   - https://github.com/MetaMask/metamask-extension
-- Andreas M. Antonopoulos, Gavin Wood “Mastering Ethereum - 04keys-addresses.asciidoc - Ethereum’s Cryptographic Hash Function: Keccak-256”
+- Andreas M. Antonopoulos, Gavin Wood "Mastering Ethereum - 04keys-addresses.asciidoc - Ethereum’s Cryptographic Hash Function: Keccak-256"
   - https://github.com/ethereumbook/ethereumbook/blob/develop/04keys-addresses.asciidoc#ethereums-cryptographic-hash-function-keccak-256
-- Vincent Kobel “CREATE FULL ETHEREUM WALLET, KEYPAIR AND ADDRESS”
+- Vincent Kobel "CREATE FULL ETHEREUM WALLET, KEYPAIR AND ADDRESS"
   - https://kobl.one/blog/create-full-ethereum-keypair-and-address/
-- npm “@ethersproject/hdnode”
+- npm "@ethersproject/hdnode"
   - https://www.npmjs.com/package/@ethersproject/hdnode
-- npm “secp256k1”
+- npm "secp256k1"
   - https://www.npmjs.com/package/secp256k1
-- npm “@ethersproject/keccak256”
+- npm "@ethersproject/keccak256"
   - https://www.npmjs.com/package/@ethersproject/keccak256
 
 ## 1.3　トランザクションとは何ですか
-- ​​ethereum.org “TRANSACTIONS”
+- ​​ethereum.org "TRANSACTIONS"
   - https://ethereum.org/en/developers/docs/transactions/
 
 ## 1.4 スマートコントラクトのコード監査とは何ですか
-- rekt “leaderboard”
+- rekt "leaderboard"
   - https://rekt.news/leaderboard/
-- DeFiLlama “Hacks”
+- DeFiLlama "Hacks"
   - https://defillama.com/hacks
-- code4rena “Home”
+- code4rena "Home"
   - https://code4rena.com/
-- AAVE “Protocol Whitepaper V2.0” p.2
+- AAVE "Protocol Whitepaper V2.0" p.2
   - https://github.com/aave/protocol-v2/blob/master/aave-v2-whitepaper.pdf
-- ethereum.org “TESTING SMART CONTRACTS”
+- ethereum.org "TESTING SMART CONTRACTS"
   - https://ethereum.org/en/developers/docs/smart-contracts/testing/
-- OWASP “OWASP Risk Rating Methodology”
+- OWASP "OWASP Risk Rating Methodology"
   - https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
 - Github "0xywzx/SmartContractBook"
   - https://github.com/0xywzx/SmartContractBook/blob/main/1.4.gas-optimization/GasOptimizationSample.sol
 
 ## 2.1 ERC20トークンとは何ですか
-- Ethereum Improvement Proposals “EIP-20: Token Standard”
+- Ethereum Improvement Proposals "EIP-20: Token Standard"
   - https://eips.ethereum.org/EIPS/eip-20
-- Github “ethereum/EIPs”
+- Github "ethereum/EIPs"
   - https://github.com/ethereum/EIPs
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/IERC20Metadata.so
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts
-- FATF “The FATF Recommendations - INTERNATIONAL STANDARDS ON COMBATING MONEY LAUNDERING AND THE FINANCING OF TERRORISM & PROLIFERATION” (Updated March 2022)（FATF基準）
+- FATF "The FATF Recommendations - INTERNATIONAL STANDARDS ON COMBATING MONEY LAUNDERING AND THE FINANCING OF TERRORISM & PROLIFERATION" (Updated March 2022)（FATF基準）
   - https://www.fatf-gafi.org/media/fatf/documents/recommendations/pdfs/FATF%20Recommendations%202012.pdf
-- Open Source Initiative “The MIT License”
+- Open Source Initiative "The MIT License"
   - https://opensource.org/licenses/mit-license.php
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
-- `（要確認）` Remix IDE “Solidity Compiler”
+- `（要確認）` Remix IDE "Solidity Compiler"
   - https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js
 
 ## 2.2  ERC721のNFTとは何ですか
-- Opeansea “Bored Ape Yacht Club”
+- Opeansea "Bored Ape Yacht Club"
   - https://opensea.io/collection/boredapeyachtclub
-- OpenSea “ENS”
+- OpenSea "ENS"
   - https://opensea.io/ja/collection/ens?search[sortAscending]=false&search[sortBy]=VIEWER_COUNT
-- Ethereum Improvement Proposals “EIP-721: Non-Fungible Token Standard”
+- Ethereum Improvement Proposals "EIP-721: Non-Fungible Token Standard"
   - https://eips.ethereum.org/EIPS/eip-721
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/IERC721Metadata.sol
 - 日本暗号資産ビジネス協会「NFTビジネスに関するガイドライン」（2022年3月）
   - https://cryptocurrency-association.org/nft_guideline/#03-01
 
 ## 2.3	ERC1155とは何ですか
-- Ethereum Improvement Proposals “EIP-1155: Multi Token Standard”
+- Ethereum Improvement Proposals "EIP-1155: Multi Token Standard"
   - https://eips.ethereum.org/EIPS/eip-1155
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/IERC1155.sol
 
 
 ## 2.4 トークンのapproveとは何ですか
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
    - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
 
 ## 2.5 トークンの移転（transfer）とは何ですか
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
 
 ## 2.6 NFTのtokenURIとは何ですか
-- a16z Crypto “The Can’t Be Evil NFT Licenses”
+- a16z Crypto "The Can’t Be Evil NFT Licenses"
   - https://a16zcrypto.com/introducing-nft-licenses/
-- OpenSea Developers “Metadata Standards”
+- OpenSea Developers "Metadata Standards"
   - https://docs.opensea.io/docs/metadata-standards
-- Etherscan “Uniswap V3: Positions NFT”
+- Etherscan "Uniswap V3: Positions NFT"
   - https://etherscan.io/address/0xc36442b4a4522e871399cd717abdd847ab11fe88#readProxyContract
-- OpenSea “Uniswap V3 Positions”
+- OpenSea "Uniswap V3 Positions"
   - https://opensea.io/ja/collection/uniswap-v3-positions
-- OpenSea “Murakami.Flowers Official”
+- OpenSea "Murakami.Flowers Official"
   - https://opensea.io/collection/murakami-flowers-2022-official
-- OpenSea “Hashmasks”
+- OpenSea "Hashmasks"
   - https://opensea.io/collection/hashmasks
-- OpenSea “Nouns”
+- OpenSea "Nouns"
   - https://opensea.io/collection/nouns
-- OpenSea “Uniswap V3 Positions”
+- OpenSea "Uniswap V3 Positions"
   - https://opensea.io/collection/uniswap-v3-positions
-- OpenSea “Azuki”
+- OpenSea "Azuki"
   - https://opensea.io/collection/azuki
-- OpenSea “Bored Ape Yacht Club”
+- OpenSea "Bored Ape Yacht Club"
   - https://opensea.io/collection/boredapeyachtclub
 
 ## 2.7 	トークンのBlocklist機能とは何ですか
-- Github “centrehq/centre-tokens”
+- Github "centrehq/centre-tokens"
   - https://github.com/centrehq/centre-tokens/blob/0d3cab14ebd133a83fc834dbd48d0468bdf0b391/contracts/v1/Blacklistable.sol#L35-L79
-- Github “jcam1/JPYCv2”
+- Github "jcam1/JPYCv2"
   - https://github.com/jcam1/JPYCv2/blob/main/contracts/v1/Blocklistable.sol
-- Github “centrehq/centre-tokens”
+- Github "centrehq/centre-tokens"
   - https://github.com/centrehq/centre-tokens/blob/0d3cab14ebd133a83fc834dbd48d0468bdf0b391/contracts/v1/FiatTokenV1.sol#L266-L282
   - https://github.com/centrehq/centre-tokens/blob/0d3cab14ebd133a83fc834dbd48d0468bdf0b391/contracts/v1/Blacklistable.sol#L52-L62
-- Alex Beregszaszi, @chriseth, etc. “Solidity 0.8.17 documentation”
+- Alex Beregszaszi, @chriseth, etc. "Solidity 0.8.17 documentation"
   - https://docs.soliditylang.org/en/latest/contracts.html#function-modifiers
-- alchemy “Solidity Error Handling Overview: What is require?”
+- alchemy "Solidity Error Handling Overview: What is require?"
   - https://www.alchemy.com/overviews/solidity-require
 
 ## 2.8 トークンのpermitとは何ですか
-- Ethereum Improvement Proposals “EIP-2612: Permit Extension for EIP-20 Signed Approvals”
+- Ethereum Improvement Proposals "EIP-2612: Permit Extension for EIP-20 Signed Approvals"
   - https://eips.ethereum.org/EIPS/eip-2612
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/49c0e4370d0cc50ea6090709e3835a3091e33ee2/contracts/token/ERC20/extensions/draft-ERC20Permit.sol#L46-L68
 
 ## 2.9 Upgradable機能とは何ですか
-- ethereum.org Docs “UPGRADING SMART CONTRACTS - PROS AND CONS OF UPGRADING SMART CONTRACTS”
+- ethereum.org Docs "UPGRADING SMART CONTRACTS - PROS AND CONS OF UPGRADING SMART CONTRACTS"
   - https://ethereum.org/en/developers/docs/smart-contracts/upgrading/
-- Solidity 0.8.17 documentation “Fallback Function”
+- Solidity 0.8.17 documentation "Fallback Function"
   - https://docs.soliditylang.org/en/v0.8.17/contracts.html?highlight=fallback#fallback-function
-- Solidity by Example “Delegatecall”
+- Solidity by Example "Delegatecall"
   - https://solidity-by-example.org/delegatecall/
 
 ## 3.1  	Wrapped ETH (WETH) とは何ですか
-- Github “makerdao/sai”
+- Github "makerdao/sai"
   - https://github.com/makerdao/sai/blob/8b7a7359f40231131218b594fa59ac2bcee5f6ef/src/weth9.sol
-- Etherscan “Wrapped Ether”
+- Etherscan "Wrapped Ether"
   - https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2#code
-- Maker Protocol Technical Docs “MakerDAO Technical Docs”
+- Maker Protocol Technical Docs "MakerDAO Technical Docs"
   - https://docs.makerdao.com/
-- the Maker Team “The Dai Stablecoin System” (December, 2017)
+- the Maker Team "The Dai Stablecoin System" (December, 2017)
   - https://makerdao.com/whitepaper/DaiDec17WP.pdf
-- Kenton, Wouter, Soren, Tom, and Chris B. “Maker Protocol 101” (Updated December 8th, 2020)
+- Kenton, Wouter, Soren, Tom, and Chris B. "Maker Protocol 101" (Updated December 8th, 2020)
   - https://drive.google.com/file/d/1VtGV8Ct2iBO8WjWsjFYLg5DnwlGmetSp/view
-- Github “makerdao/dss”
+- Github "makerdao/dss"
   - https://github.com/makerdao/dss
-- Github “makerdao/dss-proxy-actions”
+- Github "makerdao/dss-proxy-actions"
   - https://github.com/makerdao/dss-proxy-actions/blob/master/src/DssProxyActions.sol
--oasis.app “ETH-C Vault 30009”
+-oasis.app "ETH-C Vault 30009"
   - https://oasis.app/30009#overview
-- Maker Protocol Technical Docs “CDP Manager - Detailed Documentation”
+- Maker Protocol Technical Docs "CDP Manager - Detailed Documentation"
   - https://docs.makerdao.com/smart-contract-modules/proxy-module/cdp-manager-detailed-documentation
 - 一般社団法人日本暗号資産取引業協会「取扱暗号資産及び暗号資産概要説明書 」
   - https://jvcea.or.jp/about/document/
 
 ## 3.3  	Soul Bound Token (SBT) とは何ですか
-- E. Glen Weyl, Puja Ohlhaver, Vitalik Buterin “Decentralized Society: Finding Web3's Soul” (11 May 2022)
+- E. Glen Weyl, Puja Ohlhaver, Vitalik Buterin "Decentralized Society: Finding Web3's Soul" (11 May 2022)
   - https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4105763
--  Ethereum Improvement Proposals “EIP-5192: Minimal Soulbound NFTs”
+-  Ethereum Improvement Proposals "EIP-5192: Minimal Soulbound NFTs"
   - https://eips.ethereum.org/EIPS/eip-5192
-- Ethereum Improvement Proposals “EIP-5484: Consensual Soulbound Tokens”
+- Ethereum Improvement Proposals "EIP-5484: Consensual Soulbound Tokens"
   - https://eips.ethereum.org/EIPS/eip-5484
-- Ethereum Improvement Proposals “EIP-165: Standard Interface Detection”
+- Ethereum Improvement Proposals "EIP-165: Standard Interface Detection"
   - https://eips.ethereum.org/EIPS/eip-165
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/d59306bd06a241083841c2e4a39db08e1f3722cc/contracts/token/ERC721/ERC721.sol#L49-L57
 
 ## 3.4	リビール型NFTとは何ですか
-- Eterscan “Beanz (BEANZ)”
+- Eterscan "Beanz (BEANZ)"
   - https://etherscan.io/address/0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949?method=Set__Base__URI~0x55f804b3
-- Etherscan “RTFKT - CloneX”
+- Etherscan "RTFKT - CloneX"
   - https://etherscan.io/token/0x348fc118bcc65a92dc033a951af153d14d945312#code
-- Etherscan “0x1dd8fbd8e0271412ccb4ad9b79d414c1395d371e0be1b89f655e4af6918c4992”
+- Etherscan "0x1dd8fbd8e0271412ccb4ad9b79d414c1395d371e0be1b89f655e4af6918c4992"
   - https://etherscan.io/tx/0x1dd8fbd8e0271412ccb4ad9b79d414c1395d371e0be1b89f655e4af6918c4992
 
 ## 3.5	ガバナンストークンとは何ですか
 - 日本暗号資産ビジネス協会（JCBA）他「NFTのランダム型販売に関するガイドライン」（2022年10月）
   - https://cryptocurrency-association.org/cms2017/wp-content/uploads/2022/10/GuidelinesforRandomizedNFTSales.pdf
-- Compound “Initialize Compound III (USDC on Ethereum)”
+- Compound "Initialize Compound III (USDC on Ethereum)"
   - https://compound.finance/governance/proposals/116
-- snapshot “Create the Uniswap Foundation”
+- snapshot "Create the Uniswap Foundation"
   - https://snapshot.org/#/uniswap/proposal/0xd70b3e84db501c2633bc8189fcfc335726fce90584a3c37f6155580369f11023
-- Uniswap “Create the Uniswap Foundation”
+- Uniswap "Create the Uniswap Foundation"
   - https://app.uniswap.org/#/vote/2/24?lng=en-US
--Compound v2 “Governance”
+-Compound v2 "Governance"
   - https://docs.compound.finance/v2/governance/
-- Github “compound-finance/compound-protocol”
+- Github "compound-finance/compound-protocol"
   - https://github.com/compound-finance/compound-protocol/blob/master/contracts/Governance/Comp.sol
-- Etherscan “Compound (COMP)”
+- Etherscan "Compound (COMP)"
   - https://etherscan.io/token/0xc00e94cb662c3520282e6f5717214004a7f26888#code
-- Github “compound-finance/compound-protocol”
+- Github "compound-finance/compound-protocol"
   - https://github.com/compound-finance/compound-protocol/blob/master/contracts/Governance/GovernorBravoDelegate.sol
-- Github “nounsDAO/nouns-monorepo”
+- Github "nounsDAO/nouns-monorepo"
   - https://github.com/nounsDAO/nouns-monorepo/blob/master/packages/nouns-contracts/contracts/governance/NounsDAOLogicV1.sol
-- etherscan “PublicResolver”
+- etherscan "PublicResolver"
   - https://etherscan.io/address/0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41#code
-- Github “Snapshot Labs”
+- Github "Snapshot Labs"
   - https://github.com/snapshot-labs
-- Github “snapshot-labs/snapshot-strategies”
+- Github "snapshot-labs/snapshot-strategies"
   - https://github.com/snapshot-labs/snapshot-strategies/tree/master/src/strategies
 
 ## 4.1	NFTマーケットプレイスとは何ですか
-- OpenSea Developers “Seaport Overview”
+- OpenSea Developers "Seaport Overview"
   - https://docs.opensea.io/v2.0/reference/seaport-overview
-- Github “ProjectOpenSea/seaport”
+- Github "ProjectOpenSea/seaport"
   - https://github.com/ProjectOpenSea/seaport
-- Github “ProjectOpenSea/seaport”
+- Github "ProjectOpenSea/seaport"
   - https://github.com/ProjectOpenSea/seaport/blob/f402dac8b3faabdb8420d31d46759f47c9d74b7d/contracts/lib/Consideration.sol#L84-L119
-- Etherscan “OpenSea Shared Storefront (OPENSTORE)”
+- Etherscan "OpenSea Shared Storefront (OPENSTORE)"
   - https://etherscan.io/address/0x495f947276749ce646f68ac8c248420045cb7b5e#code
-- Github “ProjectOpenSea/seaport”
+- Github "ProjectOpenSea/seaport"
   - https://github.com/ProjectOpenSea/seaport/blob/f402dac8b3faabdb8420d31d46759f47c9d74b7d/test/basic.spec.ts#L123-L161
   - https://github.com/ProjectOpenSea/seaport/blob/f402dac8b3faabdb8420d31d46759f47c9d74b7d/test/utils/fixtures/marketplace.ts#L101-L220
-- OpenSea Developers “Seaport Overview - Order Fulfillment”
+- OpenSea Developers "Seaport Overview - Order Fulfillment"
   - https://docs.opensea.io/v2.0/reference/seaport-overview#order-fulfillmen
-- Ethereum Improvement Proposals “EIP-712: Typed structured data hashing and signing”
+- Ethereum Improvement Proposals "EIP-712: Typed structured data hashing and signing"
   - https://eips.ethereum.org/EIPS/eip-712
 
 ## 4.2	NFTのロイヤリティとは何ですか
-- Ethereum Improvement Proposals “EIP-2981: NFT Royalty Standard”
+- Ethereum Improvement Proposals "EIP-2981: NFT Royalty Standard"
   - https://eips.ethereum.org/EIPS/eip-2981
-- Github “OpenZeppelin/openzeppelin-contracts”
+- Github "OpenZeppelin/openzeppelin-contracts"
   - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/common/ERC2981.sol
-- Github “ERC-2571: Creators’ Royalty Token standard #2571”
+- Github "ERC-2571: Creators’ Royalty Token standard #2571"
   - https://github.com/ethereum/EIPs/issues/2571
 
 ## 5.1 	DEXとは何ですか
-- Uniswap “Uniswap Docs” https://docs.uniswap.org/
-- Github “Uniswap Labs” https://github.com/Uniswap
-- Etherscan “Transaction Details”
-https://etherscan.io/tx/0x4eb277ea36813bd8b4d86da6c8915f81ffc168dd1cb2f531b1e5e433045a0ae7
-- Github “Uniswap/v2-periphery”
-https://github.com/Uniswap/v2-periphery/blob/master/contracts/UniswapV2Router01.sol
--  Github “Uniswap/v2-periphery”
-https://github.com/Uniswap/v2-periphery/blob/master/contracts/UniswapV2Router01.sol
-- Github “Uniswap/v2-periphery”
-https://github.com/Uniswap/v2-periphery/blob/master/contracts/libraries/UniswapV2Library.sol
-- Github “Uniswap/v2-core”
-https://github.com/Uniswap/v2-core/blob/master/contracts/UniswapV2Pair.sol
-- Uniswap “How Uniswap works”
-https://docs.uniswap.org/contracts/v2/concepts/protocol-overview/how-uniswap-works
-- Github “Uniswap/v2-core”
-https://github.com/Uniswap/v2-core/blob/ee547b17853e71ed4e0101ccfd52e70d5acded58/contracts/UniswapV2Pair.sol#L133-L156
-- Uniswap “Pools” https://docs.uniswap.org/contracts/v2/concepts/core-concepts/pools
-- Github “Uniswap/v2-core” https://github.com/Uniswap/v2-core/blob/ee547b17853e71ed4e0101ccfd52e70d5acded58/contracts/UniswapV2Pair.sol#L109-L156
-- Github “Uniswap/v2-core” https://github.com/Uniswap/v2-core/blob/ee547b17853e71ed4e0101ccfd52e70d5acded58/contracts/UniswapV2Pair.sol#L158-L195
-- Uniswap “Uniswap Labs Terms of Service” https://uniswap.org/terms-of-service
-- Uniswap “Swaps” https://docs.uniswap.org/concepts/protocol/swaps
-- Hayden Adams, Noah Zinsmeister, Moody Salem, River Keefer, Dan Robinson “Uniswap v3 Core” (March 2021) pp.1 https://uniswap.org/whitepaper-v3.pdf
-- Uniswap “Concentrated Liquidity” https://docs.uniswap.org/concepts/protocol/concentrated-liquidity
+- Uniswap "Uniswap Docs"
+  - https://docs.uniswap.org/
+- Github "Uniswap Labs"
+  - https://github.com/Uniswap
+- Etherscan "Transaction Details"
+  - https://etherscan.io/tx/0x4eb277ea36813bd8b4d86da6c8915f81ffc168dd1cb2f531b1e5e433045a0ae7
+- Github "Uniswap/v2-periphery"
+  - https://github.com/Uniswap/v2-periphery/blob/master/contracts/UniswapV2Router01.sol
+-  Github "Uniswap/v2-periphery"
+  - https://github.com/Uniswap/v2-periphery/blob/master/contracts/UniswapV2Router01.sol
+- Github "Uniswap/v2-periphery"
+  - https://github.com/Uniswap/v2-periphery/blob/master/contracts/libraries/UniswapV2Library.sol
+- Github "Uniswap/v2-core"
+  - https://github.com/Uniswap/v2-core/blob/master/contracts/UniswapV2Pair.sol
+- Uniswap "How Uniswap works"
+  - https://docs.uniswap.org/contracts/v2/concepts/protocol-overview/how-uniswap-works
+- Github "Uniswap/v2-core"
+  - https://github.com/Uniswap/v2-core/blob/ee547b17853e71ed4e0101ccfd52e70d5acded58/contracts/UniswapV2Pair.sol#L133-L156
+- Uniswap "Pools"
+  - https://docs.uniswap.org/contracts/v2/concepts/core-concepts/pools
+- Github "Uniswap/v2-core"
+  - https://github.com/Uniswap/v2-core/blob/ee547b17853e71ed4e0101ccfd52e70d5acded58/contracts/UniswapV2Pair.sol#L109-L156
+- Github "Uniswap/v2-core"
+  - https://github.com/Uniswap/v2-core/blob/ee547b17853e71ed4e0101ccfd52e70d5acded58/contracts/UniswapV2Pair.sol#L158-L195
+- Uniswap "Uniswap Labs Terms of Service"
+  - https://uniswap.org/terms-of-service
+- Uniswap "Swaps"
+  - https://docs.uniswap.org/concepts/protocol/swaps
+- Hayden Adams, Noah Zinsmeister, Moody Salem, River Keefer, Dan Robinson "Uniswap v3 Core" (March 2021) pp.1
+  - https://uniswap.org/whitepaper-v3.pdf
+- Uniswap "Concentrated Liquidity"
+  - https://docs.uniswap.org/concepts/protocol/concentrated-liquidity
 
 ## 5.2  	レンディングプロトコルとは何ですか
-- AAVE “Aave Document Hub” https://docs.aave.com/hub/
-- Github “Aave” https://github.com/aave
-- Github “aave/protocol-v2”
-https://github.com/aave/protocol-v2/blob/master/contracts/protocol/lendingpool/LendingPool.sol
-- Github “aave/protocol-v2”
-https://github.com/aave/protocol-v2/blob/1.0/contracts/protocol/tokenization/AToken.sol
-- Github “aave/protocol-v2”
-https://github.com/aave/protocol-v2/blob/master/contracts/protocol/lendingpool/LendingPool.sol
-- Github “aave/protocol-v2”
-https://github.com/aave/protocol-v2/blob/master/test-suites/test-aave/atoken-transfer.spec.ts
-- Github “aave/protocol-v2”
-https://github.com/aave/protocol-v2/blob/master/contracts/protocol/lendingpool/LendingPoolCollateralManager.sol
-- Github “aave/protocol-v2”
-https://github.com/aave/protocol-v2/blob/master/contracts/protocol/lendingpool/LendingPoolCollateralManager.sol
-- Github “aave/protocol-v2” https://github.com/aave/protocol-v2/blob/1.0/contracts/misc/AaveOracle.sol
-- AAVE Developers v2 “Price Oracle” https://docs.aave.com/developers/v/2.0/the-core-protocol/price-oracle#getassetprice
+- AAVE "Aave Document Hub"
+  - https://docs.aave.com/hub/
+- Github "Aave"
+  - https://github.com/aave
+- Github "aave/protocol-v2"
+  - https://github.com/aave/protocol-v2/blob/master/contracts/protocol/lendingpool/LendingPool.sol
+- Github "aave/protocol-v2"
+  - https://github.com/aave/protocol-v2/blob/1.0/contracts/protocol/tokenization/AToken.sol
+- Github "aave/protocol-v2"
+  - https://github.com/aave/protocol-v2/blob/master/contracts/protocol/lendingpool/LendingPool.sol
+- Github "aave/protocol-v2"
+  - https://github.com/aave/protocol-v2/blob/master/test-suites/test-aave/atoken-transfer.spec.ts
+- Github "aave/protocol-v2"
+  - https://github.com/aave/protocol-v2/blob/master/contracts/protocol/lendingpool/LendingPoolCollateralManager.sol
+- Github "aave/protocol-v2"
+  - https://github.com/aave/protocol-v2/blob/master/contracts/protocol/lendingpool/LendingPoolCollateralManager.sol
+- Github "aave/protocol-v2"
+  - https://github.com/aave/protocol-v2/blob/1.0/contracts/misc/AaveOracle.sol
+- AAVE Developers v2 "Price Oracle"
+  - https://docs.aave.com/developers/v/2.0/the-core-protocol/price-oracle#getassetprice
 
 ## 5.3	フラッシュローンとは何ですか
-- Ethereum Improvement Proposals “EIP-3156: Flash Loans” https://eips.ethereum.org/EIPS/eip-3156
+- Ethereum Improvement Proposals "EIP-3156: Flash Loans"
+  - https://eips.ethereum.org/EIPS/eip-3156
 
 ## 6.1 コントラクトウォレットとは何ですか
-- Github “safe-global/safe-contracts” https://github.com/safe-global/safe-contracts/blob/821d5fbdc2a4e7776d66c9f232b000b81e60bffc/contracts/base/OwnerManager.sol#L19-L44
-- Gnosis Safe “Introduction” https://docs.gnosis-safe.io
-- Github “Safe Ecosystem” https://github.com/safe-global
-- Github “safe-global/safe-contracts” https://github.com/safe-global/safe-contracts/blob/821d5fbdc2a4e7776d66c9f232b000b81e60bffc/contracts/GnosisSafe.sol#L99-L194
-- Github “argentlabs/argent-contracts” https://github.com/argentlabs/argent-contracts/blob/develop/contracts/infrastructure_0.5/storage/GuardianStorage.sol
-- Argent “Argent Vault on Ethereum L1” https://docs.argent.xyz/wallet-connect-and-argent
-- Argent “About wallet recovery” https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery
-- Github “argentlabs” https://github.com/argentlabs/
-- Github “argentlabs/argent-contracts”
-https://github.com/argentlabs/argent-contracts/blob/ea361609bbda15bf19bac35dbc2af80b720cb27b/contracts/modules/SecurityManager.sol#L127-L152
-- Ethereum Improvement Proposals “EIP-4337: Account Abstraction Using Alt Mempool” https://eips.ethereum.org/EIPS/eip-4337
-- Vitalik Buterin “ERC 4337: account abstraction without Ethereum protocol changes” https://medium.com/infinitism/erc-4337-account-abstraction-without-ethereum-protocol-changes-d75c9d94dc4a
-- Vitalik Buterin “ERC 4337: account abstraction without Ethereum protocol changes” https://medium.com/infinitism/erc-4337-account-abstraction-without-ethereum-protocol-changes-d75c9d94dc4a
-- Ethereum Improvement Proposals “EIP-4337: Account Abstraction Using Alt Mempool” https://eips.ethereum.org/EIPS/eip-4337
+- Github "safe-global/safe-contracts"
+  - https://github.com/safe-global/safe-contracts/blob/821d5fbdc2a4e7776d66c9f232b000b81e60bffc/contracts/base/OwnerManager.sol#L19-L44
+- Gnosis Safe "Introduction"
+  - https://docs.gnosis-safe.io
+- Github "Safe Ecosystem"
+  - https://github.com/safe-global
+- Github "safe-global/safe-contracts"
+  - https://github.com/safe-global/safe-contracts/blob/821d5fbdc2a4e7776d66c9f232b000b81e60bffc/contracts/GnosisSafe.sol#L99-L194
+- Github "argentlabs/argent-contracts"
+  - https://github.com/argentlabs/argent-contracts/blob/develop/contracts/infrastructure_0.5/storage/GuardianStorage.sol
+- Argent "Argent Vault on Ethereum L1"
+  - https://docs.argent.xyz/wallet-connect-and-argent
+- Argent "About wallet recovery"
+  - https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery
+- Github "argentlabs"
+  - https://github.com/argentlabs/
+- Github "argentlabs/argent-contracts"
+  - https://github.com/argentlabs/argent-contracts/blob/ea361609bbda15bf19bac35dbc2af80b720cb27b/contracts/modules/SecurityManager.sol#L127-L152
+- Ethereum Improvement Proposals "EIP-4337: Account Abstraction Using Alt Mempool"
+  - https://eips.ethereum.org/EIPS/eip-4337
+- Vitalik Buterin "ERC 4337: account abstraction without Ethereum protocol changes"
+  - https://medium.com/infinitism/erc-4337-account-abstraction-without-ethereum-protocol-changes-d75c9d94dc4a
+- Vitalik Buterin "ERC 4337: account abstraction without Ethereum protocol changes"
+  - https://medium.com/infinitism/erc-4337-account-abstraction-without-ethereum-protocol-changes-d75c9d94dc4a
+- Ethereum Improvement Proposals "EIP-4337: Account Abstraction Using Alt Mempool"
+  - https://eips.ethereum.org/EIPS/eip-4337
 
 ## 6.2	ENSとは何ですか
-- ENS “ENS Documentation” https://docs.ens.domains/
-- Github “Ethereum Name Service (ENS)” https://github.com/ensdomains
-- ENS “smartcontract.eth” https://app.ens.domains/name/smartcontract.eth/details
--  PHI “Get an ENS Domain” https://docs.philand.xyz/products/phi-quest/user-guide-for-phi-quest/before-playing-phi/get-an-ens-domain
-- Eth.xyz “Eth.xyz” https://eth.xyz/
-- MAARIA.ETH “MAARIA.ETH” https://maaria.eth.xyz
-- Github “ensdomains/ethregistrar” https://github.com/ensdomains/ethregistrar/blob/916dff21bf427771e67af11611b811f870aa7200/contracts/ETHRegistrarController.sol#L66-L77
-- Github “ensdomains/ethregistrar” https://github.com/ensdomains/ethregistrar/blob/916dff21bf427771e67af11611b811f870aa7200/contracts/ETHRegistrarController.sol#L79-L82
-- Github “ensdomains/ethregistrar” https://github.com/ensdomains/ethregistrar/blob/916dff21bf427771e67af11611b811f870aa7200/contracts/StablePriceOracle.sol#L36-L47
+- ENS "ENS Documentation"
+  - https://docs.ens.domains/
+- Github "Ethereum Name Service (ENS)"
+  - https://github.com/ensdomains
+- ENS "smartcontract.eth"
+  - https://app.ens.domains/name/smartcontract.eth/details
+-  PHI "Get an ENS Domain"
+  - https://docs.philand.xyz/products/phi-quest/user-guide-for-phi-quest/before-playing-phi/get-an-ens-domain
+- Eth.xyz "Eth.xyz"
+  - https://eth.xyz/
+- MAARIA.ETH "MAARIA.ETH"
+  - https://maaria.eth.xyz
+- Github "ensdomains/ethregistrar"
+  - https://github.com/ensdomains/ethregistrar/blob/916dff21bf427771e67af11611b811f870aa7200/contracts/ETHRegistrarController.sol#L66-L77
+- Github "ensdomains/ethregistrar"
+  - https://github.com/ensdomains/ethregistrar/blob/916dff21bf427771e67af11611b811f870aa7200/contracts/ETHRegistrarController.sol#L79-L82
+- Github "ensdomains/ethregistrar"
+  - https://github.com/ensdomains/ethregistrar/blob/916dff21bf427771e67af11611b811f870aa7200/contracts/StablePriceOracle.sol#L36-L47
 
 ## 6.3	Chainlinkのオラクルとは何ですか
-- Chainlink “Docs” https://docs.chain.link/
-- Chainlink “Chainlink 2.0: Next Steps in the Evolution of Decentralized Oracle Networks” https://research.chain.link/whitepaper-v2.pdf?_ga=2.246224576.557790319.1669798911-1966026761.1669798910
-- Github “smartcontractkit/chainlink” https://github.com/smartcontractkit/chainlink
-- Chainlink Data Feeds “ETH/USD” https://data.chain.link/ethereum/mainnet/crypto-usd/eth-usd
-- Chainlink “Frequently Asked Questions” https://chain.link/faqs
-- Chainlink “77+ Smart Contract Use Cases Enabled By Chainlink” https://blog.chain.link/smart-contract-use-cases/
-- Lorenz Breidenbach, Christian Cachin, Alex Coventry, Ari Juels, Andrew Miller “Chainlink Off-chain Reporting Protocol” https://research.chain.link/ocr.pdf?_ga=2.41332258.1082118202.1671852813-725166562.1619513829
-- Etherscan “AccessControlledOffchainAggregator” https://etherscan.io/address/0x37bC7498f4FF12C19678ee8fE19d713b87F6a9e6
-- Chainlink Docs “Using Price Feeds” https://docs.chain.link/data-feeds/price-feeds
-- 個人情報保護委員会「個人情報の保護に関する法律についてのガイドライン（通則編）」（2022年9月）https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/
+- Chainlink "Docs"
+  - https://docs.chain.link/
+- Chainlink "Chainlink 2.0: Next Steps in the Evolution of Decentralized Oracle Networks"
+  - https://research.chain.link/whitepaper-v2.pdf?_ga=2.246224576.557790319.1669798911-1966026761.1669798910
+- Github "smartcontractkit/chainlink"
+  - https://github.com/smartcontractkit/chainlink
+- Chainlink Data Feeds "ETH/USD"
+  - https://data.chain.link/ethereum/mainnet/crypto-usd/eth-usd
+- Chainlink "Frequently Asked Questions"
+  - https://chain.link/faqs
+- Chainlink "77+ Smart Contract Use Cases Enabled By Chainlink"
+  - https://blog.chain.link/smart-contract-use-cases/
+- Lorenz Breidenbach, Christian Cachin, Alex Coventry, Ari Juels, Andrew Miller "Chainlink Off-chain Reporting Protocol"
+  - https://research.chain.link/ocr.pdf?_ga=2.41332258.1082118202.1671852813-725166562.1619513829
+- Etherscan "AccessControlledOffchainAggregator"
+  - https://etherscan.io/address/0x37bC7498f4FF12C19678ee8fE19d713b87F6a9e6
+- Chainlink Docs "Using Price Feeds"
+  - https://docs.chain.link/data-feeds/price-feeds
+- 個人情報保護委員会「個人情報の保護に関する法律についてのガイドライン（通則編）」（2022年9月
+  - https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/
 
 ## 6.4	Bridgeとは何ですか
-- ethereum.org “Blockchain bridges” https://ethereum.org/en/bridges/
-- NEAR “NEAR Docs” https://docs.near.org/
-- Arjun Chand “What Are Blockchain Bridges And How Can We Classify Them?” https://blog.li.fi/what-are-blockchain-bridges-and-how-can-we-classify-them-560dc6ec05fa
-- Polygon wiki “Bridges” https://wiki.polygon.technology/docs/category/bridges
+- ethereum.org "Blockchain bridges"
+  - https://ethereum.org/en/bridges/
+- NEAR "NEAR Docs"
+  - https://docs.near.org/
+- Arjun Chand "What Are Blockchain Bridges And How Can We Classify Them?"
+  - https://blog.li.fi/what-are-blockchain-bridges-and-how-can-we-classify-them-560dc6ec05fa
+- Polygon wiki "Bridges"
+  - https://wiki.polygon.technology/docs/category/bridges
 
 ## 6.5	Tornado cashとは何ですか
-- Circle “Legal & Privacy - 1. About Bridged USDC” https://www.circle.com/en/legal/bridged-usdc-terms
-- Github “tornadocash/docs” https://github.com/tornadocash/docs
-- Github “tornadocash/tornado-core” https://github.com/tornadocash/tornado-core
-- witter “vitalik.eth” https://twitter.com/VitalikButerin/status/1556978967554433024?s=20&t=gwVCFRoyY23ickhUoCJtnA
-- github “tornadocash/docs/tornado-cash-classic/deposit-withdraw.md” https://github.com/tornadocash/docs/blob/en/tornado-cash-classic/deposit-withdraw.md
-- Github “tornadocash/tornado-core” https://github.com/tornadocash/tornado-core/blob/master/contracts/Tornado.sol#L51-L63
-- StarkEx Documentation “Pedersen Hash Function” https://docs.starkware.co/starkex/crypto/pedersen-hash-function.html
-- Iden3 Documentation Site “Pedersen Hash” https://iden3-docs.readthedocs.io/en/latest/iden3_repos/research/publications/zkproof-standards-workshop-2/pedersen-hash/pedersen.html
-- Github “tornadocash/tornado-cli” https://github.com/tornadocash/tornado-cli/blob/378ddf8b8b92a4924037d7b64a94dbfd5a7dd6e8/cli.js#L328-L365
-- Github “tornadocash/tornado-core” https://github.com/tornadocash/tornado-core/blob/1ef6a263ac6a0e476d063fcb269a9df65a1bd56a/contracts/Tornado.sol#L68-L99
-- U.S. Department of the Treasury “Treasury Designates DPRK Weapons Representatives” https://home.treasury.gov/news/press-releases/jy1087
-- U.S. Department of the Treasury “U.S. Treasury Sanctions Notorious Virtual Currency Mixer Tornado Cash” https://home.treasury.gov/news/press-releases/jy0916　
-- U.S. Department of the Treasury “Frequently Asked Questions 1095” https://home.treasury.gov/policy-issues/financial-sanctions/faqs/1095
-- U.S. Department of the Treasury “Frequently Asked Questions 1078” https://home.treasury.gov/policy-issues/financial-sanctions/faqs/1078
+- Circle "Legal & Privacy - 1. About Bridged USDC"
+  - https://www.circle.com/en/legal/bridged-usdc-terms
+- Github "tornadocash/docs"
+  - https://github.com/tornadocash/docs
+- Github "tornadocash/tornado-core"
+  - https://github.com/tornadocash/tornado-core
+- witter "vitalik.eth"
+  - https://twitter.com/VitalikButerin/status/1556978967554433024?s=20&t=gwVCFRoyY23ickhUoCJtnA
+- github "tornadocash/docs/tornado-cash-classic/deposit-withdraw.md"
+  - https://github.com/tornadocash/docs/blob/en/tornado-cash-classic/deposit-withdraw.md
+- Github "tornadocash/tornado-core"
+  - https://github.com/tornadocash/tornado-core/blob/master/contracts/Tornado.sol#L51-L63
+- StarkEx Documentation "Pedersen Hash Function"
+  - https://docs.starkware.co/starkex/crypto/pedersen-hash-function.html
+- Iden3 Documentation Site "Pedersen Hash"
+  - https://iden3-docs.readthedocs.io/en/latest/iden3_repos/research/publications/zkproof-standards-workshop-2/pedersen-hash/pedersen.html
+- Github "tornadocash/tornado-cli"
+  - https://github.com/tornadocash/tornado-cli/blob/378ddf8b8b92a4924037d7b64a94dbfd5a7dd6e8/cli.js#L328-L365
+- Github "tornadocash/tornado-core"
+  - https://github.com/tornadocash/tornado-core/blob/1ef6a263ac6a0e476d063fcb269a9df65a1bd56a/contracts/Tornado.sol#L68-L99
+- U.S. Department of the Treasury "Treasury Designates DPRK Weapons Representatives"
+  - https://home.treasury.gov/news/press-releases/jy1087
+- U.S. Department of the Treasury "U.S. Treasury Sanctions Notorious Virtual Currency Mixer Tornado Cash"
+  - https://home.treasury.gov/news/press-releases/jy0916　
+- U.S. Department of the Treasury "Frequently Asked Questions 1095"
+  - https://home.treasury.gov/policy-issues/financial-sanctions/faqs/1095
+- U.S. Department of the Treasury "Frequently Asked Questions 1078"
+  - https://home.treasury.gov/policy-issues/financial-sanctions/faqs/1078
 
 ## 参考スマートコントラクト
 - USDC / FiatTokenV2_1
@@ -480,22 +543,22 @@ https://github.com/argentlabs/argent-contracts/blob/ea361609bbda15bf19bac35dbc2a
   - https://etherscan.io/address/0xd90e2f925da726b50c4ed8d0fb90ad053324f31b#code
 
 参考文献
-- Vitalik Buterin “Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform.” (2014)
+- Vitalik Buterin "Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform." (2014)
   - https://ethereum.org/669c9e2e2027310b6b3cdce6e1c52962/Ethereum_Whitepaper_-_Buterin_2014.pdf
-- Gavin Wood “ETHEREUM: A SECURE DECENTRALISED GENERALISED TRANSACTION LEDGER BERLIN VERSION” (2022)
+- Gavin Wood "ETHEREUM: A SECURE DECENTRALISED GENERALISED TRANSACTION LEDGER BERLIN VERSION" (2022)
   - https://ethereum.github.io/yellowpaper/paper.pdf
-- Alex Beregszaszi, @chriseth, etc. “Solidity 0.8.17 documentation”
+- Alex Beregszaszi, @chriseth, etc. "Solidity 0.8.17 documentation"
   - https://docs.soliditylang.org/en/v0.8.17/
 - Andres M.Antonopoulos, Gavin Wood（宇野雅晴ら監訳）「マスタリング・イーサリアム」（オライリージャパン、2019）
   - 原文は以下のとおり公表されている。
-  - Andreas M. Antonopoulos, Gavin Wood “Mastering Ethereum”
+  - Andreas M. Antonopoulos, Gavin Wood "Mastering Ethereum"
     - https://github.com/ethereumbook/ethereumbook/blob/develop/book.asciidoc
 - Andres M.Antonopoulos（今井崇也=鳩貝淳一郎訳）「ビットコインとブロックチェーン　暗号通貨を支える技術」（NTT出版、2016）
   - 原文は以下のとおり公表されている。
-  - Andreas M. Antonopoulos, “Mastering Bitcoin”
+  - Andreas M. Antonopoulos, "Mastering Bitcoin"
     - https://github.com/bitcoinbook/bitcoinbook
 - Primavera De Filippi, Aaron Wright（片桐直人編訳）「ブロックチェーンと法　＜暗号の法＞がもたらすコードの支配」（弘文堂、2020）
-  - 原文は、Primavera De Filippi, Aaron Wright “Blockchain and the Law: The Rule of Code” (Harvard University Press, 2018）
+  - 原文は、Primavera De Filippi, Aaron Wright "Blockchain and the Law: The Rule of Code" (Harvard University Press, 2018）
 - 有限責任監査法人トーマツ「ゼロ知識証明入門」（翔泳社、2021）
 - 我妻榮ら「我妻・有泉コンメンタール民法ー総則・物権・債権ー〔第7版〕」（日本評論社、2021）
 - 谷口知平=五十嵐清編「新版注釈民法（13）債権（4）〔補訂版〕」（有斐閣、2006）
@@ -549,19 +612,19 @@ https://github.com/argentlabs/argent-contracts/blob/ea361609bbda15bf19bac35dbc2a
 - 横溝大「ブロックチェーンに関する抵触法的考察」NBL1222号（2022）20頁
 - 日本暗号資産ビジネス協会（JCBA）「NFTビジネスに関するガイドライン」（2022年3月）
   - https://cryptocurrency-association.org/nft_guideline/#01
-日本暗号資産ビジネス協会（JCBA）他「NFTのランダム型販売に関するガイドライン」（2022年10月）
+- 日本暗号資産ビジネス協会（JCBA）他「NFTのランダム型販売に関するガイドライン」（2022年10月）
   - https://cryptocurrency-association.org/cms2017/wp-content/uploads/2022/10/GuidelinesforRandomizedNFTSales.pdf
-スポーツエコシステム推進協議会「スポーツコンテンツを活用したNFTのパッケージ販売と二次流通市場の併設に関するガイドライン」（2022年9月）
+- スポーツエコシステム推進協議会「スポーツコンテンツを活用したNFTのパッケージ販売と二次流通市場の併設に関するガイドライン」（2022年9月）
   - https://www.c-sep.jp/wp-content/uploads/2022/10/C-SEP_NFT_guideline.pdf
-自民党「デジタル・ニッポン 2022～デジタルによる新しい資本主義への挑戦～」別紙1 自民党デジタル社会推進本部 NFT政策検討プロジェクトチーム「NFTホワイトペーパー Web3.0時代を見据えたわが国のNFT戦略」（2022年4月）
+- 自民党「デジタル・ニッポン 2022～デジタルによる新しい資本主義への挑戦～」別紙1 自民党デジタル社会推進本部 NFT政策検討プロジェクトチーム「NFTホワイトペーパー Web3.0時代を見据えたわが国のNFT戦略」（2022年4月）
   - https://jimin.jp-east-2.storage.api.nifcloud.com/pdf/news/policy/203427_1.pdf
-経済産業省大臣官房 Web3.0政策推進室「Web3.0事業環境整備の考え方 ｰ今後のトークン経済の成熟から、Society5.0への貢献可能性までｰ」（2022年12月）
+- 経済産業省大臣官房 Web3.0政策推進室「Web3.0事業環境整備の考え方 ｰ今後のトークン経済の成熟から、Society5.0への貢献可能性までｰ」（2022年12月）
   - https://www.meti.go.jp/shingikai/sankoshin/shin_kijiku/pdf/010_03_01.pdf
-デジタル庁Web3.0研究会「Web3.0 研究会報告書 ～Web3.0 の健全な発展に向けて～」（2022年3月）
+- デジタル庁Web3.0研究会「Web3.0 研究会報告書 ～Web3.0 の健全な発展に向けて～」（2022年3月）
   - https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/a31d04f1-d74a-45cf-8a4d-5f76e0f1b6eb/a53d5e03/20221227_meeting_web3_report_00.pdf
-株式会社日本総合研究所「平成29年我が国におけるデータ駆動型社会に係る基盤整備（分散型システムに対応した技術・制度等に係る調査）」報告書（2018年3月）
+- 株式会社日本総合研究所「平成29年我が国におけるデータ駆動型社会に係る基盤整備（分散型システムに対応した技術・制度等に係る調査）」報告書（2018年3月）
   - https://www.meti.go.jp/meti_lib/report/H29FY/000724.pdf
-仮想通貨交換業等に関する研究会「報告書」（2018年12月）
+- 仮想通貨交換業等に関する研究会「報告書」（2018年12月）
   - https://www.fsa.go.jp/news/30/singi/20181221-1.pdf
-金融法務研究会「仮想通貨に関する私法上・監督法上の諸問題の検討」（2019年３月）
+- 金融法務研究会「仮想通貨に関する私法上・監督法上の諸問題の検討」（2019年３月）
   - https://www.zenginkyo.or.jp/fileadmin/res/news/news310339.pdf
