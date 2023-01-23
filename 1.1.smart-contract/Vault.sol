@@ -3,11 +3,11 @@ pragma solidity 0.8.7;
 
 contract Vault {
 
-    address approver1;
-    address approver2;
-    mapping(address => bool) approvals;
+    address public approver1;
+    address public approver2;
+    mapping(address => bool) public approvals;
 
-    constructor(address _approver1, address _approver2) {
+    constructor(address _approver1, address _approver2) payable {
         approver1 = _approver1;
         approver2 = _approver2;
     }
@@ -20,6 +20,8 @@ contract Vault {
     function withdraw(uint amount) public {
         require(approvals[approver1] && approvals[approver2], "No sufficient approvals");
         payable(msg.sender).transfer(amount);
+        (bool success, ) = msg.sender.call{ value: amount }(new bytes(0));
+        require(success, "Failed transfering ether");
     }
 
     receive() external payable {}

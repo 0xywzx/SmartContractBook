@@ -13,6 +13,10 @@
   - https://docs.metamask.io/guide/#why-metamask
 - Github "MetaMask/metamask-extension"
   - https://github.com/MetaMask/metamask-extension
+- Metamask “How does MetaMask generate your keys?”
+  - https://metamask.zendesk.com/hc/en-us/articles/360020091432-How-does-MetaMask-generate-your-keys-
+- Github “bitcoin/bips”
+  - https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
 - Andreas M. Antonopoulos, Gavin Wood "Mastering Ethereum - 04keys-addresses.asciidoc - Ethereum’s Cryptographic Hash Function: Keccak-256"
   - https://github.com/ethereumbook/ethereumbook/blob/develop/04keys-addresses.asciidoc#ethereums-cryptographic-hash-function-keccak-256
 - Vincent Kobel "CREATE FULL ETHEREUM WALLET, KEYPAIR AND ADDRESS"
@@ -27,6 +31,13 @@
 ## 1.3　トランザクションとは何ですか
 - ​​ethereum.org "TRANSACTIONS"
   - https://ethereum.org/en/developers/docs/transactions/
+- Andreas M. Antonopoulos, Gavin Wood “Mastering Ethereum - Digital Signatures”
+  - https://github.com/ethereumbook/ethereumbook/blob/develop/06transactions.asciidoc#digital-signatures
+- Andreas M. Antonopoulos, Gavin Wood “Mastering Ethereum - ECDSA Math”
+  - https://github.com/ethereumbook/ethereumbook/blob/develop/06transactions.asciidoc#ecdsa-math
+- Snifikino “Understanding How ECDSA Protects Your Data.”
+  - https://www.instructables.com/Understanding-how-ECDSA-protects-your-data/
+
 
 ## 1.4 スマートコントラクトのコード監査とは何ですか
 - rekt "leaderboard"
