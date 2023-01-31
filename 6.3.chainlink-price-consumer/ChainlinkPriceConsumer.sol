@@ -7,7 +7,7 @@ interface AggregatorInterface {
 	function latestAnswer() external view returns (int256);・・・①
 }
 
-contract PriceConsumer {
+contract ChainlinkPriceConsumer {
     AggregatorInterface internal priceFeed;・・・②
 
     constructor() {
