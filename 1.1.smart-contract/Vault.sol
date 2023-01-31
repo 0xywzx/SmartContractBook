@@ -19,7 +19,6 @@ contract Vault {
 
     function withdraw(uint amount) public {
         require(approvals[approver1] && approvals[approver2], "No sufficient approvals");
-        payable(msg.sender).transfer(amount);
         (bool success, ) = msg.sender.call{ value: amount }(new bytes(0));
         require(success, "Failed transfering ether");
     }
