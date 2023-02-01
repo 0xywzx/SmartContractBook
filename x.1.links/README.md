@@ -1,8 +1,36 @@
 # リンク集
 
 ## Table of content
-- [1.1 スマートコントラクトとは何ですか](#1.1-スマートコントラクトとは何ですか)
-- [1.2 ウォレットとは何ですか](#1.2-ウォレットとは何ですか)
+- [1.1 スマートコントラクトとは何ですか](#11-スマートコントラクトとは何ですか)
+- [1.2 ウォレットとは何ですか](#12-ウォレットとは何ですか)
+- [1.3 トランザクションとは何ですか](#13-トランザクションとは何ですか)
+- [1.4 スマートコントラクトのコード監査とは何ですか](#14-スマートコントラクトのコード監査とは何ですか)
+- [2.1 ERC20トークンとは何ですか](#21-ERC20トークンとは何ですか)
+- [2.2 ERC721のNFTとは何ですか](#22-ERC721のNFTとは何ですか)
+- [2.3 ERC1155とは何ですか](#23-ERC1155とは何ですか)
+- [2.4 トークンのapproveとは何ですか](#24-トークンのapproveとは何ですか)
+- [2.5 トークンの移転（transfer）とは何ですか](#25-トークンの移転transferとは何ですか)
+- [2.6 NFTのtokenURIとは何ですか](#26-NFTのtokenURIとは何ですか)
+- [2.7 トークンのBlocklist機能とは何ですか](#27-トークンのBlocklist機能とは何ですか)
+- [2.8 トークンのpermitとは何ですか](#28-トークンのpermitとは何ですか)
+- [2.9 Upgradable機能とは何ですか](#29-Upgradable機能とは何ですか)
+- [3.1 Wrapped ETH (WETH) とは何ですか](#31-Wrapped-ETH-WETH-とは何ですか)
+- [3.2 	Dai stablecoin (DAI)とは何ですか](#32Dai-stablecoin-DAIとは何ですか)
+- [3.3 Soul Bound Token (SBT) とは何ですか](#33-Soul-Bound-Token-SBT-とは何ですか)
+- [3.4 リビール型NFTとは何ですか](#34-リビール型NFTとは何ですか)
+- [3.5 ガバナンストークンとは何ですか](#35-ガバナンストークンとは何ですか)
+- [4.1 NFTマーケットプレイスとは何ですか](#41-NFTマーケットプレイスとは何ですか)
+- [4.2 NFTのロイヤリティとは何ですか](#42-NFTのロイヤリティとは何ですか)
+- [5.1 DEXとは何ですか](#51-DEXとは何ですか)
+- [5.2 レンディングプロトコルとは何ですか](#52-レンディングプロトコルとは何ですか)
+- [5.3 フラッシュローンとは何ですか](#53-フラッシュローンとは何ですか)
+- [6.1 コントラクトウォレットとは何ですか](#61-コントラクトウォレットとは何ですか)
+- [6.2 ENSとは何ですか](#62-ENSとは何ですか)
+- [6.3 Chainlinkのオラクルとは何ですか](#63-Chainlinkのオラクルとは何ですか)
+- [6.4 Bridgeとは何ですか](#64-Bridgeとは何ですか)
+- [6.5 Tornado cashとは何ですか](#65-Tornado-cashとは何ですか)
+- [参考スマートコントラクト](#参考スマートコントラクト)
+- [参考文献](#参考文献)
 
 <!-- START doctoc -->
 
@@ -181,7 +209,24 @@
 - 一般社団法人日本暗号資産取引業協会「取扱暗号資産及び暗号資産概要説明書 」
   - https://jvcea.or.jp/about/document/
 
-## 3.3  	Soul Bound Token (SBT) とは何ですか
+## 3.2 	Dai stablecoin (DAI)とは何ですか
+- Maker Protocol Technical Docs "MakerDAO Technical Docs"
+  - https://docs.makerdao.com/
+- the Maker Team "The Dai Stablecoin System" (December, 2017)
+  - https://makerdao.com/whitepaper/DaiDec17WP.pdf
+- Kenton, Wouter, Soren, Tom, and Chris B. "Maker Protocol 101" (Updated December 8th, 2020)
+  - https://drive.google.com/file/d/1VtGV8Ct2iBO8WjWsjFYLg5DnwlGmetSp/view
+- Github "makerdao/dss"
+  - https://github.com/makerdao/dss
+- Github "makerdao/dss-proxy-actions"
+  - https://github.com/makerdao/dss-proxy-actions/blob/master/src/DssProxyActions.sol
+- oasis.app "ETH-C Vault 30009"
+  - https://oasis.app/30009#overview
+- Github "makerdao/dss-proxy-actions"
+  - https://github.com/makerdao/dss-proxy-actions/blob/master/src/DssProxyActions.sol
+
+
+## 3.3  Soul Bound Token (SBT) とは何ですか
 - E. Glen Weyl, Puja Ohlhaver, Vitalik Buterin "Decentralized Society: Finding Web3's Soul" (11 May 2022)
   - https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4105763
 -  Ethereum Improvement Proposals "EIP-5192: Minimal Soulbound NFTs"
@@ -559,7 +604,7 @@
 - Tornado Cash / TornadoRouter
   - https://etherscan.io/address/0xd90e2f925da726b50c4ed8d0fb90ad053324f31b#code
 
-参考文献
+## 参考文献
 - Vitalik Buterin "Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform." (2014)
   - https://ethereum.org/669c9e2e2027310b6b3cdce6e1c52962/Ethereum_Whitepaper_-_Buterin_2014.pdf
 - Gavin Wood "ETHEREUM: A SECURE DECENTRALISED GENERALISED TRANSACTION LEDGER BERLIN VERSION" (2022)
@@ -646,4 +691,4 @@
 - 金融法務研究会「仮想通貨に関する私法上・監督法上の諸問題の検討」（2019年３月）
   - https://www.zenginkyo.or.jp/fileadmin/res/news/news310339.pdf
 
-<!-- END doctoc -->cd
+<!-- END doctoc -->
