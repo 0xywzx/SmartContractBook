@@ -1,0 +1,12 @@
+# 1.2 generate address
+
+```
+yarn
+yarn generate
+
+$ node index.js
+Private Kay : 0x0e21101ed5b9eea10ffedfd36ea035430b8d1d6ee8d6788c4c31eae125cd005b
+Public Key : 04ae665abe463fb89925e13159b8eb1753fbbc531ba10e8a5017ee14365cf135cf2fe280ca14b24c2956a3aba23a167328bfdb63f1ea973f0ecd1e847c78dd77df
+Hashed Public Key : 0x5b6c208b0a44613f5687765f13e0cbac560eaa9f79ba1eb537e50017ba88855a
+Address : 0x13e0cbac560eaa9f79ba1eb537e50017ba88855a
+```
