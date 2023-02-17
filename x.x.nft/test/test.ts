@@ -52,7 +52,54 @@ describe("Lock", function () {
     });
 
     describe("Mint", function () {
+      it("should mint NFT", async function() {
+        const { contract, account1 } = await loadFixture(deployContractFixture);
 
+        // mint nft
+        await contract.safeMint(account1.address);
+
+        expect(await contract.balanceOf(account1.address)).to.be.equal(
+          1
+        );
+      });
+    });
+
+  });
+
+  describe("BatchMint", function () {
+    describe("Valicdation", function () {
+      it("should revert if called other then the minter", async function() {
+        const { contract, owner, account1 } = await loadFixture(deployContractFixture);
+
+        await expect(contract.connect(account1).batchMint([account1.address])).to.be.revertedWith(
+          "AccessControl: account "
+          + account1.address.toLowerCase()
+          + " is missing role "
+          + MINTER_ROLE
+        );
+      });
+    });
+
+    describe("BatchMint", function () {
+      it("should mint NFT", async function() {
+        const {
+          contract,
+          account1,
+          account2,
+          account3
+        } = await loadFixture(deployContractFixture);
+
+        // mint nft
+        await contract.batchMint([
+          account1.address,
+          account2.address,
+          account3.address
+        ]);
+
+        expect(await contract.balanceOf(account1.address)).to.be.equal(1);
+        expect(await contract.balanceOf(account2.address)).to.be.equal(1);
+        expect(await contract.balanceOf(account3.address)).to.be.equal(1);
+      });
     });
 
   });
