@@ -5,6 +5,10 @@ import { ethers } from "hardhat";
 
 describe("Lock", function () {
 
+  let DEFAULT_ADMIN_ROLE
+  = '0x0000000000000000000000000000000000000000000000000000000000000000'
+  let MINTER_ROLE = ethers.utils.keccak256(ethers.utils.toUtf8Bytes('MINTER_ROLE'))
+
   async function deployContractFixture() {
 
     // Contracts are deployed using the first signer/account by default
@@ -22,20 +26,34 @@ describe("Lock", function () {
   }
 
   describe("Deployment", function () {
-    let DEFAULT_ADMIN_ROLE
-      = '0x0000000000000000000000000000000000000000000000000000000000000000'
-    let MINTER_ROLE = ethers.utils.keccak256(ethers.utils.toUtf8Bytes('MINTER_ROLE'))
 
     it("Should owner has roles", async function () {
       const { contract, owner } = await loadFixture(deployContractFixture);
 
       // for default admin role
-      expect(await contract.hasRole(DEFAULT_ADMIN_ROLE, owner.address)).to.equal(true)
-      expect(await contract.hasRole(MINTER_ROLE, owner.address)).to.equal(true)
-
+      expect(await contract.hasRole(DEFAULT_ADMIN_ROLE, owner.address)).to.equal(true);
+      expect(await contract.hasRole(MINTER_ROLE, owner.address)).to.equal(true);
     });
 
+  });
 
+  describe("SafeMint", function () {
+    describe("Valicdation", function () {
+      it("should revert if called other then the minter", async function() {
+        const { contract, owner, account1 } = await loadFixture(deployContractFixture);
+
+        await expect(contract.connect(account1).safeMint(account1.address)).to.be.revertedWith(
+          "AccessControl: account "
+          + account1.address.toLowerCase()
+          + " is missing role "
+          + MINTER_ROLE
+        );
+      });
+    });
+
+    describe("Mint", function () {
+
+    });
 
   });
 

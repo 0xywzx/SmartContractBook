@@ -11,7 +11,7 @@ const config: HardhatUserConfig = {
   solidity: "0.8.17",
   networks: {
     goerli: {
-      url: `${process.env.GOERLI_RPC}`,
+      url: process.env.GOERLI_RPC,
       accounts: [`0x${privateKey}`],
     },
   },

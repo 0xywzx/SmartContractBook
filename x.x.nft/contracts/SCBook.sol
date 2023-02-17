@@ -18,6 +18,9 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
 import "base64-sol/base64.sol";
 
+import './libraries/NFTSVG.sol';
+
+
 contract SCBook is ERC721, ERC721Enumerable, AccessControl {
 
     // @dev counter for token id
@@ -33,7 +36,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
      *************/
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
-    string public constant name = "Smart Contract Book";
+    string public constant nftName = "Smart Contract Book";
     string public constant description = "Smart Contract Book NFT";
 
     /*************
@@ -59,9 +62,9 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
 
     // @notice Return tokenURI with url format if _urlMetadata is existed
     // Return tokenURL with encoded JSON format if _urlMetadata is not existed
-    function tokenURI(uint256 _tokenId) public view returns (string memory) {
+    function tokenURI(uint256 _tokenId) public view override(ERC721) returns (string memory) {
 
-        string memory image = Base64.encode(bytes(generateSVGImage(params)));
+        string memory image = Base64.encode(bytes(NFTSVG.generateSVG()));
 
         return
             string(
@@ -70,7 +73,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
                     Base64.encode(
                         bytes(
                             abi.encodePacked(
-                                '{"name":"', name,
+                                '{"name":"', nftName,
                                 '", "description":"', description,
                                 '", "image":"', 'data:image/svg+xml;base64,', image,
                                 '", "attributes": [{"trait_type": "Type",  "value": "', "common",
@@ -96,9 +99,9 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
         _safeMint(to, tokenId);
     }
 
-    function batchMint(address[] to) public onlyRole(MINTER_ROLE) {
+    function batchMint(address[] memory to) public onlyRole(MINTER_ROLE) {
         for(uint8 i = 0; i < to.length; i ++) {
-            safeMint(to);
+            safeMint(to[i]);
         }
     }
 
@@ -114,7 +117,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
         internal
         override(ERC721, ERC721Enumerable)
     {
-        require(from != address(0), "Unable to transfer");
+        require(from == address(0), "Unable to transfer");
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 

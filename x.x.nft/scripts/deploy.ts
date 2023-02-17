@@ -2,12 +2,17 @@ import { ethers } from "hardhat";
 
 async function main() {
 
-  const Contract = await ethers.getContractFactory("SCBook");
-  const contract = await Contract.deploy();
+  const NFTContract = await ethers.getContractFactory("SCBook");
+  const nftContract = await NFTContract.deploy();
 
-  await contract.deployed();
+  await nftContract.deployed();
+  console.log(`Deployed address : ${nftContract.address}`);
 
-  console.log(`Deployed address : ${contract.address}`);
+  const accounts = await ethers.getSigners();
+  const tx = await nftContract.safeMint(accounts[0].address);
+  console.log(`NFT minted : ${tx.hash}`);
+
+  console.log(await nftContract.tokenURI(0));
 }
 
 main().catch((error) => {

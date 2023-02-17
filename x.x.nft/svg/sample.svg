@@ -20,8 +20,8 @@
     Smart Contract
   </text>
 
-  <path d="M 40 60 L 60 60 L 55 70 L 45 70 Z" fill="#ffffff"/>
-  <path d="M 65 55 L 35 55 L 40 45 L 60 45 Z" fill="#ffffff"/>
+  <path d="M 40 60 L 60 60 L 55 70 L 45 70 Z" fill="#ffffff" />
+  <path d="M 65 55 L 35 55 L 40 45 L 60 45 Z" fill="#ffffff" />
 
   <text text-rendering="optimizeSpeed">
     <textPath startOffset="-100%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">
