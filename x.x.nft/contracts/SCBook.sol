@@ -52,9 +52,9 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
      **********/
 
     // @struct NFT metadata format
-    // struct Metadata {
-    //     string plan;
-    // }
+    struct MetaParams {
+        address owner;
+    }
 
     /*************************
      * Public View Functions *

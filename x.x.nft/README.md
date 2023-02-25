@@ -1,13 +1,18 @@
-# Sample Hardhat Project
-
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
+# x.x.nft
 
 ```shell
 npx hardhat help
+
+// test
 npx hardhat test
+
+// test with gas report
 REPORT_GAS=true npx hardhat test
-npx hardhat node
+
+// contract deployment
 npx hardhat run scripts/deploy.ts
+
+// batch mint (set contract address and to addresses before execution)
+npx hardhat run scripts/batchMint.ts
+
 ```
