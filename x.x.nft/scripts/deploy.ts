@@ -13,6 +13,10 @@ async function main() {
   console.log(`NFT minted : ${tx.hash}`);
 
   console.log(await nftContract.tokenURI(0));
+  console.log(await nftContract.getMetadata(0));
+  // const Libraty = await ethers.getContractFactory("NFTSVG");
+  // const library = Libraty.attach(nftContract.address);
+  // console.log(await library.tokenToColorHex(1234, 0));
 }
 
 main().catch((error) => {

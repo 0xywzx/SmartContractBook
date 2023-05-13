@@ -20,7 +20,6 @@ import "base64-sol/base64.sol";
 
 import './libraries/NFTSVG.sol';
 
-
 contract SCBook is ERC721, ERC721Enumerable, AccessControl {
 
     // @dev counter for token id
@@ -45,15 +44,16 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
     Counters.Counter private _tokenIdCounter;
 
     // @notice Token metadata with Metadata struct
-    // mapping (uint256 => Metadata) private _metadata;
+    mapping (uint256 => Metadata) private _metadata;
 
     /**********
      * struct *
      **********/
 
     // @struct NFT metadata format
-    struct MetaParams {
+    struct Metadata {
         address owner;
+        uint256 random;
     }
 
     /*************************
@@ -64,7 +64,11 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
     // Return tokenURL with encoded JSON format if _urlMetadata is not existed
     function tokenURI(uint256 _tokenId) public view override(ERC721) returns (string memory) {
 
-        string memory image = Base64.encode(bytes(NFTSVG.generateSVG()));
+        Metadata memory metadata = _metadata[_tokenId];
+        string memory image = Base64.encode(bytes(NFTSVG.generateSVG(
+            metadata.owner,
+            metadata.random
+        )));
 
         return
             string(
@@ -86,6 +90,10 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
 
     }
 
+    function getMetadata(uint256 _tokenId) public view returns (Metadata memory) {
+        return _metadata[_tokenId];
+    }
+
     /*************************
      * MINTER_ROLE Functions *
      *************************/
@@ -96,6 +104,23 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
     {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
+
+        uint256 randomNumber = uint256(
+            keccak256(
+                abi.encodePacked(
+                    tokenId,
+                    blockhash(block.number),
+                    block.timestamp,
+                    to
+                )
+            )
+        );
+
+        _metadata[tokenId] = Metadata({
+            owner: to,
+            random: randomNumber
+        });
+
         _safeMint(to, tokenId);
     }
 
