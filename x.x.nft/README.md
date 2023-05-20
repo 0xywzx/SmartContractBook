@@ -28,6 +28,12 @@ sequenceDiagram
 
 ```
 
+## Google Cloud Console
+- Activate IAM API
+  - https://console.cloud.google.com/flows/enableapi?apiid=iam.googleapis.com&redirect=https://console.cloud.google.com
+- Create service account and generate key
+  - grant access of firebase
+  - https://cloud.google.com/iam/docs/creating-managing-service-account-keys
 
 # References
 - rainbowkit nextjs-13 upgrade
@@ -43,3 +49,7 @@ sequenceDiagram
   - https://wagmi.sh/core/getting-started
 - viem
   - https://viem.sh/docs/getting-started.html
+- routing
+  - https://nextjs.org/docs/app/building-your-application/routing
+- Route Handlers
+  - https://nextjs.org/docs/app/building-your-application/routing/router-handlers

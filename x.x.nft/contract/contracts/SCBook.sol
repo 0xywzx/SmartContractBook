@@ -69,6 +69,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
             metadata.owner,
             metadata.random
         )));
+        string memory traitType = isRare(metadata.random) ? "rare" : "common";
 
         return
             string(
@@ -80,7 +81,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
                                 '{"name":"', nftName,
                                 '", "description":"', description,
                                 '", "image":"', 'data:image/svg+xml;base64,', image,
-                                '", "attributes": [{"trait_type": "Type",  "value": "', "common",
+                                '", "attributes": [{"trait_type": "Type",  "value": "', traitType,
                                 '"}]}'
                             )
                         )

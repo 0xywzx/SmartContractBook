@@ -6,6 +6,8 @@ import { useAccount, useNetwork, useContractRead } from 'wagmi';
 import { getContract, signMessage } from '@wagmi/core'
 
 import abi from '../../contract/artifacts/contracts/SCBook.sol/SCBook.json'
+import { ethers, hexlify } from 'ethers';
+import { Content, Session } from './types/types';
 export default function Home() {
 
   const { address, isConnected } = useAccount()
@@ -33,10 +35,9 @@ export default function Home() {
     if (balance == 0) return
 
     const tokenId = await contract.read.tokenOfOwnerByIndex([address, 0])
-    console.log('tokenId', tokenId, address)
 
-    const tokenURI = await contract.read.tokenURI([tokenId])
-    console.log('tokenURI', tokenURI)
+    const tokenURI = await contract.read.tokenURI([tokenId]) as string;
+
     const encodedData = tokenURI.substring(tokenURI.indexOf(',') + 1);
     const decodedData = JSON.parse(window.atob(encodedData));
 
@@ -44,6 +45,7 @@ export default function Home() {
   };
 
   const [nftImage, setNftImage] = useState("");
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     // console.log('address', address)
@@ -54,11 +56,44 @@ export default function Home() {
     })
   }, [address, chain, contractRead])
 
-  const handleSignMessage = async () => {
-    const message = await signMessage({
-      message: 'message',
-    })
-    console.log('message', message)
+  const handleSignMessage = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await fetch("/api/session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({}),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch session");
+    };
+
+    const data = await response.json() as Session;
+    console.log('data', data);
+
+    const signature = await signMessage({
+      message: data.message,
+    });
+    console.log('message', signature);
+
+    const params = new URLSearchParams();
+    params.append("sessionId", data.sessionId);
+    params.append("signature", signature);
+
+    const materialResponse = await fetch(`/api/content?${params.toString()}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
+    console.log('materialResponse', materialResponse);
+    if (!materialResponse.ok) {
+      throw new Error("Does not have permission to access the content");
+    };
+    const content = await materialResponse.json() as Content;
+    setContent(content.content);
   }
 
   return (
@@ -79,6 +114,10 @@ export default function Home() {
       >
         Prove
       </button>
+
+      <div>
+        {content}
+      </div>
     </main>
   )
 }
