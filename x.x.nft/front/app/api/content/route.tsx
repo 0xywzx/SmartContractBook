@@ -10,6 +10,7 @@ export async function GET(request: Request) {
   const sessionId = searchParams.get('sessionId') as string;
   const signature = searchParams.get('signature') as string;
 
+  // fetch session
   const doc =
     await db.collection('sessions').doc(sessionId).get();
   const session = doc.data();
@@ -19,24 +20,24 @@ export async function GET(request: Request) {
     return NextResponse.json({
       content: 'No session'
     });
-  }
+  };
 
   if (session.status != "Requested") {
     return NextResponse.json({
       content: 'Session is already used'
     })
   };
+
   console.log('>【Content/Get】 Successfully fetched session : ', sessionId);
 
-  // 署名とsessionのメッセージからアドレスを復元
+  // recover address from signature and message
   const recoverdAddress = await ethers.verifyMessage(
     session.message,
     signature
   ) as string;
-
   console.log('>【Content/Get】 Recovered Address : ' + recoverdAddress);
 
-  // 復元したアドレスがNFTを所有してるか確認
+  // Check if the address is the owner of the NFT
   const abi = [
     "function balanceOf(address account) view returns (uint256)",
     "function tokenOfOwnerByIndex(address owner, uint256 index) view returns (uint256)",
@@ -55,8 +56,9 @@ export async function GET(request: Request) {
       content: 'Not NFT Owner'
     });
   };
-
   console.log('>【Content/Get】 NFT Owner', recoverdAddress);
+
+  // Get NFT rarity
   const tokenId = await contract.tokenOfOwnerByIndex(recoverdAddress, 0)
   const tokenURI = await contract.tokenURI(tokenId) as string;
 

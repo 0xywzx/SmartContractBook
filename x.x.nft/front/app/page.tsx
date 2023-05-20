@@ -2,122 +2,139 @@
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useEffect, useState } from 'react';
-import { useAccount, useNetwork, useContractRead } from 'wagmi';
+import { useAccount, useNetwork } from 'wagmi';
 import { getContract, signMessage } from '@wagmi/core'
 
 import abi from '../../contract/artifacts/contracts/SCBook.sol/SCBook.json'
-import { ethers, hexlify } from 'ethers';
 import { Content, Session } from './types/types';
+import { createSession, readContent } from './utils/api';
+import { getContractAddress, isSupportedChain } from './utils/web3';
 export default function Home() {
 
   const { address, isConnected } = useAccount()
   const { chain, chains } = useNetwork()
 
-  const contractRead = useContractRead({
-    address: '0xf0D1dbA6f1196080D275D1B3d60063dd8727534e',
-    abi: abi.abi,
-    functionName: 'tokenURI',
-    chainId: chain?.id,
-    args: [1],
-    onError(error) {
-      console.log('Error', error)
-    },
-  })
+  const [tokenId, setTokenId] = useState("");
+  const [nftImage, setNftImage] = useState("");
+  const [rarity, setRarity] = useState("");
+  const [content, setContent] = useState("");
 
-  const fetchToken = async () => {
+  const fetchNFT = async () => {
+    if (!address || !chain) return
+    console.log(chain);
     const contract = getContract({
-      address: '0xf0D1dbA6f1196080D275D1B3d60063dd8727534e',
+      address: `0x${getContractAddress(chain.id)}`,
       abi: abi.abi,
       chainId: chain?.id,
     })
 
     const balance = await contract.read.balanceOf([address])
-    if (balance == 0) return
+    if (balance == 0) {
+      setTokenId("");
+      setNftImage("");
+      setRarity("");
+      return
+    }
 
-    const tokenId = await contract.read.tokenOfOwnerByIndex([address, 0])
+    const tokenId = await contract.read.tokenOfOwnerByIndex([address, 0]) as string;
+    setTokenId(tokenId);
 
     const tokenURI = await contract.read.tokenURI([tokenId]) as string;
-
     const encodedData = tokenURI.substring(tokenURI.indexOf(',') + 1);
     const decodedData = JSON.parse(window.atob(encodedData));
 
     return decodedData
   };
 
-  const [nftImage, setNftImage] = useState("");
-  const [content, setContent] = useState("");
-
   useEffect(() => {
-    // console.log('address', address)
-    // console.log('data', chain)
-    fetchToken().then((data) => {
+    fetchNFT().then((data) => {
       if(!data) return;
+      setRarity(data.attributes[0].value);
       setNftImage(data.image);
     })
-  }, [address, chain, contractRead])
+  }, [address, chain])
 
-  const handleSignMessage = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const response = await fetch("/api/session", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({}),
-    });
+  const handleSwitchChain = async () => {
+    console.log('handleSwitchChain');
+    // todo: switch chain
+  }
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch session");
-    };
+  const handleSignMessage = async () => {
+    console.log('handleSignMessage');
 
-    const data = await response.json() as Session;
-    console.log('data', data);
+    const session = await createSession() as Session;
+    console.log('session', session);
 
     const signature = await signMessage({
-      message: data.message,
+      message: session.message,
     });
-    console.log('message', signature);
+    console.log('signature', signature);
 
-    const params = new URLSearchParams();
-    params.append("sessionId", data.sessionId);
-    params.append("signature", signature);
+    console.log('fetching content');
+    const content = await readContent(session.sessionId, signature);
 
-    const materialResponse = await fetch(`/api/content?${params.toString()}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      }
-    });
-    console.log('materialResponse', materialResponse);
-    if (!materialResponse.ok) {
-      throw new Error("Does not have permission to access the content");
-    };
-    const content = await materialResponse.json() as Content;
     setContent(content.content);
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="flex flex-col items-center justify-center">
-        Smart contract book
-      </div>
+    <main className="flex flex-col items-center justify-center p-24">
+      <h1 className="text-3xl font-bold mb-8">Smart Contract Book</h1>
 
       <ConnectButton accountStatus="avatar" />
 
-      <div style={{ width: '400px' }}>
-        <img src={nftImage} alt="Image" />
-      </div>
+      {isConnected ? (
+        <>
+          {chain && isSupportedChain(chain.id) && (
+            <div className="flex flex-col items-center justify-center mt-4">
+              <p>Please switch to the desired chain to access the content.</p>
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
+                onClick={handleSwitchChain}
+              >
+                Switch Chain
+              </button>
+            </div>
+          )}
 
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={handleSignMessage}
-      >
-        Prove
-      </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            onClick={handleSignMessage}
+          >
+            Access Content
+          </button>
 
-      <div>
-        {content}
-      </div>
+          {nftImage ? (
+            <div className="flex flex-col items-center justify-center">
+              <div className="py-4" style={{ maxWidth: '400px' }}>
+                <img src={nftImage} alt="Image" className="max-w-full" />
+              </div>
+              <div className="mb-4">
+                <p>TokenID: {tokenId}</p>
+                <p>Rarity: {rarity}</p>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center">
+              <p>This address does not own an NFT.</p>
+            </div>
+          )}
+
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            onClick={handleSignMessage}
+          >
+            Access Content
+          </button>
+
+          <div className="mt-8">
+            {content}
+          </div>
+        </>
+      ) : (
+        <div className="flex flex-col items-center justify-center">
+          <p>Please connect your account to access the content.</p>
+        </div>
+      )}
     </main>
   )
 }

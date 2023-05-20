@@ -69,7 +69,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
             metadata.owner,
             metadata.random
         )));
-        string memory traitType = isRare(metadata.random) ? "rare" : "common";
+        string memory traitType = NFTSVG.isRare(metadata.random) ? "rare" : "common";
 
         return
             string(

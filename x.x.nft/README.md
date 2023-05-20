@@ -7,7 +7,7 @@ sequenceDiagram
     participant API
     participant DB
     participant Blockchain
-    Client ->> API: Request to get materials
+    Client ->> API: Request to get content
     API ->> DB: Request to create a session
     DB ->> DB: Create a session
     DB -->> Client: Session ID, Random message
@@ -22,8 +22,8 @@ sequenceDiagram
       API -->> Client: Error message
     else NFT Holder
       Blockchain -->> API: Return balance
-      API ->> DB: Fetch secret materials
-      DB -->> Client: Secret materials
+      API ->> DB: Fetch secret content
+      DB -->> Client: Secret content
     end
 
 ```
