@@ -20,7 +20,12 @@ describe("Lock", function () {
     ] = await ethers.getSigners();
 
     const ContractFactory = await ethers.getContractFactory("SCBook");
-    const contract = await ContractFactory.deploy();
+
+    // https://docs.chain.link/vrf/v2/direct-funding/supported-networks
+    const contract = await ContractFactory.deploy(
+      "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846", // LINK Token on fuji
+      "0x9345AC54dA4D0B5Cda8CB749d8ef37e5F02BBb21" // VRF Wrapper on fuji
+    );
 
     return { contract, owner, account1, account2, account3 };
   }
@@ -39,7 +44,7 @@ describe("Lock", function () {
 
   describe("SafeMint", function () {
     describe("Valicdation", function () {
-      it("should revert if called other then the minter", async function() {
+      it("should revert if called other than the minter", async function() {
         const { contract, owner, account1 } = await loadFixture(deployContractFixture);
 
         await expect(contract.connect(account1).safeMint(account1.address)).to.be.revertedWith(
@@ -68,7 +73,7 @@ describe("Lock", function () {
 
   describe("BatchMint", function () {
     describe("Valicdation", function () {
-      it("should revert if called other then the minter", async function() {
+      it("should revert if called other than the minter", async function() {
         const { contract, owner, account1 } = await loadFixture(deployContractFixture);
 
         await expect(contract.connect(account1).batchMint([account1.address])).to.be.revertedWith(
@@ -105,7 +110,7 @@ describe("Lock", function () {
 
   describe("setMetadata", function () {
     describe("Valicdation", function () {
-      it("should revert if called other then the minter", async function() {
+      it("should revert if called other than the minter", async function() {
         const { contract, owner, account1 } = await loadFixture(deployContractFixture);
 
         const tokenIds = [0,1,2];

@@ -3,7 +3,7 @@ import { ethers } from "hardhat";
 async function main() {
 
   const NFTContract = await ethers.getContractFactory("SCBook");
-  const nftContract = NFTContract.attach("0xf0D1dbA6f1196080D275D1B3d60063dd8727534e");
+  const nftContract = NFTContract.attach("0xe5eA92DeE0B255fC3FEfD76a6df193CE9E591D9d");
 
   const toAddresses = [
     "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4",
