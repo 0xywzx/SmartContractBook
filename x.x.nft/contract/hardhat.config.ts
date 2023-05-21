@@ -14,8 +14,9 @@ const config: HardhatUserConfig = {
     //   url: process.env.GOERLI_RPC,
     //   accounts: [`0x${privateKey}`],
     // },
-    hardhat: {
-      
+    fuji: {
+      url: process.env.FUJI_RPC,
+      accounts: [`0x${privateKey}`],
     }
   },
   etherscan: {
