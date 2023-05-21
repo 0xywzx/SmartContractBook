@@ -42,6 +42,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
      * Variables *
      *************/
     Counters.Counter private _tokenIdCounter;
+    Counters.Counter private _utilizedTokenIdCounter; 
 
     // @notice Token metadata with Metadata struct
     mapping (uint256 => Metadata) private _metadata;
@@ -106,22 +107,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
 
-        // uint256 randomNumber = uint256(
-        //     keccak256(
-        //         abi.encodePacked(
-        //             tokenId,
-        //             blockhash(block.number),
-        //             block.timestamp,
-        //             to
-        //         )
-        //     )
-        // );
-
-        // _metadata[tokenId] = Metadata({
-        //     owner: to,
-        //     random: randomNumber
-        // });
-
         _safeMint(to, tokenId);
     }
 
@@ -134,7 +119,12 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
     // function request random ness
     // token Ids
 
-    function setMetadata(uint256[] memory tokenIds) public onlyRole(MINTER_ROLE) {
+    function setMetadata() public onlyRole(MINTER_ROLE) {
+        require(
+            _tokenIdCounter.current() - _utilizedTokenIdCounter.current() > 0,
+            "all metadata already set"
+        );
+        // rundom number　使い回し禁止
         
         // chainlink VRFで得た乱数をここに置き換えることが可能
         uint256 randomNumber = uint256(
@@ -146,16 +136,19 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
             )
         );
 
-        for(uint8 i = 0; i < tokenIds.length; i ++) {
-            require(_exists(tokenIds[i]), "invalid token ID");
-            require(_metadata[tokenIds[i]].owner == address(0), "metadata already set");
+        uint8 _length = 
+            uint8(_tokenIdCounter.current() - _utilizedTokenIdCounter.current());
+
+        for(uint8 i = 0; i < _length; i ++) {
 
             uint256 _random = randomNumber++;
 
-            _metadata[tokenIds[i]] = Metadata({
-                owner: _ownerOf(tokenIds[i]),
+            _metadata[_utilizedTokenIdCounter.current()] = Metadata({
+                owner: _ownerOf(_utilizedTokenIdCounter.current()),
                 random: _random
             });
+
+            _utilizedTokenIdCounter.increment();
         }
     }
 

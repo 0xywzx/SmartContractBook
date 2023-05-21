@@ -110,7 +110,7 @@ describe("Lock", function () {
 
         const tokenIds = [0,1,2];
 
-        await expect(contract.connect(account1).setMetadata(tokenIds)).to.be.revertedWith(
+        await expect(contract.connect(account1).setMetadata()).to.be.revertedWith(
           "AccessControl: account "
           + account1.address.toLowerCase()
           + " is missing role "
@@ -118,13 +118,24 @@ describe("Lock", function () {
         );
       });
 
-      it("should revert if invalid token ID", async function() {
+      it("should revert if all metadata has been already set", async function() {
         const { contract, owner, account1, account2, account3 } = await loadFixture(deployContractFixture);
 
         const tokenIds = [0,1,2];
 
-        await expect(contract.connect(owner).setMetadata(tokenIds)).to.be.revertedWith(
-          "invalid token ID"
+        await expect(contract.connect(owner).setMetadata()).to.be.revertedWith(
+          "all metadata already set"
+        );
+
+        await contract.batchMint([
+          account1.address,
+          account2.address,
+          account3.address
+        ]);
+
+        await contract.connect(owner).setMetadata();
+        await expect(contract.connect(owner).setMetadata()).to.be.revertedWith(
+          "all metadata already set"
         );
 
       });
@@ -134,19 +145,14 @@ describe("Lock", function () {
       it("should set Metadata", async function () {
         const { contract, owner, account1, account2, account3 } = await loadFixture(deployContractFixture);
 
-        const tokenIds = [0,1,2];
-
         await contract.batchMint([
           account1.address,
           account2.address,
           account3.address
         ]);
 
-        await contract.connect(owner).setMetadata(tokenIds);
+        await contract.connect(owner).setMetadata();
 
-        // expect(await contract.getMetadata(0)).to.be.equal([
-        //   "0x70997970C51812dc3A010C7d01b50e0d17dc79C8", { ,  }
-        //     ]);
       });
     });
 
