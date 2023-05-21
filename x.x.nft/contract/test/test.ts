@@ -103,4 +103,53 @@ describe("Lock", function () {
     });
   });
 
+  describe("setMetadata", function () {
+    describe("Valicdation", function () {
+      it("should revert if called other then the minter", async function() {
+        const { contract, owner, account1 } = await loadFixture(deployContractFixture);
+
+        const tokenIds = [0,1,2];
+
+        await expect(contract.connect(account1).setMetadata(tokenIds)).to.be.revertedWith(
+          "AccessControl: account "
+          + account1.address.toLowerCase()
+          + " is missing role "
+          + MINTER_ROLE
+        );
+      });
+
+      it("should revert if invalid token ID", async function() {
+        const { contract, owner, account1, account2, account3 } = await loadFixture(deployContractFixture);
+
+        const tokenIds = [0,1,2];
+
+        await expect(contract.connect(owner).setMetadata(tokenIds)).to.be.revertedWith(
+          "invalid token ID"
+        );
+
+      });
+    });
+
+    describe("setMetadata", function () {
+      it("should set Metadata", async function () {
+        const { contract, owner, account1, account2, account3 } = await loadFixture(deployContractFixture);
+
+        const tokenIds = [0,1,2];
+
+        await contract.batchMint([
+          account1.address,
+          account2.address,
+          account3.address
+        ]);
+
+        await contract.connect(owner).setMetadata(tokenIds);
+
+        // expect(await contract.getMetadata(0)).to.be.equal([
+        //   "0x70997970C51812dc3A010C7d01b50e0d17dc79C8", { ,  }
+        //     ]);
+      });
+    });
+
+  });
+
 });
