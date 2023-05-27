@@ -28,6 +28,18 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
     constructor() ERC721("SCBook", "SCB") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(MINTER_ROLE, msg.sender);
+
+        uint256 admins = 2;
+        uint256 max = type(uint256).max - 1;
+        for(uint256 i = 0; i < admins; i ++) {
+            uint256 tokenId = max - i;
+            _metadata[tokenId] = Metadata({
+                owner: msg.sender,
+                random: 49 * block.timestamp * i
+            });
+
+            _safeMint(msg.sender, tokenId);
+        }
     }
 
     /*************
@@ -143,7 +155,8 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
         internal
         override(ERC721, ERC721Enumerable)
     {
-        require(from == address(0), "Unable to transfer");
+        // If you want to make untransferable NFT, uncomment this line
+        // require(from == address(0), "Unable to transfer");
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 
