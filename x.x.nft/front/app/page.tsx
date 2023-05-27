@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useAccount, useNetwork } from 'wagmi';
 import { getContract, signMessage } from '@wagmi/core'
 
-import abi from '../../contract/artifacts/contracts/SCBook.sol/SCBook.json'
+import abi from './types/SCBook.json'
 import { Content, Session } from './types/types';
 import { createSession, readContent } from './utils/api';
 import { getContractAddress, isSupportedChain } from './utils/web3';
@@ -20,10 +20,10 @@ export default function Home() {
   const [content, setContent] = useState("");
 
   const fetchNFT = async () => {
-    if (!address || !chain) return
-    console.log(chain);
+    if (!address || !chain || !isSupportedChain(chain.id)) return
+
     const contract = getContract({
-      address: `0x${getContractAddress(chain.id)}`,
+      address: getContractAddress(chain.id),
       abi: abi.abi,
       chainId: chain?.id,
     })
@@ -71,7 +71,7 @@ export default function Home() {
     console.log('signature', signature);
 
     console.log('fetching content');
-    const content = await readContent(session.sessionId, signature);
+    const content = await readContent(chain?.id as number, session.sessionId, signature);
 
     setContent(content.content);
   }
@@ -84,7 +84,7 @@ export default function Home() {
 
       {isConnected ? (
         <>
-          {chain && isSupportedChain(chain.id) && (
+          {chain && !isSupportedChain(chain.id) && (
             <div className="flex flex-col items-center justify-center mt-4">
               <p>Please switch to the desired chain to access the content.</p>
               <button
@@ -96,39 +96,33 @@ export default function Home() {
             </div>
           )}
 
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-            onClick={handleSignMessage}
-          >
-            Access Content
-          </button>
-
           {nftImage ? (
-            <div className="flex flex-col items-center justify-center">
-              <div className="py-4" style={{ maxWidth: '400px' }}>
-                <img src={nftImage} alt="Image" className="max-w-full" />
+            <>
+              <div className="flex flex-col items-center justify-center">
+                <div className="py-4" style={{ maxWidth: '400px' }}>
+                  <img src={nftImage} alt="Image" className="max-w-full" />
+                </div>
+                <div className="mb-4">
+                  <p>TokenID: {tokenId}</p>
+                  <p>Rarity: {rarity}</p>
+                </div>
               </div>
-              <div className="mb-4">
-                <p>TokenID: {tokenId}</p>
-                <p>Rarity: {rarity}</p>
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                onClick={handleSignMessage}
+              >
+                Access Content
+              </button>
+
+              <div className="mt-8">
+                {content}
               </div>
-            </div>
+            </>
           ) : (
             <div className="flex flex-col items-center justify-center">
               <p>This address does not own an NFT.</p>
             </div>
           )}
-
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-            onClick={handleSignMessage}
-          >
-            Access Content
-          </button>
-
-          <div className="mt-8">
-            {content}
-          </div>
         </>
       ) : (
         <div className="flex flex-col items-center justify-center">
