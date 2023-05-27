@@ -9,6 +9,7 @@ import abi from './types/SCBook.json'
 import { Content, Session } from './types/types';
 import { createSession, readContent } from './utils/api';
 import { getContractAddress, isSupportedChain } from './utils/web3';
+import LoadingIcon from './components/LoadingIcon';
 export default function Home() {
 
   const { address, isConnected } = useAccount()
@@ -18,7 +19,7 @@ export default function Home() {
   const [nftImage, setNftImage] = useState("");
   const [rarity, setRarity] = useState("");
   const [content, setContent] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isProving, setIsProving] = useState(false);
   const [isWalletConnected, setIsWalletConnected] = useState(false);
 
   const fetchNFT = async () => {
@@ -67,19 +68,26 @@ export default function Home() {
 
   const handleSignMessage = async () => {
     console.log('handleSignMessage');
+    setIsProving(true);
+    try {
+      const session = await createSession() as Session;
+      console.log('session', session);
 
-    const session = await createSession() as Session;
-    console.log('session', session);
+      const signature = await signMessage({
+        message: session.message,
+      });
+      console.log('signature', signature);
 
-    const signature = await signMessage({
-      message: session.message,
-    });
-    console.log('signature', signature);
-
-    console.log('fetching content');
-    const content = await readContent(chain?.id as number, session.sessionId, signature);
-
-    setContent(content.content);
+      console.log('fetching content');
+      const content = await readContent(chain?.id as number, session.sessionId, signature);
+      setContent(content.content);
+      console.log('successfully fetched content');
+    } catch (error) {
+      console.log('error', error);
+      setIsProving(false);
+    } finally {
+      setIsProving(false);
+    }
   }
 
   return (
@@ -113,10 +121,20 @@ export default function Home() {
                   </div>
                 </div>
                 <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                  className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 ${
+                    isProving ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
                   onClick={handleSignMessage}
+                  disabled={isProving}
                 >
-                  Access Content
+                  {isProving ? (
+                    <div className="flex items-center">
+                      <LoadingIcon />
+                      <span>Proving...</span>
+                    </div>
+                  ) : (
+                    'Access Content'
+                  )}
                 </button>
 
                 <div className="mt-8">
