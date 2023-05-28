@@ -144,7 +144,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
         require(lastRequestId != 0, "requestId is not set");
 
         // chainlink VRFで得た乱数をここに置き換えることが可能
-        uint56 randomNumber = uint56(
+        uint256 randomNumber = uint256(
             keccak256(
                 abi.encodePacked(
                     s_requests[lastRequestId].randomWords[0],
