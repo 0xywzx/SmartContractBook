@@ -27,54 +27,28 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
     // @dev counter for token id
     using Counters for Counters.Counter;
 
-    /*********************
-     * VRF Configuration *
-     *********************/
-
-    event RequestSent(uint256 requestId, uint32 numWords);
-    event RequestFulfilled(
-        uint256 requestId,
-        uint256[] randomWords,
-        uint256 payment
-    );
-
-    struct RequestStatus {
-        uint256 paid; // amount paid in link
-        bool fulfilled; // whether the request has been successfully fulfilled
-        uint256[] randomWords;
-    }
-    mapping(uint256 => RequestStatus)
-        public s_requests; /* requestId --> requestStatus */
-
-    // past requests Id.
-    uint256[] public requestIds;
-    uint256 public lastRequestId;
-
-    // Depends on the number of requested values that you want sent to the
-    // fulfillRandomWords() function. Test and adjust
-    // this limit based on the network that you select, the size of the request,
-    // and the processing of the callback request in the fulfillRandomWords()
-    // function.
-    uint32 callbackGasLimit = 100000;
-
-    // The default is 3, but you can set this higher.
-    uint16 requestConfirmations = 3;
-
-    // For this example, retrieve 2 random values in one request.
-    // Cannot exceed VRFV2Wrapper.getConfig().maxNumWords.
-    uint32 numWords = 2;
-
-    // LINK Token Address
-    address private linkAddress;
-
     // https://docs.chain.link/vrf/v2/direct-funding/supported-networks
-    constructor(address _linkAddress, address _wrapperAddress) 
-        ERC721("SCBook", "SCB") 
-        VRFV2WrapperConsumerBase(_linkAddress, _wrapperAddress) {
-            _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-            _grantRole(MINTER_ROLE, msg.sender);
-            linkAddress = _linkAddress;
+    constructor(address _linkAddress, address _wrapperAddress)
+        ERC721("SCBook", "SCB")
+        VRFV2WrapperConsumerBase(_linkAddress, _wrapperAddress)
+    {
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(MINTER_ROLE, msg.sender);
+
+        uint256 admins = 2;
+        uint256 max = type(uint256).max - 1;
+        for(uint256 i = 0; i < admins; i ++) {
+            uint256 tokenId = max - i;
+            _metadata[tokenId] = Metadata({
+                owner: msg.sender,
+                random: 49 * block.timestamp * i
+            });
+
+            _safeMint(msg.sender, tokenId);
         }
+
+        linkAddress = _linkAddress;
+    }
 
     /*************
      * Constants *
@@ -88,7 +62,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
      * Variables *
      *************/
     Counters.Counter private _tokenIdCounter;
-    Counters.Counter private _utilizedTokenIdCounter; 
+    Counters.Counter private _utilizedTokenIdCounter;
 
     // @notice Token metadata with Metadata struct
     mapping (uint256 => Metadata) private _metadata;
@@ -168,7 +142,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
             "all metadata already set"
         );
         // rundom number　使い回し禁止
-        
+
         // chainlink VRFで得た乱数をここに置き換えることが可能
         uint256 randomNumber = uint256(
             keccak256(
@@ -179,7 +153,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
             )
         );
 
-        uint8 _length = 
+        uint8 _length =
             uint8(_tokenIdCounter.current() - _utilizedTokenIdCounter.current());
 
         for(uint8 i = 0; i < _length; i ++) {
@@ -207,7 +181,8 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
         internal
         override(ERC721, ERC721Enumerable)
     {
-        require(from == address(0), "Unable to transfer");
+        // If you want to make untransferable NFT, uncomment this line
+        // require(from == address(0), "Unable to transfer");
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 
@@ -220,10 +195,51 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
         return super.supportsInterface(interfaceId);
     }
 
+    /*********************
+     * VRF Configuration *
+     *********************/
+
+    event RequestSent(uint256 requestId, uint32 numWords);
+    event RequestFulfilled(
+        uint256 requestId,
+        uint256[] randomWords,
+        uint256 payment
+    );
+
+    struct RequestStatus {
+        uint256 paid; // amount paid in link
+        bool fulfilled; // whether the request has been successfully fulfilled
+        uint256[] randomWords;
+    }
+
+    mapping(uint256 => RequestStatus)
+    public s_requests; /* requestId --> requestStatus */
+
+    // past requests Id.
+    uint256[] public requestIds;
+    uint256 public lastRequestId;
+
+    // Depends on the number of requested values that you want sent to the
+    // fulfillRandomWords() function. Test and adjust
+    // this limit based on the network that you select, the size of the request,
+    // and the processing of the callback request in the fulfillRandomWords()
+    // function.
+    uint32 callbackGasLimit = 100000;
+
+    // The default is 3, but you can set this higher.
+    uint16 requestConfirmations = 3;
+
+    // For this example, retrieve 2 random values in one request.
+    // Cannot exceed VRFV2Wrapper.getConfig().maxNumWords.
+    uint32 numWords = 2;
+
+    // LINK Token Address
+    address private linkAddress;
+
     /*****************
      * VRF Functions *
      *****************/
-     //https://docs.chain.link/vrf/v2/direct-funding/examples/get-a-random-number
+    //https://docs.chain.link/vrf/v2/direct-funding/examples/get-a-random-number
 
     function requestRandomWords()
         external

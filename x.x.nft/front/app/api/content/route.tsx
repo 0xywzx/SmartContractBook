@@ -1,12 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { getContractAddress, getRPC } from '@/app/utils/web3';
 import { Contract, ethers } from 'ethers'
-import type { NextApiRequest, NextApiResponse } from 'next'
 import { NextResponse } from 'next/server';
 import { db } from "../../utils/firebase"
-import { Session } from '../../types/types'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
+  const chainId = Number(searchParams.get('chainId'));
   const sessionId = searchParams.get('sessionId') as string;
   const signature = searchParams.get('signature') as string;
 
@@ -43,9 +43,9 @@ export async function GET(request: Request) {
     "function tokenOfOwnerByIndex(address owner, uint256 index) view returns (uint256)",
     "function tokenURI(uint256 tokenId) view returns (string memory)"
   ];
-  const provider = new ethers.JsonRpcProvider(process.env.NEXT_PUBLIC_RPC)
+  const provider = new ethers.JsonRpcProvider(getRPC(chainId));
   const contract = new Contract(
-    "0xf0D1dbA6f1196080D275D1B3d60063dd8727534e", abi, provider
+    getContractAddress(chainId), abi, provider
   );
 
   const balance = await contract.balanceOf(recoverdAddress);

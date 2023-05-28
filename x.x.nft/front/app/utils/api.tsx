@@ -18,8 +18,9 @@ export const createSession = async () => {
   return data;
 }
 
-export const readContent = async (sessionId: string, signature: string) => {
+export const readContent = async (chainId: number, sessionId: string, signature: string) => {
   const params = new URLSearchParams();
+  params.append("chainId", String(chainId));
   params.append("sessionId", sessionId);
   params.append("signature", signature);
 
