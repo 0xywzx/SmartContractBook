@@ -8,12 +8,28 @@ const privateKey = process.env.PRIVATE_KEY;
 const apiKey = process.env.ETHERSCAN_API_KEY;
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.17",
-  networks: {
-    goerli: {
-      url: process.env.GOERLI_RPC,
-      accounts: [`0x${privateKey}`],
+  solidity: {
+    version: "0.8.18",
+    settings: {
+      viaIR: true,
+      optimizer: {
+        enabled: true,
+        details: {
+          yulDetails: {
+            optimizerSteps: "u:",
+          },
+        },
+      },
     },
+  },
+  networks: {
+    hardhat: { },
+    fuji: {
+      url: process.env.FUJI_RPC,
+      gasPrice: 225000000000,
+      chainId: 43113,
+      accounts: [`0x${privateKey}`],
+    }
   },
   etherscan: {
     apiKey: apiKey,
