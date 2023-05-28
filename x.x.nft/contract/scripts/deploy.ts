@@ -1,4 +1,5 @@
 import { ethers } from "hardhat";
+import { saveContractAddress } from "./contractAddress";
 
 async function main() {
   const [deployer] = await ethers.getSigners();
@@ -17,6 +18,7 @@ async function main() {
 
   await nftContract.deployed();
   console.log(`Deployed address : ${nftContract.address}`);
+  saveContractAddress("NFTfuji", nftContract.address);
 
   const accounts = await ethers.getSigners();
   const tx = await nftContract.safeMint(accounts[0].address);

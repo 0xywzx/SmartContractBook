@@ -141,12 +141,13 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
             _tokenIdCounter.current() - _utilizedTokenIdCounter.current() > 0,
             "all metadata already set"
         );
-        // rundom number　使い回し禁止
+        require(lastRequestId != 0, "requestId is not set");
 
         // chainlink VRFで得た乱数をここに置き換えることが可能
-        uint256 randomNumber = uint256(
+        uint56 randomNumber = uint56(
             keccak256(
                 abi.encodePacked(
+                    s_requests[lastRequestId].randomWords[0],
                     blockhash(block.number),
                     block.timestamp
                 )
@@ -167,6 +168,8 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
 
             _utilizedTokenIdCounter.increment();
         }
+        delete lastRequestId;
+        delete s_requests[lastRequestId];
     }
 
     function _burn(uint256 tokenId) internal override(ERC721) {
@@ -212,8 +215,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
         uint256[] randomWords;
     }
 
-    mapping(uint256 => RequestStatus)
-    public s_requests; /* requestId --> requestStatus */
+    mapping(uint256 => RequestStatus) public s_requests; /* requestId --> requestStatus */
 
     // past requests Id.
     uint256[] public requestIds;
@@ -246,6 +248,8 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
         onlyRole(MINTER_ROLE)
         returns (uint256 requestId)
     {
+        require(lastRequestId == 0, "request already sent");
+
         requestId = requestRandomness(
             callbackGasLimit,
             requestConfirmations,
