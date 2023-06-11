@@ -128,6 +128,8 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
         _tokenIdCounter.increment();
 
         _safeMint(to, tokenId);
+
+        delete lastRequestId;
     }
 
     function batchMint(address[] memory to) public onlyRole(MINTER_ROLE) {
