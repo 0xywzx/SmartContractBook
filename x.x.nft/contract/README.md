@@ -18,8 +18,4 @@ npx hardhat run scripts/batchMint.ts --network fuji
 // check set tokenURI on hardhat
 npx hardhat run scripts/testCall.ts --network hardhat
 
-// check percentage of rare on hardhat
-npx hardhat run scripts/testRare.ts --network hardhat
-
-
 ```
