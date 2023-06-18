@@ -29,6 +29,11 @@ const config: HardhatUserConfig = {
       gasPrice: 225000000000,
       chainId: 43113,
       accounts: [`0x${privateKey}`],
+    },
+    avalanche: {
+      url: process.env.AVALANCHE_RPC,
+      chainId: 43114,
+      accounts: [`0x${privateKey}`],
     }
   },
   etherscan: {

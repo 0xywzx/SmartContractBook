@@ -1,5 +1,5 @@
 import { ethers, network } from "hardhat";
-import { saveContractAddress } from "./contractAddress";
+import { getContractAddress, saveContractAddress } from "./contractAddress";
 
 async function main() {
   const [deployer] = await ethers.getSigners();
@@ -10,10 +10,21 @@ async function main() {
 
   const NFTContract = await ethers.getContractFactory("SCBook");
 
+  let linkTokenAddress
+  let wrapperAddress
+
+  if (network.name === "fuji") {
+    linkTokenAddress = getContractAddress("LinkFuji");
+    wrapperAddress = getContractAddress("WrapperFuji")
+  } else if (network.name === "avalanche") {
+    linkTokenAddress = getContractAddress("LinkAvalanche");
+    wrapperAddress = getContractAddress("WrapperAvalanche");
+  }
+
   // https://docs.chain.link/vrf/v2/direct-funding/supported-networks
   const nftContract = await NFTContract.deploy(
-    "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846", // LINK Token on fuji
-    "0x9345AC54dA4D0B5Cda8CB749d8ef37e5F02BBb21" // VRF Wrapper on fuji
+    linkTokenAddress,
+    wrapperAddress
   );
 
   await nftContract.deployed();
