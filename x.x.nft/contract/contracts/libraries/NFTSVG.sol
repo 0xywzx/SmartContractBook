@@ -8,10 +8,10 @@ library NFTSVG {
 
     using HexStrings for uint256;
 
-    function generateSVG(address owner, uint256 randomNumber) internal pure returns (string memory svg) {
+    function generateSVG(uint256 tokenId, address owner, uint256 randomNumber) internal pure returns (string memory svg) {
 
-        string memory color0 = tokenToColorHex(uint256(uint160(owner)) + randomNumber, 0);
-        string memory color1 = tokenToColorHex(randomNumber, 136);
+        string memory color0 = tokenToColorHex(tokenId + uint256(uint160(owner)), 0);
+        string memory color1 = tokenToColorHex(tokenId + randomNumber, 136);
 
         return
             string(

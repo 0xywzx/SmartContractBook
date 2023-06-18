@@ -87,6 +87,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
 
         Metadata memory metadata = _metadata[_tokenId];
         string memory image = Base64.encode(bytes(NFTSVG.generateSVG(
+            tokenId,
             metadata.owner,
             metadata.random
         )));
