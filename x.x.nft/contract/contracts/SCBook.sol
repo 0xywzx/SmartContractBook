@@ -129,8 +129,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
         _tokenIdCounter.increment();
 
         _safeMint(to, tokenId);
-
-        delete lastRequestId;
     }
 
     function batchMint(address[] memory to) public onlyRole(MINTER_ROLE) {
@@ -251,6 +249,10 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
         onlyRole(MINTER_ROLE)
         returns (uint256 requestId)
     {
+        require(
+            _tokenIdCounter.current() - _utilizedTokenIdCounter.current() > 0,
+            "no tokens to set metadata"
+        );
         require(lastRequestId == 0, "request already sent");
 
         requestId = requestRandomness(
