@@ -87,7 +87,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
 
         Metadata memory metadata = _metadata[_tokenId];
         string memory image = Base64.encode(bytes(NFTSVG.generateSVG(
-            tokenId,
+            _tokenId,
             metadata.owner,
             metadata.random
         )));
@@ -234,7 +234,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, VRFV2WrapperConsumer
 
     // For this example, retrieve 2 random values in one request.
     // Cannot exceed VRFV2Wrapper.getConfig().maxNumWords.
-    uint32 numWords = 2;
+    uint32 numWords = 1;
 
     // LINK Token Address
     address private linkAddress;

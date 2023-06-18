@@ -1,4 +1,4 @@
-import { ethers } from "hardhat";
+import { ethers, network } from "hardhat";
 import { saveContractAddress } from "./contractAddress";
 
 async function main() {
@@ -25,12 +25,6 @@ async function main() {
   await tx.wait();
   console.log(`NFT minted : ${tx.hash}`);
 
-  console.log(await nftContract.tokenURI(0));
-  console.log(await nftContract.getMetadata(0));
-
-  // const Libraty = await ethers.getContractFactory("NFTSVG");
-  // const library = Libraty.attach(nftContract.address);
-  // console.log(await library.tokenToColorHex(1234, 0));
 }
 
 main().catch((error) => {
