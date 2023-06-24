@@ -1,9 +1,11 @@
-import { ethers } from "hardhat";
+import { ethers, network } from "hardhat";
+import { getContractAddress } from "./contractAddress";
 
 async function main() {
 
   const NFTContract = await ethers.getContractFactory("SCBook");
-  const nftContract = NFTContract.attach("0xe5eA92DeE0B255fC3FEfD76a6df193CE9E591D9d");
+  const contractAddress = getContractAddress(network.name, "NFT");
+  const nftContract = NFTContract.attach(contractAddress);
 
   const toAddresses = [
     "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4",

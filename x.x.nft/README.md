@@ -28,13 +28,12 @@ sequenceDiagram
 
 ```
 
-
 ## NFT mint operation
 
-Set address in `script/batchMint.ts`.
-
 ```
+Set address in `script/batchMint.ts`.
 npx hardhat run scripts/batchMint.ts --network [networkName]
+Send Link token to smart contract if it does not have enough token.
 npx hardhat run scripts/requestVRF.ts --network [networkName]
 npx hardhat run scripts/setMetadata.ts --network [networkName]
 ```
@@ -64,3 +63,6 @@ npx hardhat run scripts/setMetadata.ts --network [networkName]
   - https://nextjs.org/docs/app/building-your-application/routing
 - Route Handlers
   - https://nextjs.org/docs/app/building-your-application/routing/router-handlers
+- Chainlink VRF
+  - https://docs.chain.link/vrf/v2/direct-funding/supported-networks
+-

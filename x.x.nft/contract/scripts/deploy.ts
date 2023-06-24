@@ -22,10 +22,10 @@ async function main() {
   console.log(`Deployed address : ${nftContract.address}`);
   saveContractAddress(network.name, "NFT", nftContract.address);
 
-  const accounts = await ethers.getSigners();
-  const tx = await nftContract.safeMint(accounts[0].address);
-  await tx.wait();
-  console.log(`NFT minted : ${tx.hash}`);
+  // const accounts = await ethers.getSigners();
+  // const tx = await nftContract.safeMint(accounts[0].address);
+  // await tx.wait();
+  // console.log(`NFT minted : ${tx.hash}`);
 
 }
 
