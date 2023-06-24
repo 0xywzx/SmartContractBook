@@ -28,6 +28,17 @@ sequenceDiagram
 
 ```
 
+
+## NFT mint operation
+
+Set address in `script/batchMint.ts`.
+
+```
+npx hardhat run scripts/batchMint.ts --network [networkName]
+npx hardhat run scripts/requestVRF.ts --network [networkName]
+npx hardhat run scripts/setMetadata.ts --network [networkName]
+```
+
 ## Google Cloud Console
 - Activate IAM API
   - https://console.cloud.google.com/flows/enableapi?apiid=iam.googleapis.com&redirect=https://console.cloud.google.com

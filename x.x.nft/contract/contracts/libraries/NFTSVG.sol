@@ -19,7 +19,7 @@ library NFTSVG {
                     '<svg viewBox="0 0 100 100" width="600" height="600" fill="none" role="img" xmlns="http://www.w3.org/2000/svg"',
                     " xmlns:xlink='http://www.w3.org/1999/xlink'>",
                     //
-                    '<defs> <path id="text-path-a" d="M6 3 H95 A28 28 0 0 1 97 6 V95 A28 28 0 0 1 95 97 H5 A28 28 0 0 1 3 93 V5 A28 28 0 0 1 6 3 z" />',
+                    '<defs> <path id="text-path-a" d="M9 4 H91 A40 40 0 0 1 96 10 V91 A40 40 0 0 1 91 96 H10 A40 40 0 0 1 4 91 V9 A40 40 0 0 1 9 4 z" />',
                     // gradient
                     '<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#',
                     color0,
@@ -67,9 +67,9 @@ library NFTSVG {
             svg = string(
                 abi.encodePacked(
                     '<g fill="none" stroke="white" stroke-width="0.5">',
-                    '<circle cx="70" cy="80" r="4"><animate attributeName="r" values="4;2;4" dur="3s" repeatCount="indefinite" /></circle>',
-                    '<circle cx="70" cy="80" r="1"><animate attributeName="r" values="2;1;2" dur="2s" repeatCount="indefinite" /></circle>',
-                    '<polygon points="69,75 73,75 71,71"><animateTransform attributeName="transform" type="rotate" from="0 70 80" to="360 70 80" dur="5s" repeatCount="indefinite" /><animate attributeName="fill" values="white;#29b6f6;#ab47bc;white" dur="2s" repeatCount="indefinite" /></polygon>',
+                    '<polygon points="70,76 72,80 70,84 68,80"><animateTransform attributeName="transform" type="rotate" from="0 70 80" to="360 70 80" dur="2s" repeatCount="indefinite" /></polygon>',
+                    '<polygon points="70,74 72,80 70,86 68,80"><animateTransform attributeName="transform" type="rotate" from="0 70 80" to="360 70 80" dur="3s" repeatCount="indefinite" /></polygon>',
+                    '<polygon points="70,72 72,80 70,88 68,80"><animateTransform attributeName="transform" type="rotate" from="0 70 80" to="360 70 80" dur="4s" repeatCount="indefinite" /></polygon>',
                     '</g>'
                 )
             );

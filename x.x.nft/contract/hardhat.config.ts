@@ -26,7 +26,6 @@ const config: HardhatUserConfig = {
     hardhat: { },
     fuji: {
       url: process.env.FUJI_RPC,
-      gasPrice: 225000000000,
       chainId: 43113,
       accounts: [`0x${privateKey}`],
     },
