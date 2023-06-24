@@ -1,8 +1,14 @@
 {
-  "LinkFuji": "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846",
-  "LinkAvalanche": "",
-  "WrapperFuji": "0x9345AC54dA4D0B5Cda8CB749d8ef37e5F02BBb21",
-  "WrapperAvalanche": "",
-  "NFTfuji": "0x468fdAC5540D2a6ED39aF5a10b829CCFD241Af41",
-  "NFTavalance": ""
+  "Link": {
+    "fuji": "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846",
+    "avalanche": ""
+  },
+  "Wrapper": {
+    "fuji": "0x9345AC54dA4D0B5Cda8CB749d8ef37e5F02BBb21",
+    "avalanche": ""
+  },
+  "NFT": {
+    "fuji": "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846",
+    "avalanche": ""
+  }
 }

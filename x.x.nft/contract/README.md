@@ -19,3 +19,13 @@ npx hardhat run scripts/batchMint.ts --network fuji
 npx hardhat run scripts/testCall.ts --network hardhat
 
 ```
+
+## NFT mint operation
+
+Set address in `script/batchMint.ts`.
+
+```
+npx hardhat run script/batchMint.ts --network [networkName]
+npx hardhat run scripts/requestVRF.ts --network [networkName]
+npx hardhat run scripts/setMetadata.ts --network [networkName]
+```

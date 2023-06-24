@@ -3,13 +3,19 @@ const path = require("path");
 
 const filePath = path.resolve(__dirname, "../contractAddress.json");
 
-export const getContractAddress = (contractName: string) => {
+export const getContractAddress = (
+  networkName: string,
+  contractName: string
+) => {
   try {
-
     const jsonData = fs.readFileSync(filePath);
     const config = JSON.parse(jsonData);
 
-    const contractAddress = config[contractName];
+    const contractAddress = config[contractName][networkName];
+
+    if (!contractAddress) {
+      throw new Error(`No address found for ${contractName} on ${networkName}`);
+    }
 
     return contractAddress;
   } catch (error) {
@@ -18,13 +24,21 @@ export const getContractAddress = (contractName: string) => {
   }
 }
 
-export const saveContractAddress = (contractName: string, contractAddress: string) => {
-  let deployments = {} as any;
+export const saveContractAddress = (
+  networkName: string,
+  contractName: string,
+  contractAddress: string
+) => {
+  let config = {} as any;
   if (fs.existsSync(filePath)) {
-    deployments = JSON.parse(fs.readFileSync(filePath));
+    config = JSON.parse(fs.readFileSync(filePath));
   }
 
-  deployments[contractName] = contractAddress;
+  if (!config[contractName]) {
+    config[contractName] = {};
+  }
 
-  fs.writeFileSync(filePath, JSON.stringify(deployments, null, 2));
+  config[contractName][networkName] = contractAddress;
+
+  fs.writeFileSync(filePath, JSON.stringify(config, null, 2));
 }

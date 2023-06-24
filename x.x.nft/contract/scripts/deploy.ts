@@ -10,26 +10,17 @@ async function main() {
 
   const NFTContract = await ethers.getContractFactory("SCBook");
 
-  let linkTokenAddress
-  let wrapperAddress
-
-  if (network.name === "fuji") {
-    linkTokenAddress = getContractAddress("LinkFuji");
-    wrapperAddress = getContractAddress("WrapperFuji")
-  } else if (network.name === "avalanche") {
-    linkTokenAddress = getContractAddress("LinkAvalanche");
-    wrapperAddress = getContractAddress("WrapperAvalanche");
-  }
+  let linkTokenAddress = getContractAddress(network.name, "Link");
+  let wrapperAddress = getContractAddress(network.name, "Wrapper");
 
   // https://docs.chain.link/vrf/v2/direct-funding/supported-networks
   const nftContract = await NFTContract.deploy(
     linkTokenAddress,
     wrapperAddress
   );
-
   await nftContract.deployed();
   console.log(`Deployed address : ${nftContract.address}`);
-  saveContractAddress("NFTfuji", nftContract.address);
+  saveContractAddress(network.name, "NFT", nftContract.address);
 
   const accounts = await ethers.getSigners();
   const tx = await nftContract.safeMint(accounts[0].address);

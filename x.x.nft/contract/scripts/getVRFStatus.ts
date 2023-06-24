@@ -4,12 +4,7 @@ import { getContractAddress } from "./contractAddress";
 
 async function main() {
 
-  let contractAddress = "";
-  if (network.name === "fuji") {
-    contractAddress = getContractAddress("NFTfuji");
-  } else if (network.name === "avalanche") {
-    contractAddress = getContractAddress("NFTavalanche");
-  }
+  let contractAddress = getContractAddress(network.name, "NFT");
 
   const NFTContract = await ethers.getContractFactory("SCBook");
   const nftContract = NFTContract.attach(contractAddress as string);
