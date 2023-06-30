@@ -1,12 +1,4 @@
 {
-  "Link": {
-    "fuji": "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846",
-    "avalanche": ""
-  },
-  "Wrapper": {
-    "fuji": "0x9345AC54dA4D0B5Cda8CB749d8ef37e5F02BBb21",
-    "avalanche": ""
-  },
   "NFT": {
     "fuji": "0x56e477FD475349B2164a11BA2A48Eb219B8f79FC",
     "avalanche": ""
