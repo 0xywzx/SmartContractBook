@@ -10,14 +10,7 @@ async function main() {
 
   const NFTContract = await ethers.getContractFactory("SCBook");
 
-  let linkTokenAddress = getContractAddress(network.name, "Link");
-  let wrapperAddress = getContractAddress(network.name, "Wrapper");
-
-  // https://docs.chain.link/vrf/v2/direct-funding/supported-networks
-  const nftContract = await NFTContract.deploy(
-    linkTokenAddress,
-    wrapperAddress
-  );
+  const nftContract = await NFTContract.deploy();
   await nftContract.deployed();
   console.log(`Deployed address : ${nftContract.address}`);
   saveContractAddress(network.name, "NFT", nftContract.address);

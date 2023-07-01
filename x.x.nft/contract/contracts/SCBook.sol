@@ -14,13 +14,14 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 import "base64-sol/base64.sol";
 
 import './libraries/NFTSVG.sol';
 
-contract SCBook is ERC721, ERC721Enumerable, AccessControl {
+contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
 
     // @dev counter for token id
     using Counters for Counters.Counter;
@@ -152,16 +153,25 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
         super._burn(tokenId);
     }
 
+    /********************************
+     * DEFAULT_ADMIN_ROLE Functions *
+     ********************************/
+    function pause() public onlyRole(DEFAULT_ADMIN_ROLE) {
+        _pause();
+    }
+
+    function unpause() public onlyRole(DEFAULT_ADMIN_ROLE) {
+        _unpause();
+    }
+
     /**********
      * Utils *
      **********/
-
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
         internal
+        whenNotPaused
         override(ERC721, ERC721Enumerable)
     {
-        // If you want to make untransferable NFT, uncomment this line
-        // require(from == address(0), "Unable to transfer");
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 

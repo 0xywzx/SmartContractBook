@@ -21,7 +21,7 @@ describe("Lock", function () {
 
     const ContractFactory = await ethers.getContractFactory("SCBook");
 
-    const contract = await ContractFactory.deploy();
+    const contract = await ContractFactory.connect(owner).deploy();
 
     return { contract, owner, account1, account2, account3 };
   }
@@ -39,8 +39,8 @@ describe("Lock", function () {
   });
 
   describe("SafeMint", function () {
-    describe("Valicdation", function () {
-      it("should revert if called other than the minter", async function() {
+    describe("Validation", function () {
+      it("should revert if called other than the operator", async function() {
         const { contract, owner, account1 } = await loadFixture(deployContractFixture);
 
         await expect(contract.connect(account1).safeMint(account1.address)).to.be.revertedWith(
@@ -64,12 +64,11 @@ describe("Lock", function () {
         );
       });
     });
-
   });
 
   describe("BatchMint", function () {
-    describe("Valicdation", function () {
-      it("should revert if called other than the minter", async function() {
+    describe("Validation", function () {
+      it("should revert if called other than the operator", async function() {
         const { contract, owner, account1 } = await loadFixture(deployContractFixture);
 
         await expect(contract.connect(account1).batchMint([account1.address])).to.be.revertedWith(
@@ -111,4 +110,52 @@ describe("Lock", function () {
     });
   });
 
+  describe("Pause", function () {
+    describe("Validation", function () {
+      it("pause : should revert if called other than the operator", async function() {
+        const { contract, owner, account1 } = await loadFixture(deployContractFixture);
+
+        await expect(contract.connect(account1).pause()).to.be.revertedWith(
+          "AccessControl: account "
+          + account1.address.toLowerCase()
+          + " is missing role "
+          + MINTER_ROLE
+        );
+      });
+
+      it("unpause : should revert if called other than the operator", async function() {
+        const { contract, owner, account1 } = await loadFixture(deployContractFixture);
+
+        await expect(contract.connect(account1).unpause()).to.be.revertedWith(
+          "AccessControl: account "
+          + account1.address.toLowerCase()
+          + " is missing role "
+          + MINTER_ROLE
+        );
+      });
+    });
+
+    describe("Pause", function () {
+      it("should pause", async function() {
+        const { contract, owner } = await loadFixture(deployContractFixture);
+
+        await contract.connect(owner).pause();
+
+        expect(await contract.paused()).to.be.equal(
+          true
+        );
+      });
+
+      it("should unpause", async function() {
+        const { contract, owner } = await loadFixture(deployContractFixture);
+
+        await contract.connect(owner).pause();
+        await contract.connect(owner).unpause();
+
+        expect(await contract.paused()).to.be.equal(
+          false
+        );
+      });
+    });
+  });
 });
