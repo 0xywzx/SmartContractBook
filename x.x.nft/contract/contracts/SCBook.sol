@@ -58,6 +58,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
      * Variables *
      *************/
     Counters.Counter private _tokenIdCounter;
+    bool public isTransferAllowed = false;
 
     // @notice Token metadata with Metadata struct
     mapping (uint256 => Metadata) private _metadata;
@@ -120,6 +121,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         public
         onlyRole(MINTER_ROLE)
     {
+        require(!isTransferAllowed, "Minting is not allowed after enabling transfers");
         // start from 1
         _tokenIdCounter.increment();
         uint256 tokenId = _tokenIdCounter.current();
@@ -143,7 +145,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         _safeMint(to, tokenId);
     }
 
-    function batchMint(address[] memory to) public onlyRole(MINTER_ROLE) {
+    function batchMint(address[] memory to) external onlyRole(MINTER_ROLE) {
         for(uint8 i = 0; i < to.length; i ++) {
             safeMint(to[i]);
         }
@@ -156,12 +158,17 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     /********************************
      * DEFAULT_ADMIN_ROLE Functions *
      ********************************/
-    function pause() public onlyRole(DEFAULT_ADMIN_ROLE) {
+    function pause() external onlyRole(DEFAULT_ADMIN_ROLE) {
         _pause();
     }
 
-    function unpause() public onlyRole(DEFAULT_ADMIN_ROLE) {
+    function unpause() external onlyRole(DEFAULT_ADMIN_ROLE) {
         _unpause();
+    }
+
+    function allowTransfers() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        // Allow transfers
+        isTransferAllowed = true;
     }
 
     /**********
@@ -172,6 +179,10 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         whenNotPaused
         override(ERC721, ERC721Enumerable)
     {
+        if(from != address(0)) {
+            require(isTransferAllowed, "Transfers not allowed yet");
+        }
+
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 

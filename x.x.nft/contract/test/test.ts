@@ -36,6 +36,13 @@ describe("Lock", function () {
       expect(await contract.hasRole(MINTER_ROLE, owner.address)).to.equal(true);
     });
 
+    it("should transfer is not allowed", async function () {
+      const { contract } = await loadFixture(deployContractFixture);
+
+      expect(await contract.isTransferAllowed()).to.be.equal(
+        false
+      );
+    });
   });
 
   describe("SafeMint", function () {
@@ -119,7 +126,7 @@ describe("Lock", function () {
           "AccessControl: account "
           + account1.address.toLowerCase()
           + " is missing role "
-          + MINTER_ROLE
+          + DEFAULT_ADMIN_ROLE
         );
       });
 
@@ -130,7 +137,7 @@ describe("Lock", function () {
           "AccessControl: account "
           + account1.address.toLowerCase()
           + " is missing role "
-          + MINTER_ROLE
+          + DEFAULT_ADMIN_ROLE
         );
       });
     });
@@ -154,6 +161,48 @@ describe("Lock", function () {
 
         expect(await contract.paused()).to.be.equal(
           false
+        );
+      });
+    });
+  });
+
+  describe("AllowTransfers", function () {
+    describe("Validation", function () {
+      it("should revert if called other than the operator", async function() {
+        const { contract, owner, account1 } = await loadFixture(deployContractFixture);
+
+        await expect(contract.connect(account1).allowTransfers()).to.be.revertedWith(
+          "AccessControl: account "
+          + account1.address.toLowerCase()
+          + " is missing role "
+          + DEFAULT_ADMIN_ROLE
+        );
+      });
+
+      it("should revert if called when not allowed", async function() {
+        const { contract, owner, account1, account2 } = await loadFixture(deployContractFixture);
+
+        await contract.safeMint(account1.address);
+
+        await expect(contract.connect(account1).transferFrom(
+           account1.address,
+           account2.address,
+           1
+        )).to.be.revertedWith(
+          "Transfers not allowed yet"
+        );
+      });
+    });
+
+    describe("AllowTransfers", function () {
+
+      it("should allow transfers", async function() {
+        const { contract, owner } = await loadFixture(deployContractFixture);
+
+        await contract.connect(owner).allowTransfers();
+
+        expect(await contract.isTransferAllowed()).to.be.equal(
+          true
         );
       });
     });
