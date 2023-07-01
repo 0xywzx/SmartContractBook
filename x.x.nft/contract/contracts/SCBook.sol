@@ -119,8 +119,9 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl {
         public
         onlyRole(MINTER_ROLE)
     {
-        uint256 tokenId = _tokenIdCounter.current();
+        // start from 1
         _tokenIdCounter.increment();
+        uint256 tokenId = _tokenIdCounter.current();
 
         uint256 randomNumber = uint256(
             keccak256(

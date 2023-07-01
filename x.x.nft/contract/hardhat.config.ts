@@ -36,8 +36,16 @@ const config: HardhatUserConfig = {
     }
   },
   etherscan: {
-    apiKey: apiKey,
+    apiKey: "apiKey",
   },
+  gasReporter: {
+    enabled: true,
+    currency: 'USD',
+    token: 'AVAX',
+    // gasPrice: 10,
+    gasPriceApi: 'https://api.snowtrace.io/api?module=proxy&action=eth_gasPrice',
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+  }
 };
 
 export default config;

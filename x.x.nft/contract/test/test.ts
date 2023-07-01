@@ -21,11 +21,7 @@ describe("Lock", function () {
 
     const ContractFactory = await ethers.getContractFactory("SCBook");
 
-    // https://docs.chain.link/vrf/v2/direct-funding/supported-networks
-    const contract = await ContractFactory.deploy(
-      "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846", // LINK Token on fuji
-      "0x9345AC54dA4D0B5Cda8CB749d8ef37e5F02BBb21" // VRF Wrapper on fuji
-    );
+    const contract = await ContractFactory.deploy();
 
     return { contract, owner, account1, account2, account3 };
   }
@@ -98,12 +94,19 @@ describe("Lock", function () {
         await contract.batchMint([
           account1.address,
           account2.address,
-          account3.address
+          account3.address,
+          account1.address,
+          account2.address,
+          account3.address,
+          account1.address,
+          account2.address,
+          account3.address,
+          account1.address
         ]);
 
-        expect(await contract.balanceOf(account1.address)).to.be.equal(1);
-        expect(await contract.balanceOf(account2.address)).to.be.equal(1);
-        expect(await contract.balanceOf(account3.address)).to.be.equal(1);
+        expect(await contract.balanceOf(account1.address)).to.be.equal(4);
+        expect(await contract.balanceOf(account2.address)).to.be.equal(3);
+        expect(await contract.balanceOf(account3.address)).to.be.equal(3);
       });
     });
   });
