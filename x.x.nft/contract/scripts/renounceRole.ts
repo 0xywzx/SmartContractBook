@@ -16,7 +16,7 @@ async function main() {
   console.log(`txhash : ${tx.hash}`);
 
   await tx.wait(1)
-  console.log("Renoounced");
+  console.log("Renounced");
 }
 
 main().catch((error) => {
