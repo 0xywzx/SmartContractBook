@@ -2,6 +2,7 @@
 pragma solidity ^0.8.9;
 
 import './HexStrings.sol';
+import '@openzeppelin/contracts/utils/Strings.sol';
 
 // https://github.com/Uniswap/v3-periphery/blob/b771ff9a20a0fd7c3233df0eb70d4fa084766cde/contracts/libraries/NFTSVG.sol
 library NFTSVG {
@@ -12,6 +13,9 @@ library NFTSVG {
 
         string memory color0 = tokenToColorHex(tokenId + uint256(uint160(owner)), 0);
         string memory color1 = tokenToColorHex(tokenId + randomNumber, 136);
+
+        string memory idString = Strings.toString(tokenId);
+        // string memory ownerAddressString = addressToString(owner);
 
         return
             string(
@@ -41,16 +45,18 @@ library NFTSVG {
                     // rounding
                     '<text text-rendering="optimizeSpeed">',
                     '<textPath startOffset="-100%" fill="black" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
-                    "Smart Contract", // variable
+                    'ID ',
+                    idString,
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /></textPath>',
                     '<textPath startOffset="0%" fill="black" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">'
-                    "Smart Contract", //
+                    'ID ',
+                    idString,
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /> </textPath>',
                     '<textPath startOffset="50%" fill="black" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
-                    "Smart Contract",
+                    addressToString(owner),
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /> </textPath>',
                     '<textPath startOffset="-50%" fill="black" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
-                    "Smart Contract",
+                    addressToString(owner),
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /></textPath></text>',
                     '</svg>'
                 )
@@ -80,6 +86,10 @@ library NFTSVG {
 
     function isRare(uint256 random) internal pure returns (bool) {
         return (random % 49) == 0;
+    }
+
+    function addressToString(address addr) internal pure returns (string memory) {
+        return  (uint256(uint160(addr))).toHexString(20);
     }
 
     // https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/NFTSVG.sol#LL402C1-L405C6

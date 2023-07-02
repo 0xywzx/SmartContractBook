@@ -48,19 +48,19 @@
 
   <text text-rendering="optimizeSpeed">
     <textPath startOffset="-100%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">
-      Smart Contract
+      0xb994bebb・・・9161970539
       <animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" />
     </textPath>
     <textPath startOffset="0%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">
-      Smart Contract
+      0xb994bebb・・・9161970539
       <animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" />
     </textPath>
     <textPath startOffset="50%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">
-      Smart Contract
+      token id : 1
       <animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" />
     </textPath>
     <textPath startOffset="-50%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">
-      Smart Contract
+      token id : 1
       <animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" />
     </textPath>
   </text>

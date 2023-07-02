@@ -7,7 +7,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import type { AppProps } from 'next/app';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { avalanche, goerli } from 'wagmi/chains';
+import { avalanche, avalancheFuji, goerli } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,15 +25,17 @@ export default function RootLayout({
 
   const { chains, publicClient } = configureChains(
     [
-      goerli,
+      avalancheFuji,
       avalanche,
       ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [goerli] : []),
     ],
     [publicProvider()]
   );
 
+  const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID as string;
   const { connectors } = getDefaultWallets({
     appName: 'RainbowKit App',
+    projectId,
     chains,
   });
 

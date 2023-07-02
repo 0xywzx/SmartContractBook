@@ -15,6 +15,8 @@ export default function Home() {
   const { address, isConnected } = useAccount()
   const { chain, chains } = useNetwork()
 
+  const [balance, setBalance] = useState(0);
+  const [currentTokenIdIndex, setCurrentTokenIdIndex] = useState(0);
   const [tokenId, setTokenId] = useState("");
   const [nftImage, setNftImage] = useState("");
   const [rarity, setRarity] = useState("");
@@ -31,13 +33,14 @@ export default function Home() {
       chainId: chain?.id,
     })
 
-    const balance = await contract.read.balanceOf([address])
+    const balance = await contract.read.balanceOf([address]) as number;
     if (balance == 0) {
       setTokenId("");
       setNftImage("");
       setRarity("");
       return
     }
+    if (balance >= 1) { setBalance(Number(balance)) };
 
     const tokenId = await contract.read.tokenOfOwnerByIndex([address, 0]) as string;
     setTokenId(tokenId);
@@ -47,6 +50,40 @@ export default function Home() {
     const decodedData = JSON.parse(window.atob(encodedData));
 
     return decodedData
+  };
+
+  const fetchMetadata = async (index: number) => {
+    if (!address || !chain || !isSupportedChain(chain.id)) return
+
+    const contract = getContract({
+      address: `0x${getContractAddress(chain.id).slice(2)}`,
+      abi: abi.abi,
+      chainId: chain?.id,
+    })
+
+    const tokenId = await contract.read.tokenOfOwnerByIndex([address, index]) as string;
+    setTokenId(tokenId);
+
+    const tokenURI = await contract.read.tokenURI([tokenId]) as string;
+    const encodedData = tokenURI.substring(tokenURI.indexOf(',') + 1);
+    const decodedData = JSON.parse(window.atob(encodedData));
+
+    setRarity(decodedData.attributes[0].value);
+    setNftImage(decodedData.image);
+  };
+
+  const nextNFT = () => {
+    if (currentTokenIdIndex >= balance - 1) return;
+    const nextIndex = currentTokenIdIndex + 1;
+    setCurrentTokenIdIndex(nextIndex);
+    fetchMetadata(nextIndex);
+  };
+
+  const prevNFT = () => {
+    if (currentTokenIdIndex <= 0) return;
+    const prevIndex = currentTokenIdIndex - 1;
+    setCurrentTokenIdIndex(prevIndex);
+    fetchMetadata(prevIndex);
   };
 
   useEffect(() => {
@@ -115,8 +152,30 @@ export default function Home() {
                   <div className="py-4" style={{ maxWidth: '400px' }}>
                     <img src={nftImage} alt="Image" className="max-w-full" />
                   </div>
+                  <div className="flex justify-center my-2">
+                  {currentTokenIdIndex > 0 && (
+                    <button
+                      className="flex items-center justify-center bg-gray-300 hover:bg-gray-400 text-black w-12 h-12 rounded-full"
+                      onClick={prevNFT}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                  )}
+                  {currentTokenIdIndex < balance - 1 && (
+                    <button
+                      className="flex items-center justify-center bg-gray-300 hover:bg-gray-400 text-black w-12 h-12 rounded-full ml-4"
+                      onClick={nextNFT}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  )}
+                  </div>
                   <div className="mb-4">
-                    <p>TokenID: {tokenId}</p>
+                    <p>TokenID: {Number(tokenId)}</p>
                     <p>Rarity: {rarity}</p>
                   </div>
                 </div>
