@@ -42,7 +42,12 @@ export default function Home() {
     }
     if (balance >= 1) { setBalance(Number(balance)) };
 
-    const tokenId = await contract.read.tokenOfOwnerByIndex([address, 0]) as string;
+    const decodedData = await fetchDecodedMetadata(contract, currentTokenIdIndex);
+    return decodedData
+  };
+
+  const fetchDecodedMetadata = async (contract: any, tokenIdIndex: number) => {
+    const tokenId = await contract.read.tokenOfOwnerByIndex([address, tokenIdIndex]) as string;
     setTokenId(tokenId);
 
     const tokenURI = await contract.read.tokenURI([tokenId]) as string;
@@ -50,9 +55,9 @@ export default function Home() {
     const decodedData = JSON.parse(window.atob(encodedData));
 
     return decodedData
-  };
+  }
 
-  const fetchMetadata = async (index: number) => {
+  const fetchNewNFT = async (index: number) => {
     if (!address || !chain || !isSupportedChain(chain.id)) return
 
     const contract = getContract({
@@ -61,29 +66,10 @@ export default function Home() {
       chainId: chain?.id,
     })
 
-    const tokenId = await contract.read.tokenOfOwnerByIndex([address, index]) as string;
-    setTokenId(tokenId);
-
-    const tokenURI = await contract.read.tokenURI([tokenId]) as string;
-    const encodedData = tokenURI.substring(tokenURI.indexOf(',') + 1);
-    const decodedData = JSON.parse(window.atob(encodedData));
+    const decodedData = await fetchDecodedMetadata(contract, index);
 
     setRarity(decodedData.attributes[0].value);
     setNftImage(decodedData.image);
-  };
-
-  const nextNFT = () => {
-    if (currentTokenIdIndex >= balance - 1) return;
-    const nextIndex = currentTokenIdIndex + 1;
-    setCurrentTokenIdIndex(nextIndex);
-    fetchMetadata(nextIndex);
-  };
-
-  const prevNFT = () => {
-    if (currentTokenIdIndex <= 0) return;
-    const prevIndex = currentTokenIdIndex - 1;
-    setCurrentTokenIdIndex(prevIndex);
-    fetchMetadata(prevIndex);
   };
 
   useEffect(() => {
@@ -127,93 +113,107 @@ export default function Home() {
     }
   }
 
+  const nextNFT = () => {
+    if (currentTokenIdIndex >= balance - 1) return;
+    const nextIndex = currentTokenIdIndex + 1;
+    setCurrentTokenIdIndex(nextIndex);
+    fetchNewNFT(nextIndex);
+  };
+
+  const prevNFT = () => {
+    if (currentTokenIdIndex <= 0) return;
+    const prevIndex = currentTokenIdIndex - 1;
+    setCurrentTokenIdIndex(prevIndex);
+    fetchNewNFT(prevIndex);
+  };
+
   return (
     <main className="flex flex-col items-center justify-center p-24">
       <h1 className="text-3xl font-bold mb-8">Smart Contract Book</h1>
 
       <ConnectButton accountStatus="avatar" />
-        {isWalletConnected ? (
-          <>
-            {chain && !isSupportedChain(chain.id) && (
-              <div className="flex flex-col items-center justify-center mt-4">
-                <p>Please switch to the desired chain to access the content.</p>
-                <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
-                  onClick={handleSwitchChain}
-                >
-                  Switch Chain
-                </button>
-              </div>
-            )}
 
-            {nftImage ? (
-              <>
-                <div className="flex flex-col items-center justify-center">
-                  <div className="py-4" style={{ maxWidth: '400px' }}>
-                    <img src={nftImage} alt="Image" className="max-w-full" />
-                  </div>
-                  <div className="flex justify-center my-2">
-                  {currentTokenIdIndex > 0 && (
-                    <button
-                      className="flex items-center justify-center bg-gray-300 hover:bg-gray-400 text-black w-12 h-12 rounded-full"
-                      onClick={prevNFT}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-                  )}
-                  {currentTokenIdIndex < balance - 1 && (
-                    <button
-                      className="flex items-center justify-center bg-gray-300 hover:bg-gray-400 text-black w-12 h-12 rounded-full ml-4"
-                      onClick={nextNFT}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  )}
-                  </div>
-                  <div className="mb-4">
-                    <p>TokenID: {Number(tokenId)}</p>
-                    <p>Rarity: {rarity}</p>
-                  </div>
-                </div>
-                <button
-                  className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 ${
-                    isProving ? 'opacity-50 cursor-not-allowed' : ''
-                  }`}
-                  onClick={handleSignMessage}
-                  disabled={isProving}
-                >
-                  {isProving ? (
-                    <div className="flex items-center">
-                      <LoadingIcon />
-                      <span>Proving...</span>
-                    </div>
-                  ) : (
-                    'Access Content'
-                  )}
-                </button>
-
-                <div className="mt-8">
-                  {content}
-                </div>
-              </>
-            ) : (
-              <div className="flex flex-col items-center justify-center">
-                <p>This address does not own an NFT.</p>
-              </div>
-            )}
-          </>
-          ) : (
-            <>
-              <div className="flex flex-col items-center justify-center">
-                <p>Please connect your account to access the content.</p>
-              </div>
-            </>
+      {isWalletConnected ? (
+        <>
+          {chain && !isSupportedChain(chain.id) && (
+            <div className="flex flex-col items-center justify-center mt-4">
+              <p>Please switch to the desired chain to access the content.</p>
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
+                onClick={handleSwitchChain}
+              >
+                Switch Chain
+              </button>
+            </div>
           )}
 
+          {nftImage ? (
+            <>
+              <div className="flex flex-col items-center justify-center">
+                <div className="py-4" style={{ maxWidth: '400px' }}>
+                  <img src={nftImage} alt="Image" className="max-w-full" />
+                </div>
+                <div className="flex justify-center my-2">
+                {currentTokenIdIndex > 0 && (
+                  <button
+                    className="flex items-center justify-center bg-gray-300 hover:bg-gray-400 text-black w-12 h-12 rounded-full"
+                    onClick={prevNFT}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                )}
+                {currentTokenIdIndex < balance - 1 && (
+                  <button
+                    className="flex items-center justify-center bg-gray-300 hover:bg-gray-400 text-black w-12 h-12 rounded-full ml-4"
+                    onClick={nextNFT}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                )}
+                </div>
+                <div className="mb-4">
+                  <p>TokenID: {Number(tokenId)}</p>
+                  <p>Rarity: {rarity}</p>
+                </div>
+              </div>
+              <button
+                className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 ${
+                  isProving ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+                onClick={handleSignMessage}
+                disabled={isProving}
+              >
+                {isProving ? (
+                  <div className="flex items-center">
+                    <LoadingIcon />
+                    <span>Proving...</span>
+                  </div>
+                ) : (
+                  'Access Content'
+                )}
+              </button>
+
+              <div className="mt-8">
+                {content}
+              </div>
+            </>
+          ) : (
+            <div className="flex flex-col items-center justify-center">
+              <p>This address does not own an NFT.</p>
+            </div>
+          )}
+        </>
+      ) : (
+        <>
+          <div className="flex flex-col items-center justify-center">
+            <p>Please connect your account to access the content.</p>
+          </div>
+        </>
+      )}
     </main>
   )
 }
