@@ -36,7 +36,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         // mint for operation test
         uint256 tokenId = MAX_SUPPLY + 1;
         _metadata[tokenId] = Metadata({
-            random: 49 * block.timestamp * i
+            random: 49 * block.timestamp * MAX_SUPPLY
         });
         _safeMint(msg.sender, tokenId);
     }
