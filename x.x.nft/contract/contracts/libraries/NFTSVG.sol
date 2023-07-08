@@ -15,7 +15,7 @@ library NFTSVG {
         string memory color1 = tokenToColorHex(tokenId + randomNumber, 136);
 
         string memory idString = Strings.toString(tokenId);
-        // string memory ownerAddressString = addressToString(owner);
+        string memory ownerAddressString = addressToShortString(owner);
 
         return
             string(
@@ -53,10 +53,10 @@ library NFTSVG {
                     idString,
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /> </textPath>',
                     '<textPath startOffset="50%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
-                    addressToShortString(owner),
+                    ownerAddressString,
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /> </textPath>',
                     '<textPath startOffset="-50%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
-                    addressToShortString(owner),
+                    ownerAddressString,
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /></textPath></text>',
                     '</svg>'
                 )
