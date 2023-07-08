@@ -23,7 +23,9 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
-    hardhat: { },
+    hardhat: {
+      blockGasLimit: 3000000000,
+    },
     fuji: {
       url: process.env.FUJI_RPC,
       chainId: 43113,

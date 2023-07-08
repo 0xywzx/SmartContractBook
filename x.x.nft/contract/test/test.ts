@@ -112,14 +112,14 @@ describe("Lock", function () {
       it("should revert if max supply is reached", async function() {
         const { contract, account1 } = await loadFixture(deployContractFixture);
 
-        const batchSize = 100;
+        const batchSize = 200;
 
         // create an array of `account1.address` of length `MAX_SUPPLY`
         const addressArray = Array(batchSize).fill(account1.address);
 
         // mint nfts to reach max supply
         for(let i = 0; i < MAX_SUPPLY/batchSize; i++) {
-            await contract.batchMint(addressArray);
+          await contract.batchMint(addressArray);
         }
 
         await expect(
