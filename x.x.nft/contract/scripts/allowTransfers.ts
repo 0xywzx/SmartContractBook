@@ -9,14 +9,11 @@ async function main() {
 
   const account = await ethers.getSigners();
 
-  const tx = await nftContract.renounceRole(
-    account[0].address,
-    ethers.utils.keccak256(ethers.utils.toUtf8Bytes('MINTER_ROLE'))
-  );
+  const tx = await nftContract.allowTransfers();
   console.log(`txhash : ${tx.hash}`);
 
   await tx.wait(1)
-  console.log("Renounced");
+  console.log("allowTransfers enabeled");
 }
 
 main().catch((error) => {

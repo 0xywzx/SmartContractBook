@@ -6,6 +6,7 @@ import { db } from "../../utils/firebase"
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
+  const tokenIdIndex = Number(searchParams.get('tokenIdIndex'));
   const chainId = Number(searchParams.get('chainId'));
   const sessionId = searchParams.get('sessionId') as string;
   const signature = searchParams.get('signature') as string;
@@ -59,7 +60,7 @@ export async function GET(request: Request) {
   console.log('>【Content/Get】 NFT Owner', recoverdAddress);
 
   // Get NFT rarity
-  const tokenId = await contract.tokenOfOwnerByIndex(recoverdAddress, 0)
+  const tokenId = await contract.tokenOfOwnerByIndex(recoverdAddress, tokenIdIndex) as string;
   const tokenURI = await contract.tokenURI(tokenId) as string;
 
   const encodedData = tokenURI.substring(tokenURI.indexOf(',') + 1);

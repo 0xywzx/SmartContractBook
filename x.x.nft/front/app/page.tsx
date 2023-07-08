@@ -102,7 +102,12 @@ export default function Home() {
       console.log('signature', signature);
 
       console.log('fetching content');
-      const content = await readContent(chain?.id as number, session.sessionId, signature);
+      const content = await readContent(
+        currentTokenIdIndex,
+        chain?.id as number,
+        session.sessionId,
+        signature
+      );
       setContent(content.content);
       console.log('successfully fetched content');
     } catch (error) {
