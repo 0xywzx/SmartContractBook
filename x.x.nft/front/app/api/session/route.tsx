@@ -9,7 +9,7 @@ export async function POST() {
 
   // 任意の文字列の生成
   const message: string = ethers.keccak256(ethers.randomBytes(32));
-  console.log('>【Session/Post】 Created a Message: ' + message);
+  console.log('>【Session/Post】Created a Message: ' + message);
 
   const docRef = await db.collection('sessions').add({
     message: message,

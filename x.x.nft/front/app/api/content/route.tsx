@@ -17,7 +17,7 @@ export async function GET(request: Request) {
   const session = doc.data();
 
   if (!session) {
-    console.log('>【Content/Get】 No session');
+    console.log('>【Content/Get No session');
     return NextResponse.json({
       content: 'No session'
     });
@@ -29,14 +29,14 @@ export async function GET(request: Request) {
     })
   };
 
-  console.log('>【Content/Get】 Successfully fetched session : ', sessionId);
+  console.log('>【Content/Get】Successfully fetched session : ', sessionId);
 
   // recover address from signature and message
   const recoverdAddress = await ethers.verifyMessage(
     session.message,
     signature
   ) as string;
-  console.log('>【Content/Get】 Recovered Address : ' + recoverdAddress);
+  console.log('>【Content/Get】Recovered Address : ' + recoverdAddress);
 
   // Check if the address is the owner of the NFT
   const abi = [
@@ -52,14 +52,15 @@ export async function GET(request: Request) {
   const balance = await contract.balanceOf(recoverdAddress);
 
   if (balance == 0) {
-    console.log('>【Content/Get】 Not NFT Owner ', recoverdAddress);
+    console.log('>【Content/Get】Not NFT Owner ', recoverdAddress);
     return NextResponse.json({
       content: 'Not NFT Owner'
     });
   };
-  console.log('>【Content/Get】 NFT Owner', recoverdAddress);
+  console.log('>【Content/Get】NFT Owner', recoverdAddress);
 
   // Get NFT rarity
+  console.log('>【Content/Get】Token index', tokenIdIndex);
   const tokenId = await contract.tokenOfOwnerByIndex(recoverdAddress, tokenIdIndex) as string;
   const tokenURI = await contract.tokenURI(tokenId) as string;
 

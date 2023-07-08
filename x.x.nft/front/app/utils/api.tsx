@@ -19,13 +19,13 @@ export const createSession = async () => {
 }
 
 export const readContent = async (
-  tokenIndex: number,
+  tokenIdIndex: number,
   chainId: number,
   sessionId: string,
   signature: string
 ) => {
   const params = new URLSearchParams();
-  params.append("tokenIndex", String(tokenIndex));
+  params.append("tokenIdIndex", String(tokenIdIndex));
   params.append("chainId", String(chainId));
   params.append("sessionId", sessionId);
   params.append("signature", signature);
