@@ -33,30 +33,30 @@ library NFTSVG {
                     '</defs>',
                     '<rect width="100%" height="100%" rx="12" fill="url(#gradient)" />',
                     // border
-                    '<rect width="90" height="90" x="5" y="5" rx="10" stroke-width="0.5" stroke="black" />',
+                    '<rect width="90" height="90" x="5" y="5" rx="10" stroke-width="0.5" stroke="white" />',
                     // title
-                    '<text text-anchor="middle" x="50" y="30" fill="black" font-size="6" font-weight="bold">',
+                    '<text text-anchor="middle" x="50" y="30" fill="white" font-size="6" font-weight="bold">',
                     "Smart Contract", // variable
                     '</text>',
                     // icon
-                    '<path d="M 40 60 L 60 60 L 55 70 L 45 70 Z" fill="#000000"/><path d="M 65 55 L 35 55 L 40 45 L 60 45 Z" fill="#000000"/>',
+                    '<path d="M 40 60 L 60 60 L 55 70 L 45 70 Z" fill="#ffffff"/><path d="M 65 55 L 35 55 L 40 45 L 60 45 Z" fill="#ffffff"/>',
                     // rare
                     generateSVGRare(randomNumber),
                     // rounding
                     '<text text-rendering="optimizeSpeed">',
-                    '<textPath startOffset="-100%" fill="black" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
+                    '<textPath startOffset="-100%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
                     'ID ',
                     idString,
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /></textPath>',
-                    '<textPath startOffset="0%" fill="black" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">'
+                    '<textPath startOffset="0%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">'
                     'ID ',
                     idString,
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /> </textPath>',
-                    '<textPath startOffset="50%" fill="black" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
-                    addressToString(owner),
+                    '<textPath startOffset="50%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
+                    addressToShortString(owner),
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /> </textPath>',
-                    '<textPath startOffset="-50%" fill="black" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
-                    addressToString(owner),
+                    '<textPath startOffset="-50%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
+                    addressToShortString(owner),
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /></textPath></text>',
                     '</svg>'
                 )
@@ -88,13 +88,20 @@ library NFTSVG {
         return (random % 49) == 0;
     }
 
-    function addressToString(address addr) internal pure returns (string memory) {
-        return  (uint256(uint160(addr))).toHexString(20);
+    function addressToShortString(address _addr) public pure returns(string memory) {
+        string memory addr = (uint256(uint160(_addr))).toHexString(20);
+        string memory prefix = substring(addr, 0, 7);
+        string memory suffix = substring(addr, 39, 42);
+        return string(abi.encodePacked(prefix, '...', suffix));
     }
 
-    // https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/NFTSVG.sol#LL402C1-L405C6
-    // function isRare(uint256 tokenId, address poolAddress) internal pure returns (bool) {
-    //     bytes32 h = keccak256(abi.encodePacked(tokenId, poolAddress));
-    //     return uint256(h) < type(uint256).max / (1 + BitMath.mostSignificantBit(tokenId) * 2);
-    // }
+    function substring(string memory str, uint startIndex, uint endIndex) public pure returns (string memory) {
+        bytes memory strBytes = bytes(str);
+        bytes memory result = new bytes(endIndex-startIndex);
+        for(uint i = startIndex; i < endIndex; i++) {
+            result[i-startIndex] = strBytes[i];
+        }
+        return string(result);
+    }
+
 }
