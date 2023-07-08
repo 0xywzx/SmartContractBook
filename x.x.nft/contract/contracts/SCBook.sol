@@ -68,7 +68,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
 
     // @struct NFT metadata format
     struct Metadata {
-        address owner;
         uint256 random;
     }
 
@@ -83,7 +82,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         Metadata memory metadata = _metadata[_tokenId];
         string memory image = Base64.encode(bytes(NFTSVG.generateSVG(
             _tokenId,
-            metadata.owner,
+            ownerOf(_tokenId),
             metadata.random
         )));
         string memory traitType = NFTSVG.isRare(metadata.random) ? "rare" : "common";
@@ -137,7 +136,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         );
 
         _metadata[tokenId] = Metadata({
-            owner: to,
             random: randomNumber
         });
 
