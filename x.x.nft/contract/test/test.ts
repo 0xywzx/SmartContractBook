@@ -5,6 +5,7 @@ import { ethers } from "hardhat";
 
 describe("Lock", function () {
 
+  let MAX_SUPPLY = 1200
   let DEFAULT_ADMIN_ROLE
   = '0x0000000000000000000000000000000000000000000000000000000000000000'
   let MINTER_ROLE = ethers.utils.keccak256(ethers.utils.toUtf8Bytes('MINTER_ROLE'))
@@ -43,6 +44,14 @@ describe("Lock", function () {
         false
       );
     });
+
+    it("should set max supply", async function () {
+      const { contract } = await loadFixture(deployContractFixture);
+
+      expect(await contract.MAX_SUPPLY()).to.be.equal(
+        MAX_SUPPLY
+      );
+    });
   });
 
   describe("SafeMint", function () {
@@ -57,6 +66,20 @@ describe("Lock", function () {
           + MINTER_ROLE
         );
       });
+
+      // commented out because it takes too long
+      // it("should revert if max supply is reached", async function() {
+      //   const { contract, account1 } = await loadFixture(deployContractFixture);
+
+      //   // mint nft to reach max supply
+      //   for (let i = 0; i < MAX_SUPPLY; i++) {
+      //     await contract.safeMint(account1.address);
+      //   }
+
+      //   await expect(contract.safeMint(account1.address)).to.be.revertedWith(
+      //     "Max supply reached"
+      //   );
+      // });
     });
 
     describe("Mint", function () {
@@ -84,6 +107,24 @@ describe("Lock", function () {
           + " is missing role "
           + MINTER_ROLE
         );
+      });
+
+      it("should revert if max supply is reached", async function() {
+        const { contract, account1 } = await loadFixture(deployContractFixture);
+
+        const batchSize = 100;
+
+        // create an array of `account1.address` of length `MAX_SUPPLY`
+        const addressArray = Array(batchSize).fill(account1.address);
+
+        // mint nfts to reach max supply
+        for(let i = 0; i < MAX_SUPPLY/batchSize; i++) {
+            await contract.batchMint(addressArray);
+        }
+
+        await expect(
+          contract.safeMint(account1.address)
+        ).to.be.revertedWith("Max supply reached");
       });
     });
 

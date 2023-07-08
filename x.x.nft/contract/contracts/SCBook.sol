@@ -34,9 +34,8 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         _grantRole(MINTER_ROLE, msg.sender);
 
         // uint256 admins = 2;
-        // uint256 max = type(uint256).max - 1;
-        // for(uint256 i = 0; i < admins; i ++) {
-        //     uint256 tokenId = max - i;
+        // for(uint256 i = 1; i <= admins; i ++) {
+        //     uint256 tokenId = MAX_SUPPLY + i;
         //     _metadata[tokenId] = Metadata({
         //         owner: msg.sender,
         //         random: 49 * block.timestamp * i
@@ -49,7 +48,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     /*************
      * Constants *
      *************/
-
+    uint256 public constant MAX_SUPPLY = 1200;
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     string public constant nftName = "Smart Contract Book";
     string public constant description = "Smart Contract Book NFT";
@@ -122,9 +121,11 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         onlyRole(MINTER_ROLE)
     {
         require(!isTransferAllowed, "Minting is not allowed after enabling transfers");
+
         // start from 1
         _tokenIdCounter.increment();
         uint256 tokenId = _tokenIdCounter.current();
+        require(tokenId <= MAX_SUPPLY, "Max supply reached");
 
         uint256 randomNumber = uint256(
             keccak256(
