@@ -120,8 +120,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         public
         onlyRole(MINTER_ROLE)
     {
-        require(!isTransferAllowed, "Minting is not allowed after enabling transfers");
-
         // start from 1
         _tokenIdCounter.increment();
         uint256 tokenId = _tokenIdCounter.current();
