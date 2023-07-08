@@ -90,8 +90,8 @@ library NFTSVG {
 
     function addressToShortString(address _addr) public pure returns(string memory) {
         string memory addr = (uint256(uint160(_addr))).toHexString(20);
-        string memory prefix = substring(addr, 0, 7);
-        string memory suffix = substring(addr, 39, 42);
+        string memory prefix = substring(addr, 0, 8);
+        string memory suffix = substring(addr, 34, 42);
         return string(abi.encodePacked(prefix, '...', suffix));
     }
 
