@@ -33,16 +33,12 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(MINTER_ROLE, msg.sender);
 
-        // uint256 admins = 2;
-        // for(uint256 i = 1; i <= admins; i ++) {
-        //     uint256 tokenId = MAX_SUPPLY + i;
-        //     _metadata[tokenId] = Metadata({
-        //         owner: msg.sender,
-        //         random: 49 * block.timestamp * i
-        //     });
-
-        //     _safeMint(msg.sender, tokenId);
-        // }
+        // mint for operation test
+        uint256 tokenId = MAX_SUPPLY + 1;
+        _metadata[tokenId] = Metadata({
+            random: 49 * block.timestamp * i
+        });
+        _safeMint(msg.sender, tokenId);
     }
 
     /*************
