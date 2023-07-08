@@ -69,7 +69,11 @@ export async function GET(request: Request) {
   const rarity = decodedData.attributes[0].value as string;
   console.log('>【Content/Get】NFT rarity', rarity);
 
-  const content = rarity == "rare" ? "Secret content" : "Common content";
+  const collectionId = chainId == 43114 ? "contents" : "testContents";
+  const contentDoc =
+    await db.collection(collectionId).doc(rarity).get();
+
+  const content = contentDoc.data()!.content;
   console.log('-----------------');
 
   return NextResponse.json({

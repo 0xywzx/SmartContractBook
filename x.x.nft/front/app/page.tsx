@@ -197,19 +197,18 @@ export default function Home() {
                 )}
               </button>
 
-              <div className="mt-8">
-                {content}
-              </div>
+              {/* content */}
+              <div className="mt-8" dangerouslySetInnerHTML={{ __html: content }} />
             </>
           ) : (
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center my-8">
               <p>This address does not own an NFT.</p>
             </div>
           )}
         </>
       ) : (
         <>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center my-8">
             <p>Please connect your account to access the content.</p>
           </div>
         </>
