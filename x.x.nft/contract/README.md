@@ -18,4 +18,6 @@ npx hardhat run scripts/batchMint.ts --network fuji
 // check set tokenURI on hardhat
 npx hardhat run scripts/testCall.ts --network hardhat
 
+// verify contract on etherscan
+npx hardhat verify --network <network-name> <contract-address>
 ```
