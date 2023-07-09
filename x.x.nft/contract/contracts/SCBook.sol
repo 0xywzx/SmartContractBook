@@ -61,7 +61,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     /**********
      * struct *
      **********/
-
     // @struct NFT metadata format
     struct Metadata {
         uint256 random;
@@ -70,7 +69,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     /*************************
      * Public View Functions *
      *************************/
-
     // @notice Return tokenURI with url format if _urlMetadata is existed
     // Return tokenURL with encoded JSON format if _urlMetadata is not existed
     function tokenURI(uint256 _tokenId) public view override(ERC721) returns (string memory) {
@@ -110,7 +108,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     /*************************
      * MINTER_ROLE Functions *
      *************************/
-
     function safeMint(address to)
         public
         onlyRole(MINTER_ROLE)
@@ -144,10 +141,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         }
     }
 
-    function _burn(uint256 tokenId) internal override(ERC721) {
-        super._burn(tokenId);
-    }
-
     /********************************
      * DEFAULT_ADMIN_ROLE Functions *
      ********************************/
@@ -164,9 +157,13 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         isTransferAllowed = true;
     }
 
-    /**********
-     * Utils *
-     **********/
+    /*********************
+     * Internal Function *
+     *********************/
+    function _burn(uint256 tokenId) internal override(ERC721) {
+        super._burn(tokenId);
+    }
+
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
         internal
         whenNotPaused

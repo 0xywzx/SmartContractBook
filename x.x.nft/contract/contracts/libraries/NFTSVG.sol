@@ -45,7 +45,7 @@ library NFTSVG {
                     // rounding
                     '<text text-rendering="optimizeSpeed">',
                     '<textPath startOffset="-100%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">',
-                    'ID ',
+                    'token id : ',
                     idString,
                     '<animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" /></textPath>',
                     '<textPath startOffset="0%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">'

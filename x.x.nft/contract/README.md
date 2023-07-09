@@ -10,13 +10,16 @@ npx hardhat test
 REPORT_GAS=true npx hardhat test
 
 // contract deployment on testnet
-npx hardhat run scripts/deploy.ts --network fuji
+npx hardhat run scripts/deploy.ts --network <network-name>
 
-// batch mint on testnet (set contract address and to addresses before execution)
-npx hardhat run scripts/batchMint.ts --network fuji
+// batch mint on testnet
+npx hardhat run scripts/batchMint.ts --network <network-name>
 
 // check set tokenURI on hardhat
-npx hardhat run scripts/testCall.ts --network hardhat
+npx hardhat run scripts/testCall.ts --network <network-name>
+
+// execute allowTransfer
+mpx hardhat run script/allowTransfers.ts --network <network-name>
 
 // verify contract on etherscan
 npx hardhat verify --network <network-name> <contract-address>
