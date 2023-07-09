@@ -26,7 +26,9 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     // @dev counter for token id
     using Counters for Counters.Counter;
 
-    constructor()
+    constructor(
+        address _operator
+    )
         ERC721("SCBook", "SCB")
     {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
@@ -37,7 +39,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         _metadata[tokenId] = Metadata({
             random: 49 * block.timestamp * MAX_SUPPLY
         });
-        _safeMint(msg.sender, tokenId);
+        _safeMint(_operator, tokenId);
     }
 
     /*************

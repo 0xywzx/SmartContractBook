@@ -10,7 +10,9 @@ async function main() {
 
   const NFTContract = await ethers.getContractFactory("SCBook");
 
-  const nftContract = await NFTContract.deploy();
+  const nftContract = await NFTContract.deploy(
+    process.env.OPERATOR_ADDRESS as string,
+  );
   await nftContract.deployed();
   console.log(`Deployed address : ${nftContract.address}`);
   saveContractAddress(network.name, "NFT", nftContract.address);

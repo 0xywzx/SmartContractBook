@@ -17,14 +17,17 @@ describe("Lock", function () {
       owner,
       account1,
       account2,
-      account3
+      account3,
+      operator
     ] = await ethers.getSigners();
 
     const ContractFactory = await ethers.getContractFactory("SCBook");
 
-    const contract = await ContractFactory.connect(owner).deploy();
+    const contract = await ContractFactory.connect(owner).deploy(
+      operator.address
+    );
 
-    return { contract, owner, account1, account2, account3 };
+    return { contract, owner, account1, account2, account3, operator };
   }
 
   describe("Deployment", function () {
@@ -52,6 +55,14 @@ describe("Lock", function () {
         MAX_SUPPLY
       );
     });
+
+    it("should operator has NFT", async function () {
+      const { contract, operator } = await loadFixture(deployContractFixture);
+
+      expect(await contract.balanceOf(operator.address)).to.be.equal(
+        1
+      );
+    })
   });
 
   describe("SafeMint", function () {
