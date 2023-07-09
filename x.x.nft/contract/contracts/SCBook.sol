@@ -26,7 +26,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     // @dev counter for token id
     using Counters for Counters.Counter;
 
-    // https://docs.chain.link/vrf/v2/direct-funding/supported-networks
     constructor()
         ERC721("SCBook", "SCB")
     {
@@ -55,13 +54,11 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     Counters.Counter private _tokenIdCounter;
     bool public isTransferAllowed = false;
 
-    // @notice Token metadata with Metadata struct
     mapping (uint256 => Metadata) private _metadata;
 
     /**********
      * struct *
      **********/
-    // @struct NFT metadata format
     struct Metadata {
         uint256 random;
     }
@@ -69,8 +66,6 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     /*************************
      * Public View Functions *
      *************************/
-    // @notice Return tokenURI with url format if _urlMetadata is existed
-    // Return tokenURL with encoded JSON format if _urlMetadata is not existed
     function tokenURI(uint256 _tokenId) public view override(ERC721) returns (string memory) {
 
         Metadata memory metadata = _metadata[_tokenId];

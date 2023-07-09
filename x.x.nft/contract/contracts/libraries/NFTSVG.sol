@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: MIT
+// This code is inspired by the Uniswap V3 NFT SVG generator:
+// https://github.com/Uniswap/v3-periphery/blob/b771ff9a20a0fd7c3233df0eb70d4fa084766cde/contracts/libraries/NFTSVG.sol
+
 pragma solidity ^0.8.9;
 
 import './HexStrings.sol';
 import '@openzeppelin/contracts/utils/Strings.sol';
 
-// https://github.com/Uniswap/v3-periphery/blob/b771ff9a20a0fd7c3233df0eb70d4fa084766cde/contracts/libraries/NFTSVG.sol
 library NFTSVG {
 
     using HexStrings for uint256;
@@ -63,11 +65,6 @@ library NFTSVG {
             );
     }
 
-    // https://github.com/Uniswap/v3-periphery/blob/6cce88e63e176af1ddb6cc56e029110289622317/contracts/libraries/NFTDescriptor.sol#L462-L464C1
-    function tokenToColorHex(uint256 token, uint256 offset) public pure returns (string memory str) {
-        return string((token >> offset).toHexStringNoPrefix(3));
-    }
-
     function generateSVGRare(uint256 random) private pure returns (string memory svg) {
         if (isRare(random)) {
             svg = string(
@@ -104,4 +101,9 @@ library NFTSVG {
         return string(result);
     }
 
+    // Copied from :
+    // https://github.com/Uniswap/v3-periphery/blob/6cce88e63e176af1ddb6cc56e029110289622317/contracts/libraries/NFTDescriptor.sol#L462-L464C1
+    function tokenToColorHex(uint256 token, uint256 offset) public pure returns (string memory str) {
+        return string((token >> offset).toHexStringNoPrefix(3));
+    }
 }
