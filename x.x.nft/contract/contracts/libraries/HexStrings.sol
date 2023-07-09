@@ -1,6 +1,6 @@
+// SPDX-License-Identifier: MIT
 // This library is same as Uniswap V3 HexStrings.sol
 // https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/HexStrings.sol
-// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
 library HexStrings {
