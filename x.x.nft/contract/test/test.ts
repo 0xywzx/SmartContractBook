@@ -130,18 +130,20 @@ describe("Lock", function () {
         const batchSize = 200;
 
         // create an array of `account1.address` of length `MAX_SUPPLY`
-        const addressArray = Array(batchSize).fill(account1.address);
+        let addressArray = Array(batchSize).fill(account1.address);
 
         // mint nfts to reach max supply
         for(let i = 0; i < MAX_SUPPLY/batchSize; i++) {
           if (i === Math.floor(MAX_SUPPLY / batchSize) - 1) {
-            await expect(
-              contract.batchMint(addressArray)
-            ).to.be.revertedWith("Max supply reached");
-          } else {
-            await contract.batchMint(addressArray);
+            addressArray = Array(batchSize - 1).fill(account1.address);
           }
+          console.log(addressArray.length);
+          await contract.batchMint(addressArray);
         }
+
+        await expect(
+          contract.safeMint(account1.address)
+        ).to.be.revertedWith("Max supply reached");
       });
     });
 
