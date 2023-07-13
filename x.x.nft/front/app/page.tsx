@@ -203,7 +203,7 @@ export default function Home() {
               </button>
 
               {/* content */}
-              <div className="mt-8" dangerouslySetInnerHTML={{ __html: content }} />
+              <div className="mx-8 mt-8 md:w-1/2 w-full" dangerouslySetInnerHTML={{ __html: content }} />
             </>
           ) : (
             <div className="flex flex-col items-center justify-center my-8">

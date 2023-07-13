@@ -22,5 +22,5 @@ npx hardhat run scripts/testCall.ts --network <network-name>
 mpx hardhat run script/allowTransfers.ts --network <network-name>
 
 // verify contract on etherscan
-npx hardhat verify --network <network-name> <contract-address>
+npx hardhat verify --network <network-name> <contract-address> "constructor argument"
 ```
