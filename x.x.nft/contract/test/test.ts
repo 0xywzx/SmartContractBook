@@ -21,7 +21,7 @@ describe("Lock", function () {
       operator
     ] = await ethers.getSigners();
 
-    const ContractFactory = await ethers.getContractFactory("SCBook");
+    const ContractFactory = await ethers.getContractFactory("SmartContractBook");
 
     const contract = await ContractFactory.connect(owner).deploy(
       operator.address
@@ -61,6 +61,10 @@ describe("Lock", function () {
 
       expect(await contract.balanceOf(operator.address)).to.be.equal(
         1
+      );
+
+      expect(await contract.ownerOf(MAX_SUPPLY)).to.be.equal(
+        operator.address
       );
     })
   });
@@ -130,12 +134,14 @@ describe("Lock", function () {
 
         // mint nfts to reach max supply
         for(let i = 0; i < MAX_SUPPLY/batchSize; i++) {
-          await contract.batchMint(addressArray);
+          if (i === Math.floor(MAX_SUPPLY / batchSize) - 1) {
+            await expect(
+              contract.batchMint(addressArray)
+            ).to.be.revertedWith("Max supply reached");
+          } else {
+            await contract.batchMint(addressArray);
+          }
         }
-
-        await expect(
-          contract.safeMint(account1.address)
-        ).to.be.revertedWith("Max supply reached");
       });
     });
 

@@ -8,7 +8,7 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const NFTContract = await ethers.getContractFactory("SCBook");
+  const NFTContract = await ethers.getContractFactory("SmartContractBook");
 
   const nftContract = await NFTContract.deploy(
     process.env.OPERATOR_ADDRESS as string,

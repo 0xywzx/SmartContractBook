@@ -3,7 +3,7 @@ import { getContractAddress } from "./contractAddress";
 
 async function main() {
 
-  const NFTContract = await ethers.getContractFactory("SCBook");
+  const NFTContract = await ethers.getContractFactory("SmartContractBook");
   const contractAddress = getContractAddress(network.name, "NFT");
   const nftContract = NFTContract.attach(contractAddress);
 

@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "SCBook",
-  "sourceName": "contracts/SCBook.sol",
+  "contractName": "SmartContractBook",
+  "sourceName": "contracts/SmartContractBook.sol",
   "abi": [
     {
       "inputs": [],
@@ -289,7 +289,7 @@
               "type": "uint256"
             }
           ],
-          "internalType": "struct SCBook.Metadata",
+          "internalType": "struct SmartContractBook.Metadata",
           "name": "",
           "type": "tuple"
         }

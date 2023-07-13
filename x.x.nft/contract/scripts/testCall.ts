@@ -2,8 +2,8 @@ import { ethers } from "hardhat";
 
 async function main() {
 
-  const NFTContract = await ethers.getContractFactory("SCBook");
-  
+  const NFTContract = await ethers.getContractFactory("SmartContractBook");
+
   // https://docs.chain.link/vrf/v2/direct-funding/supported-networks
   const nftContract = await NFTContract.deploy(
     "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846", // LINK Token on fuji

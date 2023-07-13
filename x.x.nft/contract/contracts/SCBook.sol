@@ -21,7 +21,7 @@ import "base64-sol/base64.sol";
 
 import './libraries/NFTSVG.sol';
 
-contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
+contract SmartContractBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
 
     // @dev counter for token id
     using Counters for Counters.Counter;
@@ -29,13 +29,13 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
     constructor(
         address _operator
     )
-        ERC721("SCBook", "SCB")
+        ERC721("SmartContractBook", "SCB")
     {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(MINTER_ROLE, msg.sender);
 
         // mint for operation test
-        uint256 tokenId = MAX_SUPPLY + 1;
+        uint256 tokenId = MAX_SUPPLY;
         _metadata[tokenId] = Metadata({
             random: 49 * block.timestamp * MAX_SUPPLY
         });
@@ -112,7 +112,7 @@ contract SCBook is ERC721, ERC721Enumerable, AccessControl, Pausable {
         // start from 1
         _tokenIdCounter.increment();
         uint256 tokenId = _tokenIdCounter.current();
-        require(tokenId <= MAX_SUPPLY, "Max supply reached");
+        require(tokenId < MAX_SUPPLY, "Max supply reached");
 
         uint256 randomNumber = uint256(
             keccak256(

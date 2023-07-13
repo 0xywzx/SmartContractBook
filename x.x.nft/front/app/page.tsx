@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useAccount, useNetwork } from 'wagmi';
 import { getContract, signMessage } from '@wagmi/core'
 
-import abi from './types/SCBook.json'
+import abi from './types/SmartContractBook.json'
 import { Content, Session } from './types/types';
 import { createSession, readContent } from './utils/api';
 import { getContractAddress, isSupportedChain } from './utils/web3';

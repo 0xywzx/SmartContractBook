@@ -6,7 +6,7 @@ async function main() {
 
   let contractAddress = getContractAddress(network.name, "NFT");
 
-  const NFTContract = await ethers.getContractFactory("SCBook");
+  const NFTContract = await ethers.getContractFactory("SmartContractBook");
   const nftContract = NFTContract.attach(contractAddress as string);
 
   console.log(await nftContract.tokenURI(3));
