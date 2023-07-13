@@ -56,11 +56,11 @@
       <animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" />
     </textPath>
     <textPath startOffset="50%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">
-      token id : 1
+      token ID : 13
       <animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" />
     </textPath>
     <textPath startOffset="-50%" fill="white" font-family="\'Courier New\', monospace" font-size="5px" xlink:href="#text-path-a">
-      token id : 1
+      token ID : 13
       <animate additive="sum" attributeName="startOffset" from="0%" to="100%" begin="0s" dur="8s" repeatCount="indefinite" />
     </textPath>
   </text>

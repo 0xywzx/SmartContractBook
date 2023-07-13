@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// @tittle Smart Contract book NFT contract
+// @tittle Smart Contract Book NFT contract
 
 // ┏━━━┓━━━━━━━━━━━━━┏┓━┏━━━┓━━━━━━━━━┏┓━━━━━━━━━━━━━━┏┓━
 // ┃┏━┓┃━━━━━━━━━━━━┏┛┗┓┃┏━┓┃━━━━━━━━┏┛┗┓━━━━━━━━━━━━┏┛┗┓
