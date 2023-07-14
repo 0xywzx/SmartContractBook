@@ -40,26 +40,26 @@
 - [参考文献](#参考文献)
 
 <!-- START doctoc -->
-<a href="https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf" target="_blank" >新規タブで開く</a>
+
 ## 凡例
 - 金融庁「事務ガイドライン第三分冊金融会社関係　16.暗号資産交換業者関係」
-  - https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf{:target="_blank"}
+  - https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf
 - 金融庁「事務ガイドライン第三分冊金融会社関係　14.資金移動業者関係」
-  - https://www.fsa.go.jp/common/law/guide/kaisya/14.pdf{:target="_blank"}
+  - https://www.fsa.go.jp/common/law/guide/kaisya/14.pdf
 - 金融庁「事務ガイドライン第三分冊金融会社関係　17.電子決済手段等取引業者関係」
-  - https://www.fsa.go.jp/common/law/guide/kaisya/18.pdf{:target="_blank"}
+  - https://www.fsa.go.jp/common/law/guide/kaisya/18.pdf
 - 金融庁「令和４年資金決済法等改正に係る政令・内閣府令案等に関するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）電子決済手段等関係」（2023年５月26日）
-  - https://www.fsa.go.jp/news/r4/sonota/20230526/20230526.html{:target="_blank"}
+  - https://www.fsa.go.jp/news/r4/sonota/20230526/20230526.html
 - 金融庁「事務ガイドライン第三分冊金融会社関係の一部改正（案）に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）」（2023年3月24日）
-  - https://www.fsa.go.jp/news/r4/sonota/20230324-2/1.pdf{:target="_blank"}
+  - https://www.fsa.go.jp/news/r4/sonota/20230324-2/1.pdf
 - 金融庁「令和元年資金決済法等改正に係る政令・内閣府令案等に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）」（2020年4月3日）
-  - https://www.fsa.go.jp/news/r1/sonota/20200403/01.pdf{:target="_blank"}
+  - https://www.fsa.go.jp/news/r1/sonota/20200403/01.pdf
 - 金融庁「事務ガイドライン第三分冊金融会社関係の一部改正（案）に対するパブリックコメントの結果について（コメントの概要及びそれに対する金融庁の考え方）」（2019年9月3日）
-  - https://www.fsa.go.jp/news/r1/virtualcurrency/20190903-1.pdf{:target="_blank"}
+  - https://www.fsa.go.jp/news/r1/virtualcurrency/20190903-1.pdf
 - 金融庁「銀行法施行令等の一部を改正する政令等（案）等に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）資金決済に関する法律（仮想通貨）関係」（2017年３月24日）
-  - https://www.fsa.go.jp/news/28/ginkou/20170324-1/01.pdf{:target="_blank"}
+  - https://www.fsa.go.jp/news/28/ginkou/20170324-1/01.pdf
 - 金融庁「金融商品取引法制に関する政令案・内閣府令案等に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）」（2007年７月31日）
-  - https://www.fsa.go.jp/news/19/syouken/20070731-7/00.pdf{:target="_blank"}
+  - https://www.fsa.go.jp/news/19/syouken/20070731-7/00.pdf
 
 
 ## 1.1 スマートコントラクトとは
