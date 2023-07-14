@@ -40,9 +40,10 @@
 - [参考文献](#参考文献)
 
 <!-- START doctoc -->
-
+<a href="https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf" target="_blank" >新規タブで開く</a>
 ## 凡例
-- [金融庁「事務ガイドライン第三分冊金融会社関係　16.暗号資産交換業者関係」](https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf){:target="_blank"}
+- 金融庁「事務ガイドライン第三分冊金融会社関係　16.暗号資産交換業者関係」
+  - https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf{:target="_blank"}
 - 金融庁「事務ガイドライン第三分冊金融会社関係　14.資金移動業者関係」
   - https://www.fsa.go.jp/common/law/guide/kaisya/14.pdf{:target="_blank"}
 - 金融庁「事務ガイドライン第三分冊金融会社関係　17.電子決済手段等取引業者関係」
