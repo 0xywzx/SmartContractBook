@@ -43,23 +43,23 @@
 
 ## 凡例
 - 金融庁「事務ガイドライン第三分冊金融会社関係　16.暗号資産交換業者関係」
-  - https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf
+  - https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf{:target="_blank"}
 - 金融庁「事務ガイドライン第三分冊金融会社関係　14.資金移動業者関係」
-  - https://www.fsa.go.jp/common/law/guide/kaisya/14.pdf
+  - https://www.fsa.go.jp/common/law/guide/kaisya/14.pdf{:target="_blank"}
 - 金融庁「事務ガイドライン第三分冊金融会社関係　17.電子決済手段等取引業者関係」
-  - https://www.fsa.go.jp/common/law/guide/kaisya/18.pdf
+  - https://www.fsa.go.jp/common/law/guide/kaisya/18.pdf{:target="_blank"}
 - 金融庁「令和４年資金決済法等改正に係る政令・内閣府令案等に関するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）電子決済手段等関係」（2023年５月26日）
-  - https://www.fsa.go.jp/news/r4/sonota/20230526/20230526.html
+  - https://www.fsa.go.jp/news/r4/sonota/20230526/20230526.html{:target="_blank"}
 - 金融庁「事務ガイドライン第三分冊金融会社関係の一部改正（案）に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）」（2023年3月24日）
-  - https://www.fsa.go.jp/news/r4/sonota/20230324-2/1.pdf
+  - https://www.fsa.go.jp/news/r4/sonota/20230324-2/1.pdf{:target="_blank"}
 - 金融庁「令和元年資金決済法等改正に係る政令・内閣府令案等に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）」（2020年4月3日）
-  - https://www.fsa.go.jp/news/r1/sonota/20200403/01.pdf
+  - https://www.fsa.go.jp/news/r1/sonota/20200403/01.pdf{:target="_blank"}
 - 金融庁「事務ガイドライン第三分冊金融会社関係の一部改正（案）に対するパブリックコメントの結果について（コメントの概要及びそれに対する金融庁の考え方）」（2019年9月3日）
-  - https://www.fsa.go.jp/news/r1/virtualcurrency/20190903-1.pdf
+  - https://www.fsa.go.jp/news/r1/virtualcurrency/20190903-1.pdf{:target="_blank"}
 - 金融庁「銀行法施行令等の一部を改正する政令等（案）等に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）資金決済に関する法律（仮想通貨）関係」（2017年３月24日）
-  - https://www.fsa.go.jp/news/28/ginkou/20170324-1/01.pdf
+  - https://www.fsa.go.jp/news/28/ginkou/20170324-1/01.pdf{:target="_blank"}
 - 金融庁「金融商品取引法制に関する政令案・内閣府令案等に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）」（2007年７月31日）
-  - https://www.fsa.go.jp/news/19/syouken/20070731-7/00.pdf
+  - https://www.fsa.go.jp/news/19/syouken/20070731-7/00.pdf{:target="_blank"}
 
 
 ## 1.1 スマートコントラクトとは
@@ -654,27 +654,27 @@
   - https://docs.soliditylang.org/en/v0.8.17/
 - Andreas M. Antonopoulos, “Mastering Bitcoin”
   - https://github.com/bitcoinbook/bitcoinbook
-  - なお，日本語訳についてAndreas M.Antonopoulos（今井崇也=鳩貝淳一郎訳）『ビットコインとブロックチェーン　暗号通貨を支える技術』（NTT出版，2016）
+  - なお，日本語訳についてAndreas M.Antonopoulos（今井崇也=鳩貝淳一郎訳）「ビットコインとブロックチェーン　暗号通貨を支える技術」（NTT出版，2016）
 - Andreas M. Antonopoulos, Gavin Wood “Mastering Ethereum”
   - https://github.com/ethereumbook/ethereumbook/blob/develop/book.asciidoc
-  - なお，日本語訳についてAndreas M.Antonopoulos, Gavin Wood（宇野雅晴ら監訳）『マスタリング・イーサリアム』（オライリージャパン，2019）
+  - なお，日本語訳についてAndreas M.Antonopoulos, Gavin Wood（宇野雅晴ら監訳）「マスタリング・イーサリアム」（オライリージャパン，2019）
 - UNIDROIT “DIGITAL ASSETS AND PRIVATE LAW”
   - https://www.unidroit.org/work-in-progress/digital-assets-and-private-law/
 - Uniform Law Commission “Uniform Commercial Code”
   - https://www.uniformlaws.org/acts/ucc
 - Primavera De Filippi, Aaron Wright “Blockchain and the Law: The Rule of Code” (Harvard University Press, 2018）
-  - なお，日本語訳についてPrimavera De Filippi, Aaron Wright（片桐直人編訳）『ブロックチェーンと法　＜暗号の法＞がもたらすコードの支配』（弘文堂，2020）
+  - なお，日本語訳についてPrimavera De Filippi, Aaron Wright（片桐直人編訳）「ブロックチェーンと法　＜暗号の法＞がもたらすコードの支配」（弘文堂，2020）
 - 有限責任監査法人トーマツ「ゼロ知識証明入門」（翔泳社、2021）
-- 結城浩『暗号技術入門〔第３版〕』（SBクリエイティブ，2022）
+- 結城浩「暗号技術入門〔第３版〕」（SBクリエイティブ，2022）
 - 我妻榮ら「我妻・有泉コンメンタール民法ー総則・物権・債権ー〔第7版〕」（日本評論社、2021）
 - 谷口知平=五十嵐清編「新版注釈民法（13）債権（4）〔補訂版〕」（有斐閣、2006）
 - 山野目章夫編「新注釈民法（1）　総則（1）」（有斐閣、2018）
 - 小粥太郎編「新注釈民法（5）　物権（2）」（有斐閣、2020）
 - 窪田充見編「新注釈民法（15）　債権（8）」（有斐閣、2017）
-- 山口厚『刑法各論〔第2版〕』（有斐閣、2010）
+- 山口厚「刑法各論〔第2版〕」（有斐閣、2010）
 - 鎮目征樹「情報刑法Ⅰ　サイバーセキュリティ関連犯罪」（弘文堂、2022）
 - 倉持俊宏編著「サイバー犯罪・デジタルフォレンジック実務ハンドブック」（2022、立花書房）
-- 大塚仁ら編『大コンメンタール刑法第9巻〔第174条～第192条〕〔第三版〕』（2013、青林書院）〔中神正義、高嶋智光〕
+- 大塚仁ら編「大コンメンタール刑法第9巻〔第174条～第192条〕〔第三版〕」（2013、青林書院）〔中神正義、高嶋智光〕
 - 浅田和茂ら編「新基本法コンメンタール刑法〔第２版〕」（日本評論社、2017）
 - 中森亘ら編「バーチャルマネーの法務〔第２版〕ー電子マネー・ポイント・仮想通貨を中心にー」（民事法研究会、2018）
 - 久保田隆編「ブロックチェーンをめぐる実務・政策と法」（中央経済社、2018）
@@ -683,7 +683,7 @@
 - 関口智和ら編「デジタル通貨・証券の仕組みと実務 - ビジネス・法務・会計・税務 - 」（中央経済社、2021）
 - 増島雅和ら編「暗号資産の法律」（中央経済社、2020）
 - 佐野史明「詳解デジタル金融法務」（きんざい、2021）
-- 大蔵省銀行局内貸金業関係法令研究会『実例問答式貸金業法のすべて』（大蔵財務協会，1992）
+- 大蔵省銀行局内貸金業関係法令研究会「実例問答式貸金業法のすべて」（大蔵財務協会，1992）
 - 尾崎寛ら編「逐条解説FATF勧告　国際基準からみる日本の金融犯罪対策」（中央経済社、2022）
 - 天羽健介ら編「NFTの教科書」（朝日新聞出版、2021）
 - 泉絢也ら「NFT・暗号資産の税務」（中央経済社、2022）
@@ -695,7 +695,7 @@
 - 石塚洋行ら「アドバンス金融商品取引法〔第３版〕」（商事法務、2019）
 - 宇賀克也「新・個人情報保護法の逐条解説」（有斐閣、2021）
 - 太田洋ら編「個人情報保護法制大全」（商事法務、2020）
-- 浅見靖峰ら『ファイナンス法大全（上）〔全訂版〕』（商事法務，2017）
+- 浅見靖峰ら「ファイナンス法大全（上）〔全訂版〕」（商事法務，2017）
 - 赤鹿大樹ら「ファイナンス法大全（下）〔全訂版〕」（商事法務、2017）
 - 中山信弘「著作権法〔第３版〕」（有斐閣、2020）
 - 岩井久美子監修「OSSライセンスの教科書」（技術評論社、2018）
