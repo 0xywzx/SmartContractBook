@@ -105,7 +105,7 @@
 - UNIDROIT “DIGITAL ASSETS AND PRIVATE LAW”
   - https://www.unidroit.org/work-in-progress/digital-assets-and-private-law/
 - Uniform Law Commission and the American Law Institute “Uniform Commercial Code Amendments (2022)”
-  - https://www.uniformlaws.org/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=2e456b4d-7e6a-18b7-116c-7971f84a8393&forceDialog=0
+  - https://www.uniformlaws.org/viewdocument/final-act-164?CommunityKey=1457c422-ddb7-40b0-8c76-39a1991651ac&tab=librarydocuments
 
 
 
