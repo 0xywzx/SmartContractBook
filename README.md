@@ -35,4 +35,7 @@
 - 楽天ブックスのリンク
   - https://books.rakuten.co.jp/rb/17550688/
 
+## 特典NFTについて
+本書の購入特典として配布されるNFTは、以下の特設サイト若しくはOpenseaにて確認することができます。
+https://smart-contract-book.vercel.app/
 
