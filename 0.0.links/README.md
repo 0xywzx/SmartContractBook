@@ -105,7 +105,7 @@
 - UNIDROIT “DIGITAL ASSETS AND PRIVATE LAW”
   - https://www.unidroit.org/work-in-progress/digital-assets-and-private-law/
 - Uniform Law Commission and the American Law Institute “Uniform Commercial Code Amendments (2022)”
-  - https://www.uniformlaws.org/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=2e456b4d-7e6a-18b7-116c-7971f84a8393&forceDialog=0
+  - https://www.uniformlaws.org/viewdocument/final-act-164?CommunityKey=1457c422-ddb7-40b0-8c76-39a1991651ac&tab=librarydocuments
 
 
 
@@ -654,27 +654,27 @@
   - https://docs.soliditylang.org/en/v0.8.17/
 - Andreas M. Antonopoulos, “Mastering Bitcoin”
   - https://github.com/bitcoinbook/bitcoinbook
-  - なお，日本語訳についてAndreas M.Antonopoulos（今井崇也=鳩貝淳一郎訳）『ビットコインとブロックチェーン　暗号通貨を支える技術』（NTT出版，2016）
+  - なお，日本語訳についてAndreas M.Antonopoulos（今井崇也=鳩貝淳一郎訳）「ビットコインとブロックチェーン　暗号通貨を支える技術」（NTT出版，2016）
 - Andreas M. Antonopoulos, Gavin Wood “Mastering Ethereum”
   - https://github.com/ethereumbook/ethereumbook/blob/develop/book.asciidoc
-  - なお，日本語訳についてAndreas M.Antonopoulos, Gavin Wood（宇野雅晴ら監訳）『マスタリング・イーサリアム』（オライリージャパン，2019）
+  - なお，日本語訳についてAndreas M.Antonopoulos, Gavin Wood（宇野雅晴ら監訳）「マスタリング・イーサリアム」（オライリージャパン，2019）
 - UNIDROIT “DIGITAL ASSETS AND PRIVATE LAW”
   - https://www.unidroit.org/work-in-progress/digital-assets-and-private-law/
 - Uniform Law Commission “Uniform Commercial Code”
   - https://www.uniformlaws.org/acts/ucc
 - Primavera De Filippi, Aaron Wright “Blockchain and the Law: The Rule of Code” (Harvard University Press, 2018）
-  - なお，日本語訳についてPrimavera De Filippi, Aaron Wright（片桐直人編訳）『ブロックチェーンと法　＜暗号の法＞がもたらすコードの支配』（弘文堂，2020）
+  - なお，日本語訳についてPrimavera De Filippi, Aaron Wright（片桐直人編訳）「ブロックチェーンと法　＜暗号の法＞がもたらすコードの支配」（弘文堂，2020）
 - 有限責任監査法人トーマツ「ゼロ知識証明入門」（翔泳社、2021）
-- 結城浩『暗号技術入門〔第３版〕』（SBクリエイティブ，2022）
+- 結城浩「暗号技術入門〔第３版〕」（SBクリエイティブ，2022）
 - 我妻榮ら「我妻・有泉コンメンタール民法ー総則・物権・債権ー〔第7版〕」（日本評論社、2021）
 - 谷口知平=五十嵐清編「新版注釈民法（13）債権（4）〔補訂版〕」（有斐閣、2006）
 - 山野目章夫編「新注釈民法（1）　総則（1）」（有斐閣、2018）
 - 小粥太郎編「新注釈民法（5）　物権（2）」（有斐閣、2020）
 - 窪田充見編「新注釈民法（15）　債権（8）」（有斐閣、2017）
-- 山口厚『刑法各論〔第2版〕』（有斐閣、2010）
+- 山口厚「刑法各論〔第2版〕」（有斐閣、2010）
 - 鎮目征樹「情報刑法Ⅰ　サイバーセキュリティ関連犯罪」（弘文堂、2022）
 - 倉持俊宏編著「サイバー犯罪・デジタルフォレンジック実務ハンドブック」（2022、立花書房）
-- 大塚仁ら編『大コンメンタール刑法第9巻〔第174条～第192条〕〔第三版〕』（2013、青林書院）〔中神正義、高嶋智光〕
+- 大塚仁ら編「大コンメンタール刑法第9巻〔第174条～第192条〕〔第三版〕」（2013、青林書院）〔中神正義、高嶋智光〕
 - 浅田和茂ら編「新基本法コンメンタール刑法〔第２版〕」（日本評論社、2017）
 - 中森亘ら編「バーチャルマネーの法務〔第２版〕ー電子マネー・ポイント・仮想通貨を中心にー」（民事法研究会、2018）
 - 久保田隆編「ブロックチェーンをめぐる実務・政策と法」（中央経済社、2018）
@@ -683,7 +683,7 @@
 - 関口智和ら編「デジタル通貨・証券の仕組みと実務 - ビジネス・法務・会計・税務 - 」（中央経済社、2021）
 - 増島雅和ら編「暗号資産の法律」（中央経済社、2020）
 - 佐野史明「詳解デジタル金融法務」（きんざい、2021）
-- 大蔵省銀行局内貸金業関係法令研究会『実例問答式貸金業法のすべて』（大蔵財務協会，1992）
+- 大蔵省銀行局内貸金業関係法令研究会「実例問答式貸金業法のすべて」（大蔵財務協会，1992）
 - 尾崎寛ら編「逐条解説FATF勧告　国際基準からみる日本の金融犯罪対策」（中央経済社、2022）
 - 天羽健介ら編「NFTの教科書」（朝日新聞出版、2021）
 - 泉絢也ら「NFT・暗号資産の税務」（中央経済社、2022）
@@ -695,7 +695,7 @@
 - 石塚洋行ら「アドバンス金融商品取引法〔第３版〕」（商事法務、2019）
 - 宇賀克也「新・個人情報保護法の逐条解説」（有斐閣、2021）
 - 太田洋ら編「個人情報保護法制大全」（商事法務、2020）
-- 浅見靖峰ら『ファイナンス法大全（上）〔全訂版〕』（商事法務，2017）
+- 浅見靖峰ら「ファイナンス法大全（上）〔全訂版〕」（商事法務，2017）
 - 赤鹿大樹ら「ファイナンス法大全（下）〔全訂版〕」（商事法務、2017）
 - 中山信弘「著作権法〔第３版〕」（有斐閣、2020）
 - 岩井久美子監修「OSSライセンスの教科書」（技術評論社、2018）
