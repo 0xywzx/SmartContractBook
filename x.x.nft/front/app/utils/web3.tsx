@@ -6,6 +6,8 @@ export const getContractAddress = (chainId: number) => {
   } else if (chainId === 43114) {
     contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS_AVALANCHE as string;
   }
+  console.log("chainId", chainId);
+  console.log("contractAddress", contractAddress);
 
   return contractAddress;
 }
