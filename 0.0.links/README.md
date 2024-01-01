@@ -43,6 +43,7 @@
 <!-- START doctoc -->
 ## ステーブルコイン関連ライセンスに関するリンク集
 ### 資金決済法等
+#### 法令等 - 資金決済法等関連
 - 銀行法
   - https://elaws.e-gov.go.jp/document?lawid=356AC0000000059
 - 銀行法施行規則
@@ -64,6 +65,7 @@
 - 登録等の申請様式一覧 - 金融庁「各種手続きにかかる申請様式について」
   - https://www.fsa.go.jp/common/shinsei/shinseiyoushiki.html
 
+#### ガイドライン等 - 資金決済法等関連
 - 監督指針 - 主要行等向けの総合的な監督指針
   - https://www.fsa.go.jp/common/law/guide/city/index.html
 - 監督指針（信託会社等） - 信託会社等に関する総合的な監督指針
@@ -79,6 +81,7 @@
 - 電取業ガイドライン - 金融庁「事務ガイドライン第三分冊金融会社関係　17.電子決済手段等取引業者関係」
   - https://www.fsa.go.jp/common/law/guide/kaisya/18.pdf
 
+#### 参考資料 - 資金決済法等関連
 - 金融庁「令和４年資金決済法等改正に係る政令・内閣府令案等に関するパブリックコメントの結果等について」
   - https://www.fsa.go.jp/news/r4/sonota/20230526/20230526.html
 - 金融庁「電子決済手段等取引業・電子決済等取扱業を営もうとするみなさまへ」
@@ -97,7 +100,6 @@
   - https://www.fsa.go.jp/common/law/amlcft/211122_amlcft_guidelines.pdf
 - 危険度調査書 - 警察庁「年次報告書、危険度調査書など」
   - https://www.npa.go.jp/sosikihanzai/jafic/nenzihokoku/nenzihokoku.htm
-
 - 犯罪収益移転防止法の解説等 - 警察庁「犯罪収益移転防止法の解説、パブリックコメント」
   - https://www.npa.go.jp/sosikihanzai/jafic/hourei/law_com.htm
 - 金融庁「金融機関におけるマネロン・テロ資金供与・拡散金融対策について」
