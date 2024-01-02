@@ -90,7 +90,7 @@
   - https://jvcea.or.jp/about/rule/
 
 ### AMLCFT
-- 犯収法 - 犯罪による収益の移転防止に関する法律
+- 犯収法 - 犯罪による収益の移転防止に関する法律 
   - https://elaws.e-gov.go.jp/document?lawid=419AC0000000022
 - 犯収法施行令 - 犯罪による収益の移転防止に関する法律施行令
   - https://elaws.e-gov.go.jp/document?lawid=420CO0000000020
