@@ -1,6 +1,7 @@
 # リンク集
 
 ## Table of content
+- ステーブルコイン関連ライセンスに関するリンク集
 - 凡例
 - 第1　スマートコントラクトへの誘い
   - [1.1 スマートコントラクトとは](#11-スマートコントラクトとは)
@@ -40,25 +41,119 @@
 - [参考文献](#参考文献)
 
 <!-- START doctoc -->
+## ステーブルコイン関連ライセンスに関するリンク集
+### 資金決済法等
+#### 法令等 - 資金決済法等関連
+- 銀行法
+  - https://elaws.e-gov.go.jp/document?lawid=356AC0000000059
+- 銀行法施行規則
+  - https://elaws.e-gov.go.jp/document?lawid=357M50000040010
+- 兼営法 - 金融機関の信託業務の兼営等に関する法律
+  - https://elaws.e-gov.go.jp/document?lawid=318AC0000000043_20231129_505AC0000000079
+- 兼営法施行規則 - 金融機関の信託業務の兼営等に関する法律施行規則
+  - https://elaws.e-gov.go.jp/document?lawid=357M50000040016_20230601_505M60000002050
+- 資金決済法 - 資金決済に関する法律
+  - https://elaws.e-gov.go.jp/document?lawid=421AC0000000059
+- 前払府令 - 前払式支払手段に関する内閣府令
+  - https://elaws.e-gov.go.jp/document?lawid=422M60000002003
+- 移動業府令 - 資金移動業者に関する内閣府令
+  - https://elaws.e-gov.go.jp/document?lawid=422M60000002004
+- 交換業府令 - 暗号資産交換業者に関する内閣府令
+  - https://elaws.e-gov.go.jp/document?lawid=429M60000002007
+- 電取業府令 - 電子決済手段等取引業者に関する内閣府令
+  - https://elaws.e-gov.go.jp/document?lawid=505M60000002048_20230601_000000000000000
+- 登録等の申請様式一覧 - 金融庁「各種手続きにかかる申請様式について」
+  - https://www.fsa.go.jp/common/shinsei/shinseiyoushiki.html
+
+#### ガイドライン等 - 資金決済法等関連
+- 監督指針 - 主要行等向けの総合的な監督指針
+  - https://www.fsa.go.jp/common/law/guide/city/index.html
+- 監督指針（信託会社等） - 信託会社等に関する総合的な監督指針
+  - https://www.fsa.go.jp/common/law/guide/shintaku/index.html
+- 事務ガイドライン一覧 - 金融庁「第三分冊：金融会社関係」
+  - https://www.fsa.go.jp/common/law/guide/kaisya/index.html
+- 前払ガイドライン - 金融庁「事務ガイドライン第三分冊金融会社関係　5.前払式支払手段発行者関係」
+  - https://www.fsa.go.jp/common/law/guide/kaisya/05.pdf
+- 移動業ガイドライン - 金融庁「事務ガイドライン第三分冊金融会社関係　14.資金移動業者関係」
+  - https://www.fsa.go.jp/common/law/guide/kaisya/14.pdf
+- 交換業ガイドライン - 金融庁「事務ガイドライン第三分冊金融会社関係　16.暗号資産交換業者関係」
+  - https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf
+- 電取業ガイドライン - 金融庁「事務ガイドライン第三分冊金融会社関係　17.電子決済手段等取引業者関係」
+  - https://www.fsa.go.jp/common/law/guide/kaisya/18.pdf
+
+#### 参考資料 - 資金決済法等関連
+- 金融庁「令和４年資金決済法等改正に係る政令・内閣府令案等に関するパブリックコメントの結果等について」
+  - https://www.fsa.go.jp/news/r4/sonota/20230526/20230526.html
+- 金融庁「電子決済手段等取引業・電子決済等取扱業を営もうとするみなさまへ」
+  - https://www.fsa.go.jp/common/shinsei/dendai/dentori.html
+- JVCEA諸規則一覧 - 一般社団法人日本暗号資産取引業協会（JVCEA）「定款・諸規則 RULE」
+  - https://jvcea.or.jp/about/rule/
+
+### AMLCFT
+- 犯収法 - 犯罪による収益の移転防止に関する法律 
+  - https://elaws.e-gov.go.jp/document?lawid=419AC0000000022
+- 犯収法施行令 - 犯罪による収益の移転防止に関する法律施行令
+  - https://elaws.e-gov.go.jp/document?lawid=420CO0000000020
+- 犯収法施行規則 - 犯罪による収益の移転防止に関する法律施行規則
+  - https://elaws.e-gov.go.jp/document?lawid=420M60000f5a001
+- マネロン・テロ資金供与対策ガイドライン - 金融庁「マネー・ローンダリング及びテロ資金供与対策に関するガイドライン」
+  - https://www.fsa.go.jp/common/law/amlcft/211122_amlcft_guidelines.pdf
+- 危険度調査書 - 警察庁「年次報告書、危険度調査書など」
+  - https://www.npa.go.jp/sosikihanzai/jafic/nenzihokoku/nenzihokoku.htm
+- 犯罪収益移転防止法の解説等 - 警察庁「犯罪収益移転防止法の解説、パブリックコメント」
+  - https://www.npa.go.jp/sosikihanzai/jafic/hourei/law_com.htm
+- 金融庁「金融機関におけるマネロン・テロ資金供与・拡散金融対策について」
+  - https://www.fsa.go.jp/policy/amlcftcpt/index.html
+- 金融庁「犯罪収益移転防止法に関する留意事項について」
+  - https://www.fsa.go.jp/common/law/guide/hansyuhou.pdf
+- 疑わしい取引届出様式等一覧 - 警察庁「事業者の皆さんへ」
+  - https://www.npa.go.jp/sosikihanzai/jafic/index_g.htm
+
+### 反社会的勢力への対応
+- 企業が反社会的勢力による被害を防止するための指針
+  - https://www.moj.go.jp/keiji1/keiji_keiji42.html
+- 暴力団等に対する基本的対応要領
+  - https://www.zenboutsui.jp/_src/3608057/taiouyoukou_2022.pdf?v=1679925595824
+
+### 個人情報保護
+- 個人情報保護法 - 個人情報の保護に関する法律
+  - https://elaws.e-gov.go.jp/document?lawid=415AC0000000057
+- 個人情報保護法施行令 - 個人情報の保護に関する法律施行令
+  - https://elaws.e-gov.go.jp/document?lawid=415CO0000000507
+- 個人情報保護法施行規則 - 個人情報の保護に関する法律施行規則
+  - https://elaws.e-gov.go.jp/document?lawid=428M60020000003
+- 通則ガイドライン等 - 個人情報保護委員会「法令・ガイドライン等」 - 個人情報の保護に関する法律についてのガイドライン（通則編） 
+  - https://www.ppc.go.jp/personalinfo/legal/#anc_Guide
+- 金融分野ガイドライン - 金融分野における個人情報保護に関するガイドライン
+  - https://www.fsa.go.jp/common/law/kj-hogo-2/01-3.pdf
+- 実務指針 - 金融分野における個人情報保護に関するガイドラインの安全管理措置等についての実務指針
+  - https://www.fsa.go.jp/common/law/kj-hogo-2/03-2.pdf
+- 金融機関における個人情報保護に関するＱ＆Ａ等
+  - https://www.fsa.go.jp/common/law/kj-hogo-2/index.html
+
 
 ## 凡例
-- 金融庁「事務ガイドライン第三分冊金融会社関係　16.暗号資産交換業者関係」
-  - https://www.fsa.go.jp/common/law/guide/kaisya/16.pdf
-- 金融庁「事務ガイドライン第三分冊金融会社関係　14.資金移動業者関係」
-  - https://www.fsa.go.jp/common/law/guide/kaisya/14.pdf
-- 金融庁「事務ガイドライン第三分冊金融会社関係　17.電子決済手段等取引業者関係」
-  - https://www.fsa.go.jp/common/law/guide/kaisya/18.pdf
-- 金融庁「令和４年資金決済法等改正に係る政令・内閣府令案等に関するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）電子決済手段等関係」（2023年５月26日）
-  - https://www.fsa.go.jp/news/r4/sonota/20230526/20230526.html
-- 金融庁「事務ガイドライン第三分冊金融会社関係の一部改正（案）に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）」（2023年3月24日）
+- 2023年5月26日パブコメ回答〔電子決済手段等関係〕 - 金融庁「令和４年資金決済法等改正に係る政令・内閣府令案等に関するパブリックコメントの結果等について」
+  - https://www.fsa.go.jp/news/r4/sonota/20230526/01.pdf
+- 2023年5月26日パブコメ回答〔前払式支払手段関係〕 - 金融庁「令和４年資金決済法等改正に係る政令・内閣府令案等に関するパブリックコメントの結果等について」
+  - https://www.fsa.go.jp/news/r4/sonota/20230526/03.pdf
+- 2023年5月26日パブコメ回答〔犯罪収益移転防止法関係 別紙4-1〕 - 金融庁「令和４年資金決済法等改正に係る政令・内閣府令案等に関するパブリックコメントの結果等について」
+  - https://www.fsa.go.jp/news/r4/sonota/20230526/04-1.pdf
+- 2023年5月26日パブコメ回答〔犯罪収益移転防止法関係 別紙4-2〕 - 金融庁「令和４年資金決済法等改正に係る政令・内閣府令案等に関するパブリックコメントの結果等について」
+  - https://www.fsa.go.jp/news/r4/sonota/20230526/04-2.pdf
+- 2023年3月24日パブコメ回答 - 金融庁「事務ガイドライン第三分冊金融会社関係の一部改正（案）に対するパブリックコメントの結果等について」
   - https://www.fsa.go.jp/news/r4/sonota/20230324-2/1.pdf
-- 金融庁「令和元年資金決済法等改正に係る政令・内閣府令案等に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）」（2020年4月3日）
+- 2020年4月3日日パブコメ回答 - 金融庁「令和元年資金決済法等改正に係る政令・内閣府令案等に対するパブリックコメントの結果等について」
   - https://www.fsa.go.jp/news/r1/sonota/20200403/01.pdf
-- 金融庁「事務ガイドライン第三分冊金融会社関係の一部改正（案）に対するパブリックコメントの結果について（コメントの概要及びそれに対する金融庁の考え方）」（2019年9月3日）
+- 2019年9月3日パブコメ回答 - 金融庁「事務ガイドライン第三分冊金融会社関係の一部改正（案）に対するパブリックコメントの結果について」
   - https://www.fsa.go.jp/news/r1/virtualcurrency/20190903-1.pdf
-- 金融庁「銀行法施行令等の一部を改正する政令等（案）等に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）資金決済に関する法律（仮想通貨）関係」（2017年３月24日）
+- 2017年３月24日パブコメ回答 - 金融庁「銀行法施行令等の一部を改正する政令等（案）等に対するパブリックコメントの結果等について」
   - https://www.fsa.go.jp/news/28/ginkou/20170324-1/01.pdf
-- 金融庁「金融商品取引法制に関する政令案・内閣府令案等に対するパブリックコメントの結果等について（コメントの概要及びそれに対する金融庁の考え方）」（2007年７月31日）
+- 2015年6月19日パブコメ回答 - 警察庁「犯罪による収益の移転防止に関する法律の一部を改正する法律の施行に伴う関係政令の整備等に関する政令案等に対する意見の募集結果について」
+  - https://public-comment.e-gov.go.jp/servlet/PcmFileDownload?seqNo=0000133365
+- 2010年2月23日パブコメ回答 - 金融庁「資金決済に関する法律の施行に伴う政令案・内閣府令案等に対するパブリックコメントの結果等について」
+  - https://www.fsa.go.jp/news/21/kinyu/20100223-1/00.pdf
+- 2007年７月31日パブコメ回答 - 金融庁「金融商品取引法制に関する政令案・内閣府令案等に対するパブリックコメントの結果等について」
   - https://www.fsa.go.jp/news/19/syouken/20070731-7/00.pdf
 
 
@@ -741,5 +836,9 @@
   - https://www.zenginkyo.or.jp/fileadmin/res/news/news310339.pdf
 - 日本銀行金融研究所「デジタルマネーの私法上の性質を巡る法律問題研究会」報告書（2023年6月）
   - https://www.boj.or.jp/about/release_2023/rel230609a.htm
+- Circle "USDC Terms"
+  - https://www.circle.com/en/legal/usdc-terms
+- Centre "CENTRE WHITEPAPER"
+  - https://api-new.whitepaper.io/documents/pdf?id=HJX1cRBSO
 
 <!-- END doctoc -->
